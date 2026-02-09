@@ -4,30 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - My Store</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Our Products</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="cart.html">Cart</a>
-        </nav>
-    </header>
+<header>
+    <h1>Our Products</h1>
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="./cart.html">Cart</a>
+    </nav>
+</header>
 
-    <div class="container">
-        <div class="product">
-            <h3>Product 1</h3>
-            <p>Price: €10</p>
-            <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <h3>Product 2</h3>
-            <p>Price: €25</p>
-            <button onclick="addToCart('Product 2', 25)">Add to Cart</button>
-        </div>
+<div class="container">
+    <div class="product" data-name="Death Mask" data-price="30.00" data-image="products/images/FINISH10.png">
+        <a href="products/product1.html">
+            <img src="products/images/FINISH10.png" alt="Product 1" width="200">
+            <h3> Death Mask </h3>
+        </a>
+        <p>€30.00</p>
     </div>
+
+    <div class="product" data-name="314" data-price="30.00" data-image="products/images/FINISH11.png">
+        <a href="products/product2.html">
+            <img src="products/images/FINISH11.png" alt="Product 2" width="200">
+            <h3> 314 </h3>
+        </a>
+        <p>€30.00</p>
+    </div>  
+</div>
+
 </body>
 </html>

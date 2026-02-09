@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product 2 - My Store</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>Product 2</h1>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../products.html">Products</a>
+        <a href="../cart.html">Cart</a>
+    </nav>
+</header>
+
+<div class="container">
+    <img src="images/FINISH11.png" alt="Product 2" width="300">
+    <h2>Product 2</h2>
+    <p>Price: €30,00</p>
+    <p>Description: This is a great product that comes in multiple sizes.</p>
+
+    <div class="size-selector">
+        <span>Select Size:</span>
+        <button class="size-btn" data-size="S">S</button>
+        <button class="size-btn" data-size="M">M</button>
+        <button class="size-btn" data-size="L">L</button>
+    </div>
+    <input type="hidden" id="size" value="S">
+
+    <button onclick="addToCart('314', 30.00, 'products/images/FINISH11.png')">Add to Cart</button>
+</div>
+
+</body>
+</html>
