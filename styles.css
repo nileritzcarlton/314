@@ -1,6 +1,6 @@
 body {
     font-family: "Courier New", Courier, monospace;
-    background-color: #6ff1ffa0;
+    background-color: #3a3a3aa0;
     margin: 0;
     padding: 0;
 }
@@ -32,7 +32,7 @@ nav a:hover {
     margin: 2rem auto;
     padding: 2rem;
     
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
@@ -149,7 +149,7 @@ button:hover {
 
 .product img.hover-img {
     position: absolute;
-    top: 17 px;
+    top: 17px;
     left: 25px;
     width: 80%;
     opacity: 0;
@@ -306,7 +306,7 @@ nav a {
 .search-wrapper {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid white;  /* underline style */
+    border-bottom: 1px solid rgb(218, 72, 72);  /* underline style */
     padding: 0.2rem 0;
 }
 
@@ -314,7 +314,7 @@ nav a {
     border: none;
     outline: none;
     background: transparent;
-    color: white;
+    color: rgb(218, 72, 72);
     font-family: monospace;
     font-size: 0.8rem;
     padding-left: 0.3rem;  /* space after icon */
@@ -343,4 +343,141 @@ nav a {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: #712b2b; /* thumb on hover */
+}
+
+/* ###################################################################################################### PHONE PHONE PHONE PHONE PHONE PHONE ############################################################################################################################################# */
+/* MOBILE / SMALL SCREEN COMPATIBILITY */
+@media (max-width: 768px) {
+
+    /* Header and nav */
+    header {
+        padding: 0.5rem 0;
+    }
+
+    nav {
+        flex-wrap: wrap; /* allow links to wrap */
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    #search-form {
+        width: 100%;
+        margin-right: 0;
+        order: -1; /* move search bar above links */
+        margin-bottom: 0.5rem;
+    }
+
+    .search-wrapper input {
+        width: 100px;
+        font-size: 0.8rem;
+    }
+
+    /* Container */
+    .container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    /* Product cards */
+    .container .product {
+        width: 45%;       /* 2 per row on tablets/small screens */
+        margin: 0.5rem auto;
+    }
+
+    /* Product detail page */
+    .product-detail {
+        display: flex;
+        flex-direction: column; /* stack left-center-right vertically */
+        gap: 1rem;
+        max-width: 100%;
+        margin: 1rem auto;
+    }
+
+    .product-info-left,
+    .product-image,
+    .product-info-right {
+        text-align: center;
+    }
+
+    #main-image {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .thumbnails img {
+        width: 50px;
+    }
+
+    .product-info-left {
+        text-align: center;
+    }
+
+    .product-info-right {
+        text-align: center;
+    }
+
+    /* Cart */
+    #cart-items li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #cart-items li img {
+        margin-bottom: 0.5rem;
+        width: 60px;
+    }
+
+    #cart-items li div span {
+        display: block;
+        margin: 0.2rem 0;
+        min-width: auto;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 12px; /* smaller on mobile */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border: 2px solid #000; 
+    }
+
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+
+    .container .product {
+        width: 100%; /* 1 per row */
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    #search-form {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .search-wrapper input {
+        width: 90px;
+        font-size: 0.75rem;
+    }
+
+    .product-detail {
+        gap: 0.5rem;
+    }
+
+    #main-image {
+        max-width: 100%;
+    }
 }
