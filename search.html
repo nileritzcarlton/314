@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results - My Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>Search Results</h1>
+    <a href="./products.html">← Back to Products</a>
+</header>
+
+<div class="container" id="search-results">
+    <!-- JS will populate matching products here -->
+</div>
+
+<script>
+    // Sample product data (same as in products.html)
+    const products = [
+        { name: "Death Mask", price: 30.00, image: "products/images/FINISH10.png", link: "products/product1.html" },
+        { name: "314", price: 30.00, image: "products/images/FINISH11.png", link: "products/product2.html" },
+        { name: "CASH-White", price: 30.00, image: "products/images/FINISH5.png", link: "products/product3.html" },
+        { name: "CASH-Black", price: 30.00, image: "products/images/FINISH6.png", link: "products/product4.html" },
+        { name: "One Pound", price: 30.00, image: "products/images/FINISH1.png", link: "products/product5.html" },
+        { name: "Club", price: 30.00, image: "products/images/FINISH2.png", link: "products/product6.html" },
+        { name: "Chanel", price: 30.00, image: "products/images/FINISH3.png", link: "products/product7.html" },
+    ];
+
+    // Get search query from URL
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q")?.toLowerCase() || "";
+
+    const resultsContainer = document.getElementById("search-results");
+
+    // Filter products
+    const matches = products.filter(p => p.name.toLowerCase().includes(query));
+
+    if (matches.length === 0) {
+        resultsContainer.innerHTML = "<p>No products found.</p>";
+    } else {
+        matches.forEach(p => {
+            const div = document.createElement("div");
+            div.className = "product";
+
+            div.innerHTML = `
+                <a href="${p.link}">
+                    <img src="${p.image}" alt="${p.name}" width="200">
+                    <h3>${p.name}</h3>
+                </a>
+                <p>€${p.price.toFixed(2)}</p>
+            `;
+            resultsContainer.appendChild(div);
+        });
+    }
+</script>
+</body>
+</html>

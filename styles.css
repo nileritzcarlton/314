@@ -8,7 +8,11 @@ body {
 header {
     background-color: #000000;
     color: rgb(255, 255, 255);
-    padding: 1rem;
+
+    display: flex;
+    flex-direction: column; /* stack title + nav */
+    padding: 1rem 0;
+    align-items: center;    /* horizontal center */
     text-align: center;
 }
 
@@ -23,9 +27,11 @@ nav a:hover {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
+    align-items: center;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 2rem;
+    
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -43,6 +49,8 @@ nav a:hover {
 .container .product img {
     border-radius: 8px;
     margin-bottom: 0.5rem;
+        display: block;
+    margin: 0 auto;
 }
 
 button {
@@ -78,6 +86,27 @@ button:hover {
     color: #fff;
 }
 
+.quantity-selector {
+    margin-top: 1rem;
+    display: flex;
+    gap: 2.4rem;
+}
+
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.qty-btn {
+    background: transparent;
+    border: 1px solid #000;
+    padding: 0.2rem 0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #333;
+}
+
 /* Cart item list */
 #cart-items li {
     display: flex;
@@ -110,4 +139,208 @@ button:hover {
 #cart-items li div span {
     min-width: 100px;
     display: inline-block;
+}
+
+.product {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.product img.hover-img {
+    position: absolute;
+    top: 17 px;
+    left: 25px;
+    width: 80%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.product:hover img.hover-img {
+    opacity: 1;
+}
+
+.product:hover img.main-img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product-gallery {
+    margin-bottom: 1rem;
+}
+
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 2rem auto;
+}
+
+.product-info-left {
+    text-align: right;
+}
+
+.product-image {
+    text-align: center;
+}
+
+.product a {
+    text-decoration: none;
+}
+
+.product h3 {
+    margin: 1rem 0; /* optional spacing tweak */
+}
+
+#main-image {
+    width: 320px;
+    margin-bottom: 0.5rem;
+}
+
+.thumbnails img {
+    width: 70px;
+    margin: 0 0.3rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.thumbnails img:hover {
+    border-color: #000;
+}
+
+.product-info-right {
+    text-align: left;
+}
+
+.price {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #111;
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#cart-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+#cart-icon {
+    width: 20px;      /* adjust size */
+    height: 20px;
+    color: white;
+    vertical-align: middle;
+    margin-right: 0.3rem;   /* space between icon and text */
+}
+
+#cart-count {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;  /* underline style */
+    padding: 0.2rem 0;
+}
+
+.search-wrapper input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-family: monospace;
+    font-size: 1rem;
+    padding-left: 0.3rem;  /* space after icon */
+    width: 150px;          /* adjust as needed */
+}
+
+.search-wrapper .search-icon {
+    width: 16px;    /* size of the magnifying glass */
+    height: 16px;
+    margin-right: 0.3rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;  /* vertical align all items */
+    gap: 1rem;            /* spacing between links */
+}
+
+nav a {
+    display: inline-flex;    /* treat icon + text as one line */
+    align-items: center;     /* vertical center icon + text */
+    text-decoration: none;   /* optional */
+    color: white;            /* your header text color */
+    font-family: monospace;
+}
+
+#search-form {
+    margin-right: auto;      /* push search to the left */
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;  /* underline style */
+    padding: 0.2rem 0;
+}
+
+.search-wrapper input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-family: monospace;
+    font-size: 0.8rem;
+    padding-left: 0.3rem;  /* space after icon */
+    width: 100px;          /* adjust as needed */
+}
+
+.search-wrapper .search-icon {
+    margin-right: 0.3rem;
+    font-size: 1rem;
+}
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 20px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #000000; /* track (behind the thumb) */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #983737; /* thumb color */
+    border-radius: 20px;
+    border: 3px solid #000000; /* padding around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #712b2b; /* thumb on hover */
 }

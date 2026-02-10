@@ -17,21 +17,51 @@
     </nav>
 </header>
 
-<div class="container">
-    <img src="images/FINISH11.png" alt="Product 2" width="300">
-    <h2>Product 2</h2>
-    <p>Price: €30,00</p>
-    <p>Description: This is a great product that comes in multiple sizes.</p>
+<div id="toast"></div>
 
-    <div class="size-selector">
-        <span>Select Size:</span>
-        <button class="size-btn" data-size="S">S</button>
-        <button class="size-btn" data-size="M">M</button>
-        <button class="size-btn" data-size="L">L</button>
+<div class="container product-detail">
+    <div class="product-info-left">     <!-- LEFT: Description -->
+        <h2>314</h2>
+        <p>
+            This is a great product that comes in multiple sizes.
+            High-quality print, comfortable fit, and durable fabric.
+        </p>
     </div>
-    <input type="hidden" id="size" value="S">
 
-    <button onclick="addToCart('314', 30.00, 'products/images/FINISH11.png')">Add to Cart</button>
+    <div class="product-image">     <!-- CENTER: Image Gallery -->
+        <img id="main-image" src="images/FINISH11.png" alt="314">
+
+        <div class="thumbnails">
+            <img src="images/FINISH11.png" onclick="changeImage(this)">
+            <img src="images/FINISH-BlankBlackBack.png" onclick="changeImage(this)">
+        </div>
+    </div>
+
+    <div class="product-info-right">     <!-- RIGHT: Purchase -->
+        <p class="price">€30.00</p>
+
+        <div class="size-selector">
+            <span>Select Size:</span>
+            <button class="size-btn" data-size="S">S</button>
+            <button class="size-btn" data-size="M">M</button>
+            <button class="size-btn" data-size="L">L</button>
+        </div>
+
+        <div class="quantity-selector">
+            <span>Quantity:</span>
+            <div class="qty-controls">
+                <button type="button" class="qty-btn" onclick="changeQty(-1)">−</button>
+                <span id="qty-value">1</span>
+                <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+            </div>
+        </div>
+
+        <input type="hidden" id="size" value="S">
+
+        <button onclick="addProductFromPage('314', 30.00, 'products/images/FINISH11.png')">
+            Add to Cart
+        </button>
+    </div>
 </div>
 
 </body>

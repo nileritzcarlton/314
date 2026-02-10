@@ -11,9 +11,19 @@
     <header>
         <h1>Your Cart</h1>
         <nav>
+            <form id="search-form" action="search.html" method="get">
+                <div class="search-wrapper">
+                    <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                    <input type="text" name="q" placeholder="Search" required>
+                </div>
+            </form>
+
             <a href="index.html">Home</a>
             <a href="products.html">Products</a>
-            <a href="cart.html">Cart</a>
+            <a href="cart.html" id="cart-link">
+                <img id="cart-icon" src="products/images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
+                Cart (<span id="cart-count">0</span>)
+            </a>
         </nav>
     </header>
 

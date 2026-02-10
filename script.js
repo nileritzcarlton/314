@@ -1,19 +1,24 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart(name, price, image) {
-    const sizeSelect = document.getElementById("size");
-    let size = sizeSelect ? sizeSelect.value : null;
-
-    let existingItem = cart.find(item => item.name === name && item.size === size);
+function addToCart(name, price, image, size = null, quantity = 1) {
+    let existingItem = cart.find(
+        item => item.name === name && item.size === size
+    );
 
     if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity += quantity;
     } else {
-        cart.push({ name, price, size, quantity: 1, image });
+        cart.push({
+            name,
+            price,
+            size,
+            quantity,
+            image
+        });
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${name} (${size || "default"}) added to cart!`);
+    showToast(`${name}${size ? ` (Size ${size})` : ""} ×${quantity} added to cart`);
     updateCart();
 }
 
@@ -135,6 +140,47 @@ function checkout() {
     ).join("\n");
 
     alert("Checkout:\n" + summary + `\nTotal: €${cart.reduce((a,b) => a + b.price * b.quantity, 0)}`);
+}
+
+function changeImage(thumb) {
+    const mainImage = document.getElementById("main-image");
+    if (mainImage) {
+        mainImage.src = thumb.src;
+    }
+}
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    if (!toast) return;
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2000);
+}
+
+let currentQty = 1;
+
+function changeQty(amount) {
+    currentQty = Math.max(1, currentQty + amount);
+    document.getElementById("qty-value").textContent = currentQty;
+}
+
+function addProductFromPage(name, price, image) {
+    const size = document.getElementById("size")?.value || null;
+    addToCart(name, price, image, size, currentQty);
+
+    // reset qty after adding
+    currentQty = 1;
+    document.getElementById("qty-value").textContent = "1";
+}
+
+const cartCountSpan = document.getElementById("cart-count");
+if (cartCountSpan) {
+    const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountSpan.textContent = totalQty;
 }
 
 // Run updateCart on page load
