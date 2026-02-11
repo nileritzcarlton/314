@@ -16,6 +16,136 @@ header {
     text-align: center;
 }
 
+#welcome-screen {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TV container fills screen */
+.tv-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.tv-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   /* stretch width */
+    height: 100%;  /* stretch height */
+    object-fit: fill; /* IMPORTANT: stretches to fill window */
+    z-index: 5;
+    pointer-events: none;
+}
+
+.tv-screen {
+    position: absolute;
+
+    top: 12%;      /* % from top of stretched TV */
+    left: 9%;     /* % from left of stretched TV */
+    width: 83%;    /* % of stretched TV width */
+    height: 78%;   /* % of stretched TV height */
+
+    background-image: url("products/images/f2adec8c-b9f0-401c-971c-80892042744e.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 3%;
+    overflow: hidden;
+    z-index: 1;
+
+    box-shadow:
+        inset 0 0 40px rgba(0,0,0,0.8),
+        inset 0 0 80px rgba(0,0,0,0.6);
+}
+
+.tv-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        /* scanlines */
+        repeating-linear-gradient(
+            rgba(0,0,0,0.15) 0px,
+            rgba(0,0,0,0.15) 2px,
+            transparent 2px,
+            transparent 4px
+        ),
+        /* glass reflection */
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255,255,255,0.25),
+            transparent 60%
+        );
+
+    pointer-events: none;
+    z-index: 2;
+
+    animation: crt-flicker 0.15s infinite;
+}
+
+.tv-screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: radial-gradient(
+        ellipse at center,
+        transparent 55%,
+        rgba(0,0,0,0.6) 100%
+    );
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes crt-flicker {
+    0%,100% { opacity: 0.95; }
+    50% { opacity: 0.9; }
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Courier New", monospace;
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 20px rgba(255,255,255,0.6);
+    cursor: pointer;
+}
+
+.blink {
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+#enter-text {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#enter-text:hover {
+    color:#aaaaaa
+}
+
 nav a {
     color: white;
     margin: 0 1rem;
@@ -326,6 +456,32 @@ nav a {
     font-size: 1rem;
 }
 
+#night-clock {
+    margin-top: 2rem;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    color: #00ff66; /* classic retro green */
+    text-shadow:
+        0 0 6px rgba(0, 255, 102, 0.6),
+        0 0 12px rgba(0, 255, 102, 0.4);
+}
+
+
+/* Big digital time */
+#cairo-time {
+    font-size: 4rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+}
+
+/* Weather slightly smaller */
+#cairo-weather {
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+}
+
+
 /* For Chrome, Edge, and Safari */
 ::-webkit-scrollbar {
     width: 20px; /* width of the scrollbar */
@@ -437,6 +593,15 @@ nav a {
         display: block;
         margin: 0.2rem 0;
         min-width: auto;
+    }
+
+    #cairo-time {
+        font-size: 2.8rem;
+        letter-spacing: 0.1em;
+    }
+
+    #cairo-weather {
+        font-size: 1.2rem;
     }
 
     /* Scrollbar */

@@ -7,29 +7,67 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Store!</h1>
-        <nav>
-            <form id="search-form" action="search.html" method="get">
-                <div class="search-wrapper">
-                    <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
-                    <input type="text" name="q" placeholder="Search" required>
+
+<div id="welcome-screen">
+    <div class="tv-wrapper">
+        <!-- Background image inside the TV screen -->
+        <div class="tv-screen">
+            <div class="welcome-content">
+                <div id="enter-text">
+                    <span class="blink">></span> Enter the store
                 </div>
-            </form>
+            </div>
+        </div>
 
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="cart.html" id="cart-link">
-                <img id="cart-icon" src="products/images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
-                Cart (<span id="cart-count">0</span>)
-            </a>
-        </nav>
-    </header>
-
-    <div class="container">
-        <h2>Coming soon!</h2>
-        <p>Check out our products page to see what’s available.</p>
+        <!-- The TV image on top -->
+        <img src="products/images/old-tv-11527929226fejsvwoykkkk.png" class="tv-frame">
     </div>
+</div>
+
+<body>
+    <script> 
+        /*
+        function updateSideTime() {
+            const options = { timeZone: 'Africa/Cairo', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const timeStr = new Intl.DateTimeFormat('en-GB', options).format(new Date());
+            document.getElementById('side-time').textContent = `Local Time: ${timeStr}`;
+        }
+        setInterval(updateSideTime, 1000);
+        updateSideTime();
+
+        // SIDE WEATHER
+        const apiKey = "2af21dfbcc6570d1543b7138367a31ea"; // your OpenWeather key
+        const cairoLat = 30.0444;
+        const cairoLon = 31.2357;
+
+        async function updateSideWeather() {
+            try {
+                const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${cairoLat}&lon=${cairoLon}&units=metric&appid=${apiKey}`);
+                const data = await res.json();
+                const temp = data.main.temp.toFixed(1);
+                const description = data.weather[0].description;
+                document.getElementById('side-weather').textContent = `Weather: ${temp}°C, ${description}`;
+            } catch (err) {
+                document.getElementById('side-weather').textContent = `Weather: unavailable`;
+                console.error(err);
+            }
+        }
+
+        updateSideWeather();
+        setInterval(updateSideWeather, 10 * 60 * 1000); // update every 10 min
+        */
+        // ENTER STORE click
+        document.getElementById("enter-text").addEventListener("click", () => {
+            window.location.href = "products.html";
+        });
+
+        // ENTER key support
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                window.location.href = "products.html";
+            }
+        });
+    </script>
 </body>
+
 </html>
