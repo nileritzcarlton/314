@@ -11,9 +11,19 @@
 <header>
     <h1>Product 5</h1>
     <nav>
+        <form id="search-form" action="search.html" method="get">
+            <div class="search-wrapper">
+                <img class="search-icon" src="images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                <input type="text" name="q" placeholder="Search" required>
+            </div>
+        </form>
+
         <a href="../index.html">Home</a>
         <a href="../products.html">Products</a>
-        <a href="../cart.html">Cart</a>
+        <a href="../cart.html" id="cart-link">
+            <img id="cart-icon" src="images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
+            Cart (<span id="cart-count">0</span>)
+        </a>
     </nav>
 </header>
 
@@ -45,6 +55,7 @@
             <button class="size-btn" data-size="S">S</button>
             <button class="size-btn" data-size="M">M</button>
             <button class="size-btn" data-size="L">L</button>
+            <button class="size-btn" data-size="XL">XL</button>
         </div>
 
         <div class="quantity-selector">
@@ -58,7 +69,7 @@
 
         <input type="hidden" id="size" value="S">
 
-        <button onclick="addProductFromPage('One Pound', 30.00, 'products/images/FINISH1.png')">
+        <button class="addtocartbutton" onclick="addProductFromPage('One Pound', 30.00, 'products/images/FINISH1.png')">
             Add to Cart
         </button>
     </div>

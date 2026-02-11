@@ -17,22 +17,27 @@ header {
 }
 
 #welcome-screen {
-    position: fixed;
-    inset: 0;
-    background: #000;
-    display: flex;
+    height: 100dvh;   /* dynamic visible height */
+    width: 100vw;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
+    flex-direction: row;
+    overflow: hidden;         /* no scroll */
 }
 
 /* TV container fills screen */
 .tv-wrapper {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
+    height: 100%;
+    width: auto;
 
+    max-width: 100vw;
+    max-height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .tv-frame {
     position: absolute;
@@ -48,7 +53,7 @@ header {
 .tv-screen {
     position: absolute;
 
-    top: 12%;      /* % from top of stretched TV */
+    top: 11.5%;      /* % from top of stretched TV */
     left: 9%;     /* % from left of stretched TV */
     width: 83%;    /* % of stretched TV width */
     height: 78%;   /* % of stretched TV height */
@@ -208,7 +213,7 @@ button:hover {
     margin-right: 0.5rem;
     cursor: pointer;
     border-radius: 4px;
-    font-family: monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .size-btn.selected {
@@ -237,6 +242,12 @@ button:hover {
     color: #333;
 }
 
+.addtocartbutton {
+    margin: 20px;
+    font-family: "Courier New", Courier, monospace;
+    border-radius: 6px;
+}
+
 /* Cart item list */
 #cart-items li {
     display: flex;
@@ -244,7 +255,7 @@ button:hover {
     margin-bottom: 1rem; /* space between items */
     padding: 0.5rem;
     border-bottom: 1px solid #ccc; /* optional separator */
-    font-family: monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
 /* Cart images */
@@ -261,7 +272,7 @@ button:hover {
     color: inherit;
     padding: 0.2rem 0.5rem;
     cursor: pointer;
-    font-family: monospace;
+    font-family: "Courier New", Courier, monospace;
     border-radius: 4px;
     font-size: 0.9rem;
 }
@@ -269,6 +280,10 @@ button:hover {
 #cart-items li div span {
     min-width: 100px;
     display: inline-block;
+}
+
+.checkoutbutton {
+    font-family: "Courier New", Courier, monospace;
 }
 
 .product {
@@ -357,7 +372,7 @@ button:hover {
     color: #fff;
     padding: 0.8rem 1.2rem;
     border-radius: 6px;
-    font-family: monospace;
+    font-family: "Courier New", Courier, monospace;
     font-size: 0.9rem;
     opacity: 0;
     pointer-events: none;
@@ -388,7 +403,7 @@ button:hover {
 #cart-count {
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-family: monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .search-wrapper {
@@ -403,7 +418,7 @@ button:hover {
     outline: none;
     background: transparent;
     color: white;
-    font-family: monospace;
+    font-family: "Courier New", Courier, monospace;
     font-size: 1rem;
     padding-left: 0.3rem;  /* space after icon */
     width: 150px;          /* adjust as needed */
@@ -425,8 +440,8 @@ nav a {
     display: inline-flex;    /* treat icon + text as one line */
     align-items: center;     /* vertical center icon + text */
     text-decoration: none;   /* optional */
-    color: white;            /* your header text color */
-    font-family: monospace;
+    color: white;           
+    font-family: "Courier New", Courier, monospace;
 }
 
 #search-form {
@@ -445,7 +460,7 @@ nav a {
     outline: none;
     background: transparent;
     color: rgb(218, 72, 72);
-    font-family: monospace;
+    font-family: "Courier New", Courier, monospace;
     font-size: 0.8rem;
     padding-left: 0.3rem;  /* space after icon */
     width: 100px;          /* adjust as needed */
@@ -455,32 +470,6 @@ nav a {
     margin-right: 0.3rem;
     font-size: 1rem;
 }
-
-#night-clock {
-    margin-top: 2rem;
-    text-align: center;
-    font-family: "Courier New", Courier, monospace;
-    color: #00ff66; /* classic retro green */
-    text-shadow:
-        0 0 6px rgba(0, 255, 102, 0.6),
-        0 0 12px rgba(0, 255, 102, 0.4);
-}
-
-
-/* Big digital time */
-#cairo-time {
-    font-size: 4rem;
-    letter-spacing: 0.15em;
-    margin-bottom: 0.5rem;
-}
-
-/* Weather slightly smaller */
-#cairo-weather {
-    font-size: 1.6rem;
-    letter-spacing: 0.1em;
-    opacity: 0.9;
-}
-
 
 /* For Chrome, Edge, and Safari */
 ::-webkit-scrollbar {
@@ -502,7 +491,6 @@ nav a {
 }
 
 /* ###################################################################################################### PHONE PHONE PHONE PHONE PHONE PHONE ############################################################################################################################################# */
-/* MOBILE / SMALL SCREEN COMPATIBILITY */
 @media (max-width: 768px) {
 
     /* Header and nav */
@@ -511,9 +499,11 @@ nav a {
     }
 
     nav {
-        flex-wrap: wrap; /* allow links to wrap */
-        justify-content: center;
+        flex-wrap: nowrap;        /* all items on one line */
+        justify-content: space-between;
+        align-items: center;
         gap: 0.5rem;
+        padding: 0 0.5rem;
     }
 
     nav a {
@@ -521,21 +511,43 @@ nav a {
     }
 
     #search-form {
-        width: 100%;
-        margin-right: 0;
-        order: -1; /* move search bar above links */
-        margin-bottom: 0.5rem;
+        width: 70px;              /* smaller search box */
+        margin: 0;
     }
 
     .search-wrapper input {
         width: 100px;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
+
+    #cart-link {
+        position: relative;  /* needed for badge positioning */
+        font-size: 0;        /* hide text */
+        gap: 0;
+    }
+    
+    #cart-link #cart-count {
+        display: block;      /* show the count */
+        position: absolute;
+        top: -6px;           /* adjust vertically */
+        right: -6px;         /* adjust horizontally */
+        background: rgb(218, 72, 72);     /* classic notification color */
+        color: white;
+        font-size: 0.6rem;   /* small size */
+        font-weight: bold;
+        width: 15px;
+        height: 15px;
+        line-height: 17px;
+        border-radius: 30%;
+    }
+
 
     /* Container */
     .container {
-        padding: 1rem;
-        margin: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* centers products */
+        gap: 0.5rem;             /* spacing between products */
     }
 
     /* Product cards */
@@ -551,6 +563,10 @@ nav a {
         gap: 1rem;
         max-width: 100%;
         margin: 1rem auto;
+    }
+
+   .product img.hover-img {
+        display: none;  /* hide the hover image entirely */
     }
 
     .product-info-left,
@@ -577,33 +593,6 @@ nav a {
         text-align: center;
     }
 
-    /* Cart */
-    #cart-items li {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    #cart-items li img {
-        margin-bottom: 0.5rem;
-        width: 60px;
-    }
-
-    #cart-items li div span {
-        display: block;
-        margin: 0.2rem 0;
-        min-width: auto;
-    }
-
-    #cairo-time {
-        font-size: 2.8rem;
-        letter-spacing: 0.1em;
-    }
-
-    #cairo-weather {
-        font-size: 1.2rem;
-    }
-
     /* Scrollbar */
     ::-webkit-scrollbar {
         width: 12px; /* smaller on mobile */
@@ -618,19 +607,21 @@ nav a {
 /* Extra small phones */
 @media (max-width: 480px) {
 
-    .container .product {
-        width: 45%; /* 1 per row */
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.3rem;
-    }
-
-    #search-form {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
         width: 100%;
-        margin-bottom: 0.5rem;
+        box-sizing: border-box;
+        gap: 0.5rem;
+    }
+
+    .container .product {
+        width: 48%;
+        margin: 0;
+        text-align: center;
+        box-sizing: border-box;
     }
 
     .search-wrapper input {

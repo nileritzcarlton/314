@@ -19,7 +19,9 @@ function addToCart(name, price, image, size = null, quantity = 1) {
 
     localStorage.setItem("cart", JSON.stringify(cart));
     showToast(`${name}${size ? ` (Size ${size})` : ""} ×${quantity} added to cart`);
+
     updateCart();
+    updateCartCount(); // at the end of updateCart
 }
 
 function updateCart() {
@@ -30,15 +32,18 @@ function updateCart() {
     list.innerHTML = "";
     let sum = 0;
 
+    const sizeOrder = { "S": 1, "M": 2, "L": 3, "XL": 4, "XXL": 5 };
     // Group by product name, then size
     const grouped = [...cart].sort((a, b) => {
+        // Sort by name first
         if (a.name < b.name) return -1;
         if (a.name > b.name) return 1;
 
-        if ((a.size || "") < (b.size || "")) return 1;
-        if ((a.size || "") > (b.size || "")) return -1;
-        return 0;
-    });
+        // Sort by size using custom order
+        const aSize = sizeOrder[a.size] || 0;
+        const bSize = sizeOrder[b.size] || 0;
+        return aSize - bSize;
+    })
 
     grouped.forEach((item, index) => {
         const li = document.createElement("li");
@@ -80,19 +85,29 @@ function updateCart() {
             }
             localStorage.setItem("cart", JSON.stringify(cart));
             updateCart();
+            updateCartCount(); // at the end of updateCart
         };
 
         const plusBtn = document.createElement("button");
         plusBtn.textContent = "+";
-        plusBtn.style.marginLeft = "0.3rem";
+        const isMobile = window.innerWidth <= 780;
+
+        minusBtn.style.marginRight = isMobile ? "0" : "0.3rem";
+        plusBtn.style.marginLeft  = isMobile ? "0" : "0.3rem";
+
         plusBtn.onclick = () => {
             item.quantity += 1;
             localStorage.setItem("cart", JSON.stringify(cart));
             updateCart();
+            updateCartCount(); // at the end of updateCart
         };
 
         const qtySpan = document.createElement("span");
-        qtySpan.textContent = `Quantity: ${item.quantity} - €${(item.price * item.quantity).toFixed(2)}`;
+        if (isMobile) {
+            qtySpan.textContent = `${item.quantity} - €${(item.price * item.quantity).toFixed(2)}`;
+        } else {
+            qtySpan.textContent = `Quantity: ${item.quantity} - €${(item.price * item.quantity).toFixed(2)}`;
+        }
         qtySpan.style.margin = "0 0.5rem";
 
         quantityDiv.appendChild(minusBtn);
@@ -127,6 +142,8 @@ function updateCart() {
     });
 
     if (total) total.textContent = sum.toFixed(2);
+
+    updateCartCount(); // at the end of updateCart
 }
 
 function checkout() {
@@ -179,6 +196,14 @@ function addProductFromPage(name, price, image) {
 
 const cartCountSpan = document.getElementById("cart-count");
 if (cartCountSpan) {
+    const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCountSpan.textContent = totalQty;
+}
+
+function updateCartCount() {
+    const cartCountSpan = document.getElementById("cart-count");
+    if (!cartCountSpan) return;
+
     const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCountSpan.textContent = totalQty;
 }
