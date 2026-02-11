@@ -540,7 +540,7 @@ nav a {
 
     /* Product cards */
     .container .product {
-        width: 40%;       /* 2 per row on tablets/small screens */
+        width: 45%;       /* 2 per row on tablets/small screens */
         margin: 0.5rem auto;
     }
 
@@ -619,7 +619,7 @@ nav a {
 @media (max-width: 480px) {
 
     .container .product {
-        width: 100%; /* 1 per row */
+        width: 45%; /* 1 per row */
     }
 
     nav {
