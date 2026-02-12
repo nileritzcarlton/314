@@ -197,7 +197,7 @@ function addProductFromPage(name, price, image) {
 const cartCountSpan = document.getElementById("cart-count");
 if (cartCountSpan) {
     const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCountSpan.textContent = totalQty;
+    cartCountSpan.textContent = totalQty;;
 }
 
 function updateCartCount() {
@@ -205,13 +205,30 @@ function updateCartCount() {
     if (!cartCountSpan) return;
 
     const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCountSpan.textContent = totalQty;
+    // Add parentheses directly
+    cartCountSpan.textContent = totalQty;;
 }
 
-// Run updateCart on page load
+function toggleMenu() {
+    const menu = document.querySelector(".left-links");
+    if (!menu) return;
+    menu.classList.toggle("active");
+}
+
+// Close menu if click outside
+document.addEventListener("click", function(e) {
+    const menu = document.querySelector(".left-links");
+    const toggle = document.querySelector(".menu-toggle");
+    if (!menu || !menu.classList.contains("active")) return;
+
+    // If click is NOT inside the menu AND not on the toggle button
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove("active");
+    }
+});
+
 document.addEventListener("DOMContentLoaded", updateCart);
 
-// Size button selection
 document.addEventListener("DOMContentLoaded", () => {
     const sizeButtons = document.querySelectorAll(".size-btn");
     const sizeInput = document.getElementById("size");
@@ -226,4 +243,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Optionally mark first button as selected on page load
     if (sizeButtons.length > 0) sizeButtons[0].classList.add("selected");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Only show T-Shirts on this page
+    const products = document.querySelectorAll(".container .product");
+
+    products.forEach(product => {
+        if (product.dataset.category !== "tshirt") {
+            product.style.display = "none"; // hide non-T-Shirts
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchWrapper = document.getElementById("mobile-search");
+    if (!searchWrapper) return;
+
+    const icon = searchWrapper.querySelector(".search-icon");
+
+    icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        searchWrapper.classList.toggle("active");
+        const input = searchWrapper.querySelector("input");
+        if (searchWrapper.classList.contains("active")) {
+            input.focus();
+        }
+    });
+
+    // Close if clicking outside
+    document.addEventListener("click", function (e) {
+        if (!searchWrapper.contains(e.target)) {
+            searchWrapper.classList.remove("active");
+        }
+    });
 });

@@ -12,25 +12,40 @@
         <h1>Your Cart</h1>
         <nav>
             <form id="search-form" action="search.html" method="get">
-                <div class="search-wrapper">
+                <div class="search-wrapper"id="mobile-search">
                     <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
                     <input type="text" name="q" placeholder="Search" required>
                 </div>
             </form>
 
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
             <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
             <a href="cart.html" id="cart-link">
                 <img id="cart-icon" src="products/images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
-                Cart (<span id="cart-count">0</span>)
+                Cart <span id="cart-count">0</span>
             </a>
         </nav>
     </header>
 
+<div class="shop-layout">
+
+    <div class="left-links">
+        <a href="new.html">New</a>
+        <a href="tshirts.html">T-Shirts</a>
+        <a href="pants.html">Pants</a>
+        <a href="shorts.html">Shorts</a>
+        <a href="tos.html" class="bottom-link">Terms of Service</a>
+    </div>
+
     <div class="container">
         <ul id="cart-items"></ul>
-        <p>Total: €<span id="cart-total">0</span></p>
-        <button class="checkoutbutton" onclick="checkout()">Checkout</button>
+        <div id="cart-total-container">
+            <p>Total: €<span id="cart-total">0</span></p>
+            <button class="checkoutbutton" onclick="checkout()">Checkout</button>
+        </div>
     </div>
+</div> 
+
 </body>
 </html>

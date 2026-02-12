@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirts - My Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>T-Shirts</h1>
+    <nav>
+        <form id="search-form" action="search.html" method="get">
+            <div class="search-wrapper">
+                <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                <input type="text" name="q" placeholder="Search" required>
+            </div>
+        </form>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <a href="./index.html">Home</a>
+        <a href="./cart.html" id="cart-link">
+            <img id="cart-icon" src="products/images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
+            Cart <span id="cart-count">0</span>
+        </a>
+    </nav>
+</header>
+
+<div class="shop-layout">
+
+    <div class="left-links">
+        <a href="new.html">New</a>
+        <a href="tshirts.html">T-Shirts</a>
+        <a href="pants.html">Pants</a>
+        <a href="shorts.html">Shorts</a>
+        <a href="tos.html" class="bottom-link">Terms of Service</a>
+    </div>
+
+    <!-- Product container -->
+    <div class="container">
+
+        <div class="product" data-name="Death Mask" data-price="30.00" data-image="products/images/FINISH10.png" data-category="tshirt">
+            <a href="products/product1.html">
+                <img src="products/images/FINISH10.png" alt="Product 1" width="200">
+                <img class="hover-img" src="products/images/FINISH-BlankWhiteBack.png" alt="Product 1 Hover">
+                <h3> Death Mask </h3>
+            </a>
+            <p>€30.00</p>
+        </div>
+
+        <div class="product" data-name="314" data-price="30.00" data-image="products/images/FINISH11.png" data-category="tshirt">
+            <a href="products/product2.html">
+                <img src="products/images/FINISH11.png" alt="Product 2" width="200">
+                <img class="hover-img" src="products/images/FINISH-BlankBlackBack.png" alt="Product 2 Hover">
+                <h3> 314 </h3>
+            </a>
+            <p>€30.00</p>
+        </div>  
+
+        <div class="product" data-name="CASH-White" data-price="30.00" data-image="products/images/FINISH5.png" data-category="tshirt">
+            <a href="products/product3.html">
+                <img src="products/images/FINISH5.png" alt="Product 3" width="200">
+                <img class="hover-img" src="products/images/FINISH-BlankWhiteBack.png" alt="Product 3 Hover">
+                <h3> CASH-White </h3>
+            </a>
+            <p>€30.00</p>
+        </div>  
+
+        <div class="product" data-name="CASH-Black" data-price="30.00" data-image="products/images/FINISH6.png" data-category="tshirt">
+            <a href="products/product4.html">
+                <img src="products/images/FINISH6.png" alt="Product 4" width="200">
+                <img class="hover-img" src="products/images/FINISH6-2.png" alt="Product 4 Hover">
+                <h3> CASH-Black </h3>
+            </a>
+            <p>€30.00</p>
+        </div>
+        
+        <div class="product" data-name="One Pound" data-price="30.00" data-image="products/images/FINISH1.png" data-category="tshirt">
+            <a href="products/product5.html">
+                <img src="products/images/FINISH1.png" alt="Product 5" width="200">
+                <img class="hover-img" src="products/images/FINISH1-2.png" alt="Product 5 Hover">
+                <h3> One Pound </h3>
+            </a>
+            <p>€30.00</p>
+        </div>  
+
+        <div class="product" data-name="Club" data-price="30.00" data-image="products/images/FINISH2.png" data-category="tshirt">
+            <a href="products/product6.html">
+                <img src="products/images/FINISH2.png" alt="Product 6" width="200">
+                <img class="hover-img" src="products/images/FINISH-BlankWhiteBack.png" alt="Product 6 Hover">
+                <h3> Club </h3>
+            </a>
+            <p>€30.00</p>
+        </div>  
+
+        <div class="product" data-name="Chanel" data-price="30.00" data-image="products/images/FINISH3.png" data-category="tshirt">
+            <a href="products/product7.html">
+                <img src="products/images/FINISH3.png" alt="Product 7" width="200">
+                <img class="hover-img" src="products/images/FINISH-BlankWhiteBack.png" alt="Product 7 Hover">
+                <h3> Chanel </h3>
+            </a>
+            <p>€30.00</p>
+        </div>  
+
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Filter only T-Shirts
+    const products = document.querySelectorAll(".container .product");
+    products.forEach(product => {
+        if (product.dataset.category !== "tshirt") {
+            product.style.display = "none";
+        }
+    });
+});
+</script>
+</body>
+</html>

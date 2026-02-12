@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pants - My Store</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>Pants</h1>
+    <nav>
+        <form id="search-form" action="search.html" method="get">
+            <div class="search-wrapper">
+                <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                <input type="text" name="q" placeholder="Search" required>
+            </div>
+        </form>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <a href="./index.html">Home</a>
+        <a href="./cart.html" id="cart-link">
+            <img id="cart-icon" src="products/images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
+            Cart <span id="cart-count">0</span>
+        </a>
+    </nav>
+</header>
+
+<div class="shop-layout">
+
+    <div class="left-links">
+        <a href="new.html">New</a>
+        <a href="tshirts.html">T-Shirts</a>
+        <a href="pants.html">Pants</a>
+        <a href="shorts.html">Shorts</a>
+        <a href="tos.html">Terms of Service</a>
+    </div>
+
+    <div class="container">
+        Coming Soon
+    </div>
+
+</div>
+</body>
+</html>
