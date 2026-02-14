@@ -298,7 +298,6 @@ function startCheckout() {
 async function checkout() {
     if (!cart || cart.length === 0) return alert("Your cart is empty.");
 
-    // Convert prices to cents (Stripe expects the smallest currency unit)
     const items = cart.map(item => ({
         name: item.name,
         price: Math.round(item.price * 100), // € → cents
@@ -306,7 +305,7 @@ async function checkout() {
     }));
 
     try {
-        const res = await fetch("https://314-ygs-projects-43241ac9.vercel.app/api/create-checkout-session", {
+        const res = await fetch("https://314-orcin.vercel.app/api/create-checkout-session", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ items })
