@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Confirmed</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="success.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="success.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 <body>
-  <div class="confirmation">
+<header>
+    <h1>Shorts</h1>
+    <nav>
+        <form id="search-form" action="search.html" method="get">
+            <div class="search-wrapper">
+                <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                <input type="text" name="q" placeholder="Search" required>
+            </div>
+        </form>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <a href="./index.html">Home</a>
+        <a href="./cart.html" id="cart-link">
+            <img id="cart-icon" src="products/images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
+            Cart <span id="cart-count">0</span>
+        </a>
+    </nav>
+</header>
+
+<div class="confirmation">
     <h1>Thank you for your order! 🎉</h1>
-    <div id="order-details">
-      <p>Loading your order...</p>
-    </div>
-    <a href="index.html"><button>Continue Shopping</button></a>
-  </div>
+        <div id="order-details">
+            <p>Loading your order...</p>
+        </div>
+    <a href="new.html"><button>Continue Shopping</button></a>
+</div>
+
 </body>
 </html>
