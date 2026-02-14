@@ -271,26 +271,21 @@ async function checkout() {
 
     const items = cart.map(item => ({
         name: item.name,
-        price: Math.round(item.price * 100), // € → cents
+        price: item.price * 100,
         quantity: item.quantity
     }));
 
-    try {
-        const res = await fetch("/api/create-checkout-session", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ items: cart })
-        });
+    const res = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: cart })
+    });
 
-        const data = await res.json();
+    const data = await res.json();
 
-        if (data.url) {
-            window.location.href = data.url; // redirect to Stripe Checkout
-        } else {
-            alert("Checkout failed. Please try again.");
-        }
-    } catch (err) {
-        console.error(err);
-        alert("Checkout error. Check console for details. ");
+    if (data.url) {
+        window.location.href = data.url; // redirect to Stripe Checkout
+    } else {
+        alert("Checkout failed. Please try again.");
     }
 }
