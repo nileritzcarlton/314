@@ -11,9 +11,7 @@ export default async function handler(req, res) {
     try {
         const { items } = req.body;
 
-        if (!items || !Array.isArray(items) || items.length === 0) {
-            return res.status(400).json({ error: "Cart is empty" });
-        }
+        const origin = req.headers.origin || `https://${req.headers.host}`;
 
         // Create Checkout Session with proper cents conversion and minimum amount
         const session = await stripe.checkout.sessions.create({
@@ -33,9 +31,9 @@ export default async function handler(req, res) {
                 };
             }),
 
-            success_url: `${process.env.VERCEL_URL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `${process.env.VERCEL_URL}/cart.html`,
-            
+            success_url: `${origin}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${origin}/cart.html`,
+
             shipping_address_collection: {
                 allowed_countries: ["US", "CA", "GB", "AU", "DE"]
             }
