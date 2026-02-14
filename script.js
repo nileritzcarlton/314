@@ -291,6 +291,6 @@ async function checkout() {
         }
     } catch (err) {
         console.error(err);
-        alert("Checkout error. Check console for details.");
+        alert("Checkout error. Check console for details. ");
     }
 }

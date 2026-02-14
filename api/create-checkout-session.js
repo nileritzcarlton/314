@@ -1,9 +1,10 @@
 import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-console.log("Stripe key:", process.env.STRIPE_SECRET_KEY?.slice(0,4)); // only first 4 chars for safety
 
 export default async function handler(req, res) {
+    console.log("Stripe key:", process.env.STRIPE_SECRET_KEY?.slice(0,4)); // only first 4 chars for safety
+    
     if (req.method !== "POST") {
         return res.status(405).send("Method Not Allowed");
     }
@@ -18,7 +19,7 @@ export default async function handler(req, res) {
             line_items: items.map(item => ({
                 price_data: {
                     currency: "eur",
-                    product_data: {
+                    product_data: { 
                         name: item.name,
                     },
                     unit_amount: item.price, // cents
