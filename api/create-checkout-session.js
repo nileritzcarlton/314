@@ -33,9 +33,9 @@ export default async function handler(req, res) {
                 };
             }),
 
-            success_url: "https://314-orcin.vercel.app/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancel_url: "https:///314-orcin.vercel.app/cart.html",
-
+            success_url: `${process.env.VERCEL_URL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${process.env.VERCEL_URL}/cart.html`,
+            
             shipping_address_collection: {
                 allowed_countries: ["US", "CA", "GB", "AU", "DE"]
             }
