@@ -266,35 +266,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function loadCheckout() {
-    const list = document.getElementById("checkout-items");
-    const totalEl = document.getElementById("checkout-total");
-
-    if (!list || !totalEl) return;
-
-    list.innerHTML = "";
-
-    let total = 0;
-
-    cart.forEach(item => {
-        const li = document.createElement("li");
-
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-
-        li.textContent = `${item.name} x${item.quantity} — €${itemTotal.toFixed(2)}`;
-        list.appendChild(li);
-    });
-
-    totalEl.textContent = `Total: €${total.toFixed(2)}`;
-}
-
-document.addEventListener("DOMContentLoaded", loadCheckout);
-
-function startCheckout() {
-    alert("Payment integration coming next 🚀");
-}
-
 async function checkout() {
     if (!cart || cart.length === 0) return alert("Your cart is empty.");
 
@@ -305,7 +276,7 @@ async function checkout() {
     }));
 
     try {
-        const res = await fetch("https://314-orcin.vercel.app/api/create-checkout-session", {
+        const res = await fetch("https://314-bl8ofxve5-ygs-projects-43241ac9.vercel.app/api/create-checkout-session", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ items })

@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
             line_items: items.map(item => ({
                 price_data: {
-                    currency: "usd",
+                    currency: "eur",
                     product_data: {
                         name: item.name,
                     },
