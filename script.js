@@ -276,10 +276,10 @@ async function checkout() {
     }));
 
     try {
-        const res = await fetch("https://314-bl8ofxve5-ygs-projects-43241ac9.vercel.app/api/create-checkout-session", {
+        const res = await fetch("/api/create-checkout-session", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ items })
+            body: JSON.stringify({ items: cart })
         });
 
         const data = await res.json();
