@@ -508,6 +508,31 @@ nav a {
     height: 16px;
 }
 
+.checkout-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.checkout-container li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.checkout-bottom {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#checkout-total {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
 /* For Chrome, Edge, and Safari */
 ::-webkit-scrollbar {
     width: 20px; /* width of the scrollbar */
@@ -529,6 +554,18 @@ nav a {
 
 /* ###################################################################################################### PHONE PHONE PHONE PHONE PHONE PHONE ############################################################################################################################################# */
 @media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+
+    .container .product {
+        width: 40%;
+        margin: 0;
+    }
+
+    .container .product img {
+        width: 100%;
+    }
 
     .shop-layout {
         flex-direction: column;
@@ -662,8 +699,8 @@ nav a {
     }
 
     #main-image {
-        width: 100%;
-        max-width: 280px;
+        width: 90%;
+        max-width: 100%;
         margin: 0 auto;
     }
 
@@ -682,29 +719,4 @@ nav a {
 
 /* Extra small phones */
 @media (max-width: 480px) {
-
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0;
-        width: 100%;
-        box-sizing: border-box;
-        gap: 0.5rem;
-    }
-
-    .container .product {
-        width: 48%;
-        margin: 0;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    .product-detail {
-        gap: 0.5rem;
-    }
-
-    #main-image {
-        max-width: 100%;
-    }
 }

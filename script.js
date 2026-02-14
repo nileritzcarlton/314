@@ -146,19 +146,6 @@ function updateCart() {
     updateCartCount(); // at the end of updateCart
 }
 
-function checkout() {
-    if (cart.length === 0) {
-        alert("Your cart is empty!");
-        return;
-    }
-
-    let summary = cart.map(item => 
-        `${item.name} (${item.size || "default"}) x${item.quantity} - €${item.price * item.quantity}`
-    ).join("\n");
-
-    alert("Checkout:\n" + summary + `\nTotal: €${cart.reduce((a,b) => a + b.price * b.quantity, 0)}`);
-}
-
 function changeImage(thumb) {
     const mainImage = document.getElementById("main-image");
     if (mainImage) {
@@ -278,3 +265,62 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+function loadCheckout() {
+    const list = document.getElementById("checkout-items");
+    const totalEl = document.getElementById("checkout-total");
+
+    if (!list || !totalEl) return;
+
+    list.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach(item => {
+        const li = document.createElement("li");
+
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        li.textContent = `${item.name} x${item.quantity} — €${itemTotal.toFixed(2)}`;
+        list.appendChild(li);
+    });
+
+    totalEl.textContent = `Total: €${total.toFixed(2)}`;
+}
+
+document.addEventListener("DOMContentLoaded", loadCheckout);
+
+function startCheckout() {
+    alert("Payment integration coming next 🚀");
+}
+
+async function checkout() {
+    if (!cart || cart.length === 0) return alert("Your cart is empty.");
+
+    // Convert prices to cents (Stripe expects the smallest currency unit)
+    const items = cart.map(item => ({
+        name: item.name,
+        price: Math.round(item.price * 100), // € → cents
+        quantity: item.quantity
+    }));
+
+    try {
+        const res = await fetch("https://314-ygs-projects-43241ac9.vercel.app/api/create-checkout-session", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ items })
+        });
+
+        const data = await res.json();
+
+        if (data.url) {
+            window.location.href = data.url; // redirect to Stripe Checkout
+        } else {
+            alert("Checkout failed. Please try again.");
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Checkout error. Check console for details.");
+    }
+}
