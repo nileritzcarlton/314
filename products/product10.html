@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product 10 - My Store</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>Product 10</h1>
+    <nav>
+        <form id="search-form" action="../search.html" method="get">
+            <div class="search-wrapper"id="mobile-search">
+                <img class="search-icon" src="images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                <input type="text" name="q" placeholder="Search" required>
+            </div>
+        </form>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>   
+
+        <a href="../index.html">Home</a>
+        <a href="../cart.html" id="cart-link">
+            <img id="cart-icon" src="images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
+            Cart <span id="cart-count">0</span>
+        </a>
+    </nav>
+</header>
+
+<div id="toast"></div>
+
+<div class="shop-layout">
+
+    <div class="left-links">
+        <a href="../new.html">New</a>
+        <a href="../tshirts.html">T-Shirts</a>
+        <a href="../pants.html">Pants</a>
+        <a href="../shorts.html">Shorts</a>
+        <a href="../tos.html" class="bottom-link">Terms of Service</a>
+    </div>
+
+    <div class="container product-detail">
+        <div class="product-info-left">     <!-- LEFT: Description -->
+            <h2>Chanel</h2>
+            <p>
+                This is a great product that comes in multiple sizes.
+                High-quality print, comfortable fit, and durable fabric.
+            </p>
+        </div>
+
+        <div class="product-image">     <!-- CENTER: Image Gallery -->
+            <img id="main-image" src="images/FINISH10.png" alt="Chanel">
+
+            <div class="thumbnails">
+                <img src="images/FINISH10.png" onclick="changeImage(this)">
+                <img src="images/FINISH-BlankWhiteBack.png" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <div class="product-info-right">     <!-- RIGHT: Purchase -->
+            <p class="price">€30.00</p>
+
+            <div class="size-selector">
+                <span>Size:</span>
+                <button class="size-btn" data-size="S">S</button>
+                <button class="size-btn" data-size="M">M</button>
+                <button class="size-btn" data-size="L">L</button>
+                <button class="size-btn" data-size="XL">XL</button>
+            </div>
+
+            <div class="quantity-selector">
+                <span>Quantity:</span>
+                <div class="qty-controls">
+                    <button type="button" class="qty-btn" onclick="changeQty(-1)">−</button>
+                    <span id="qty-value">1</span>
+                    <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+                </div>
+            </div>
+
+            <input type="hidden" id="size" value="S">
+
+            <button class="addtocartbutton" onclick="addProductFromPage('Chanel', 30.00, 'products/images/FINISH3.png')">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -46,13 +46,16 @@
 
 <script>
     const products = [
-        { name: "Death Mask", price: 30.00, image: "products/images/FINISH10.png", link: "products/product1.html" },
-        { name: "314", price: 30.00, image: "products/images/FINISH11.png", link: "products/product2.html" },
-        { name: "CASH-White", price: 30.00, image: "products/images/FINISH5.png", link: "products/product3.html" },
-        { name: "CASH-Black", price: 30.00, image: "products/images/FINISH6.png", link: "products/product4.html" },
-        { name: "One Pound", price: 30.00, image: "products/images/FINISH1.png", link: "products/product5.html" },
-        { name: "Club", price: 30.00, image: "products/images/FINISH2.png", link: "products/product6.html" },
-        { name: "Chanel", price: 30.00, image: "products/images/FINISH3.png", link: "products/product7.html" },
+        { name: "Death Mask", price: 30.00, images: ["products/images/FINISH10.png", "products/images/FINISH-BlankWhiteBack.png"], link: "products/product1.html" },
+        { name: "314", price: 30.00, images: [ "products/images/FINISH11.png", "products/images/FINISH-BlankBlackBack.png"], link: "products/product2.html" },
+        { name: "CASH-White", price: 30.00, images: [ "products/images/FINISH5.png", "products/images/FINISH-BlankWhiteBack.png"], link: "products/product3.html" },
+        { name: "CASH-Black", price: 30.00, images: [ "products/images/FINISH6.png", "products/images/FINISH6-2.png"], link: "products/product4.html" },
+        { name: "One Pound", price: 30.00, images: [ "products/images/FINISH1.png", "products/images/FINISH1-2.png"], link: "products/product5.html" },
+        { name: "Club", price: 30.00, images: [ "products/images/FINISH2.png", "products/images/FINISH-BlankWhiteBack.png"], link: "products/product6.html" },
+        { name: "Chanel", price: 30.00, images: [ "products/images/FINISH3.png", "products/images/FINISH-BlankWhiteBack.png"], link: "products/product7.html" },
+        { name: "One Pound - 2", price: 30.00, images: [ "products/images/FINISH4.png", "products/images/FINISH-BlankBlackBack.png"], link: "products/product8.html" },
+        { name: "Satellite", price: 30.00, images: [ "products/images/FINISH8.png", "products/images/FINISH-BlankBlackBack.png"], link: "products/product9.html" },
+        { name: "Death Mask - 2", price: 30.00, images: [ "products/images/FINISH9.png", "products/images/FINISH-BlankWhiteBack.png"], link: "products/product10.html" },
     ];
 
     // Get search query from URL
@@ -77,8 +80,8 @@
 
             div.innerHTML = `
                 <a href="${p.link}">
-                    <img src="${p.image}" alt="${p.name}" width="200">
-                    <img class="hover-img" src="products/images/FINISH-BlankWhiteBack.png" alt="${p.name} Hover">
+                    <img src="${p.images[0]}" alt="${p.name}" width="200">
+                    <img class="hover-img" src="${p.images[1] || p.images[0]}" alt="${p.name} Hover">
                     <h3>${p.name}</h3>
                 </a>
                 <p>€${p.price.toFixed(2)}</p>

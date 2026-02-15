@@ -719,6 +719,10 @@ nav a {
     .product-info-right {
         text-align: center;
     }
+
+    .confirmation {
+        padding: 6%;
+    }
 }
 
 /* Extra small phones */
