@@ -289,3 +289,9 @@ async function checkout() {
         alert("Checkout failed. Please try again.");
     }
 }
+
+function clearCart() {
+    cart = [];
+    localStorage.removeItem("cart");
+    updateCartCount(); // you already have this
+}
