@@ -605,8 +605,8 @@ nav a {
         color: rgb(218, 72, 72);
     }
 
-    .left-links a:last-child {
-        margin-top: 25rem; 
+    .left-links a:nth-last-child(2) {
+        margin-top: 23rem; 
     }
 
     nav a[href="index.html"],
