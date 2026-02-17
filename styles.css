@@ -224,8 +224,8 @@ nav a:hover {
     font-weight: 800;
 }
 
-.left-links a:last-child {
-    margin-top: 19rem; /* extra space above TOS */
+.left-links a:nth-last-child(2) {
+    margin-top: 17rem;
 }
 
 .left-links a:hover {
