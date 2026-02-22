@@ -2,6 +2,7 @@
   "name": "my-static-store",
   "version": "1.0.0",
   "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
     "stripe": "^12.18.0"
   },
   "main": "script.js",

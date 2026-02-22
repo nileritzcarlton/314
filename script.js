@@ -295,3 +295,35 @@ function clearCart() {
     localStorage.removeItem("cart");
     updateCartCount(); // you already have this
 }
+
+if (window.paypal) {
+    paypal.Buttons({
+
+        createOrder: async function () {
+
+            const res = await fetch("/api/paypal/create-order", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ items: cart })
+            });
+
+            const data = await res.json();
+            return data.id;
+        },
+
+        onApprove: async function (data) {
+
+            const res = await fetch("/api/paypal/capture-order", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ orderID: data.orderID })
+            });
+
+            const details = await res.json();
+
+            clearCart();
+            window.location.href = "/success.html";
+        }
+
+    }).render("#paypal-button-container");
+}
