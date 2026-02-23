@@ -298,6 +298,14 @@ function clearCart() {
 
 if (window.paypal) {
     paypal.Buttons({
+        style: {
+            layout: "horizontal",
+            color: "silver",
+            shape: "rect",
+            label: "pay",
+            height: 30,
+            tagline: false
+        },
 
         createOrder: async function () {
 

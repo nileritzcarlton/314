@@ -536,6 +536,10 @@ nav a {
     font-size: 1.2rem;
 }
 
+#paypal-button-container {
+    position: relative;
+    top: 2.5px;   /* move down */
+}
 
 /* For Chrome, Edge, and Safari */
 ::-webkit-scrollbar {
