@@ -299,6 +299,12 @@ button:hover {
     border-radius: 6px;
 }
 
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
 /* Cart item list */
 #cart-items li {
     display: flex;
