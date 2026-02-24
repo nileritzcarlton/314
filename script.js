@@ -335,3 +335,10 @@ if (window.paypal) {
 
     }).render("#paypal-button-container");
 }
+
+const coin = document.getElementById("scroll-coin");
+
+window.addEventListener("scroll", () => {
+    const rotation = window.scrollY * 0.5; // speed
+    coin.style.transform = `rotate(${rotation}deg)`;
+});

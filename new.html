@@ -9,22 +9,28 @@
 </head>
 <body>
 <header>
-    <h1>314 Store Cairo, EGY</h1>
+    <h1>314 Street Cairo, Egypt</h1>
     <nav>
-        <form id="search-form" action="search.html" method="get">
-            <div class="search-wrapper" id="mobile-search">
-                <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
-                <input type="text" name="q" placeholder="Search" required>
-            </div>
-        </form>
-
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-        <a href="./index.html">Home</a>
-        <a href="./cart.html" id="cart-link">
-            <img id="cart-icon" src="products/images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
-            Cart <span id="cart-count">0</span>
+        <a href="new.html" class="nav-logo">
+            <img src="products/images/CAT.png" alt="314 Logo">
         </a>
+
+        <div class="nav-items">
+            <form id="search-form" action="search.html" method="get">
+                <div class="search-wrapper" id="mobile-search">
+                    <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                    <input type="text" name="q" placeholder="Search" required>
+                </div>
+            </form>
+
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+            <a href="./index.html">Home</a>
+            <a href="./cart.html" id="cart-link">
+                <img id="cart-icon" src="products/images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
+                Cart <span id="cart-count">0</span>
+            </a>
+        </div>
     </nav>
 </header>
 
@@ -132,6 +138,11 @@
         </div>  
 
     </div>
+    <!--
+    <div class="coin-wrapper">
+        <img src="products/images/1884-original.png" alt="Coin" id="scroll-coin">
+    </div>
+    -->
 </div>   
 
 </body>

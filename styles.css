@@ -151,11 +151,38 @@ header {
     color:#aaaaaa
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* center the nav items */
+    position: relative;      /* for positioning the logo */
+    margin-bottom: 3rem;
+}
+
+.nav-logo {
+    position: absolute;  /* pull logo to left */
+    left: -32rem;          /* spacing from left edge */
+}
+
+.nav-logo img {
+    height: 120px;        /* adjust size */
+    width: auto;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 nav a {
     color: white;
     font-weight: 800;
     margin: 0 1rem;
     text-decoration: none;
+    display: inline-flex;    /* treat icon + text as one line */
+    align-items: center;     /* vertical center icon + text */  
+    font-family: "Courier New", Courier, monospace;
 }
 
 nav a:hover {
@@ -469,20 +496,6 @@ button:hover {
     font-family: "Courier New", Courier, monospace;
 }
 
-nav {
-    display: flex;
-    align-items: center;  /* vertical align all items */
-    gap: 1rem;            /* spacing between links */
-}
-
-nav a {
-    display: inline-flex;    /* treat icon + text as one line */
-    align-items: center;     /* vertical center icon + text */
-    text-decoration: none;   /* optional */
-    color: white;           
-    font-family: "Courier New", Courier, monospace;
-}
-
 #search-form {
     margin-right: auto;      /* push search to the left */
 }
@@ -533,6 +546,20 @@ nav a {
 
 .confirmation {
     font-family: "Courier New", Courier, monospace;
+}
+
+.coin-wrapper {
+    position: absolute;
+    right: calc(50% - 650px); /* aligns with container edge */
+    top: 370px;
+    pointer-events: none; /* prevents blocking clicks */
+}
+
+#scroll-coin {
+    width: 120px;  /* adjust size */
+    height: auto;
+    transform-origin: center;
+    transition: transform 0.1s linear;
 }
 
 #checkout-total {
