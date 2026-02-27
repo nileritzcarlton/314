@@ -595,6 +595,7 @@ button:hover {
 @media (max-width: 768px) {
     .container {
         padding: 0;
+        padding-top: 1.5rem;
     }
 
     .container .product {
@@ -642,6 +643,10 @@ button:hover {
 
     .left-links a:nth-last-child(2) {
         margin-top: 22rem; 
+    }
+
+    nav {
+        margin-bottom: -2rem;
     }
 
     nav a[href="index.html"],
