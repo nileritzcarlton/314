@@ -875,6 +875,7 @@
         }
 
         nav {
+            margin-top: 0;
             margin-bottom: -4rem;
             align-items: center;
             justify-content: space-between; /* KEY CHANGE */
