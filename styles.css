@@ -161,12 +161,12 @@
         position: relative;      /* for positioning the logo */
         margin-bottom: 2rem;
         margin-top: 1rem;
-        gap: 2rem;   /* THIS handles spacing properly */
+        gap: 4rem;   /* THIS handles spacing properly */
     }
 
     .nav-logo {
         position: absolute;  /* pull logo to left */
-        left: -32rem;          /* spacing from left edge */
+        left: -28rem;          /* spacing from left edge */
         top: -5.5rem
     }
 
