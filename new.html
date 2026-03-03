@@ -7,46 +7,71 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
-<body>
+<body class="mod">
 <header>
-    <h1>314 Street Cairo, Egypt</h1>
+    <h1>314 Street Cairo</h1>
     <nav>
         <a href="new.html" class="nav-logo">
             <img src="products/images/CAT.png" alt="314 Logo">
         </a>
 
-        <div class="nav-items">
-            <form id="search-form" action="search.html" method="get">
-                <div class="search-wrapper" id="mobile-search">
-                    <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
-                    <input type="text" name="q" placeholder="Search" required>
-                </div>
-            </form>
+        <form id="search-form" action="search.html" method="get" class="desktop-search" >
+            <div class="search-wrapper" id="mobile-search">
+                <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                <input type="text" name="q" placeholder="Search" required>
+            </div>
+        </form>
 
+        <div class="mobile-menu-header">
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-            <a href="./index.html">Home</a>
-            <a href="./cart.html" id="cart-link">
-                <img id="cart-icon" src="products/images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
-                Cart <span id="cart-count">0</span>
-            </a>
+            <span class="mobile-page-indicator">New</span>
         </div>
+
+        <a href="./index.html">Home</a>
+        <a href="./cart.html" id="cart-link">
+            <img id="cart-icon" src="products/images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
+            Cart <span id="cart-count">0</span>
+        </a>
     </nav>
 </header>
 
 <div class="shop-layout">
 
     <div class="left-links">
-        <a href="new.html">New</a>
-        <a href="tshirts.html">T-Shirts</a>
+
+        <div class="mobile-menu-header">
+            <form id="mobile-search-form" action="search.html" method="get" class="desktop-search">
+                <div class="search-wrapper">
+                    <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                    <input type="text" name="q" placeholder="Search" required>
+                </div>
+            </form>
+
+            <button class="menu-close">✕</button>
+        </div>
+
+        <a href="new.html" class="active">New</a>
+        <a href="tshirts.html">All T-Shirts</a>
+        <a href="graphic_ts.html">Graphic T's</a>
+        <a href="logo_ts.html">Logo T's</a>
         <a href="pants.html">Pants</a>
         <a href="shorts.html">Shorts</a>
         <a href="index.html">Home</a>
         <a href="tos.html">Terms of Service</a>
     </div>
 
-    <div class="container">
+    <div class="right-links">
+        <span class="brand-name">YHAGA</span>
+        <a href="https://www.instagram.com/youaregodsslave" target="_blank">
+            <img src="products/images/black-instagram-icon.svg" alt="Instagram" class="social-icon">
+        </a>
+    </div>
 
+    <div class="container">
+        <button class="back-arrow" onclick="history.back()">
+            <span class="arrow-icon"> < </span>
+        </button>
+        
         <div class="product" data-name="Death Mask" data-price="30.00" data-image="products/images/FINISH10.png" data-category="tshirt">
             <a href="products/product1.html">
                 <img src="products/images/FINISH10.png" alt="Product 1" width="200">

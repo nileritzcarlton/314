@@ -9,18 +9,25 @@
     <script src="https://www.paypal.com/sdk/js?client-id=AUczAwUBbRJ1tAIW8NOkKf1YSQ4ewlGJLOLLQgf_0MQQRIFydtKvNbYz3nyefSRyqpisGfMK3FUqLrAx&currency=EUR"></script>
     <script src="script.js" defer></script>
 </head>
-<body>
+<body class="mod">
     <header>
         <h1>Your Cart</h1>
         <nav>
-            <form id="search-form" action="search.html" method="get">
+            <a href="new.html" class="nav-logo">
+                <img src="products/images/CAT.png" alt="314 Logo">
+            </a>
+
+            <form id="search-form" action="search.html" method="get" class="desktop-search">
                 <div class="search-wrapper"id="mobile-search">
                     <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
                     <input type="text" name="q" placeholder="Search" required>
                 </div>
             </form>
 
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <div class="mobile-menu-header">
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <span class="mobile-page-indicator"></span>
+            </div>
 
             <a href="index.html">Home</a>
             <a href="cart.html" id="cart-link">
@@ -31,26 +38,42 @@
     </header>
 
 <div class="shop-layout">
-
     <div class="left-links">
+        <div class="mobile-menu-header">
+            <form id="mobile-search-form" action="search.html" method="get" class="desktop-search">
+                <div class="search-wrapper">
+                    <img class="search-icon" src="products/images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                    <input type="text" name="q" placeholder="Search" required>
+                </div>
+            </form>
+
+            <button class="menu-close">✕</button>
+        </div>
+
         <a href="new.html">New</a>
-        <a href="tshirts.html">T-Shirts</a>
+        <a href="tshirts.html">All T-Shirts</a>
+        <a href="graphic_ts.html">Graphic T's</a>
+        <a href="logo_ts.html">Logo T's</a>
         <a href="pants.html">Pants</a>
         <a href="shorts.html">Shorts</a>
         <a href="index.html">Home</a>
         <a href="tos.html" class="bottom-link">Terms of Service</a>
     </div>
-
-    <div class="container">
-        <ul id="cart-items"></ul>
-        <div id="cart-total-container">
-            <p>Total: €<span id="cart-total">0</span></p>
-            <button onclick="checkout()">Checkout</button>
-
-            <div id="paypal-button-container"></div>
-        </div>
-    </div>
 </div> 
+
+<div class="container">
+    <button class="back-arrow" onclick="history.back()">
+        <span class="arrow-icon"> < </span>
+    </button>
+
+    <ul id="cart-items"></ul>
+    <div id="cart-total-container">
+        <p>Total: €<span id="cart-total">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+
+        <div id="paypal-button-container"></div>
+    </div>
+</div>
 
 </body>
 </html>

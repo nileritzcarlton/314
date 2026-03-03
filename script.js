@@ -197,9 +197,15 @@ function updateCartCount() {
 }
 
 function toggleMenu() {
-    const menu = document.querySelector(".left-links");
-    if (!menu) return;
-    menu.classList.toggle("active");
+    const menu = document.querySelector('.left-links');
+    menu.classList.toggle('active');
+
+    // Lock body scroll when menu is active
+    if(menu.classList.contains('active')){
+        document.body.classList.add('menu-open');
+    } else {
+        document.body.classList.remove('menu-open');
+    }
 }
 
 // Close menu if click outside
@@ -232,37 +238,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (sizeButtons.length > 0) sizeButtons[0].classList.add("selected");
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Only show T-Shirts on this page
-    const products = document.querySelectorAll(".container .product");
-
-    products.forEach(product => {
-        if (product.dataset.category !== "tshirt") {
-            product.style.display = "none"; // hide non-T-Shirts
-        }
-    });
-});
-
 document.addEventListener("DOMContentLoaded", function () {
-    const searchWrapper = document.getElementById("mobile-search");
-    if (!searchWrapper) return;
+    const menu = document.querySelector(".left-links");
+    const searchWrapper = menu.querySelector(".search-wrapper");
+    const searchIcon = searchWrapper.querySelector(".search-icon");
+    const searchInput = searchWrapper.querySelector("input");
+    const closeBtn = menu.querySelector(".menu-close");
 
-    const icon = searchWrapper.querySelector(".search-icon");
-
-    icon.addEventListener("click", function (e) {
+    // Open search inside menu
+    searchIcon.addEventListener("click", e => {
         e.preventDefault();
         searchWrapper.classList.toggle("active");
-        const input = searchWrapper.querySelector("input");
-        if (searchWrapper.classList.contains("active")) {
-            input.focus();
+        if (searchWrapper.classList.contains("active")) searchInput.focus();
+    });
+
+    // Close search if clicking outside
+    document.addEventListener("click", e => {
+        if (!searchWrapper.contains(e.target) && !searchIcon.contains(e.target)) {
+            searchWrapper.classList.remove("active");
         }
     });
 
-    // Close if clicking outside
-    document.addEventListener("click", function (e) {
-        if (!searchWrapper.contains(e.target)) {
-            searchWrapper.classList.remove("active");
-        }
+    // Close menu when clicking X
+    closeBtn.addEventListener("click", () => {
+        menu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+        searchWrapper.classList.remove("active");
     });
 });
 
