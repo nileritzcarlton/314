@@ -1,8 +1,11 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addToCart(name, price, image, size = null, quantity = 1) {
+function addToCart(name, price, image, size = null, quantity = 1, color = null) {
     let existingItem = cart.find(
-        item => item.name === name && item.size === size
+        item => 
+            item.name === name &&
+            item.size === size &&
+            item.color === color
     );
 
     if (existingItem) {
@@ -12,6 +15,7 @@ function addToCart(name, price, image, size = null, quantity = 1) {
             name,
             price,
             size,
+            color,
             quantity,
             image
         });
@@ -66,7 +70,11 @@ function updateCart() {
         const sizeDiv = document.createElement("div");
         sizeDiv.textContent = `Size: ${item.size || "default"}`;
         textDiv.appendChild(sizeDiv);
-
+        
+        // Color line
+        const colorDiv = document.createElement("div");
+        colorDiv.textContent = `Color: ${item.color || "default"}`;
+        textDiv.appendChild(colorDiv);
         // Quantity line with buttons
         const quantityDiv = document.createElement("div");
 
@@ -79,7 +87,10 @@ function updateCart() {
             } else {
                 // Remove item if quantity reaches 0
                 const originalIndex = cart.findIndex(
-                    c => c.name === item.name && c.size === item.size
+                    c => 
+                        c.name === item.name &&
+                        c.size === item.size &&
+                        c.color === item.color
                 );
                 if (originalIndex > -1) cart.splice(originalIndex, 1);
             }
@@ -343,3 +354,43 @@ window.addEventListener("scroll", () => {
     const rotation = window.scrollY * 0.5; // speed
     coin.style.transform = `rotate(${rotation}deg)`;
 });
+
+document.querySelectorAll(".color-btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+
+        document.querySelectorAll(".color-btn").forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+
+        const color = this.dataset.color;
+        const image = this.dataset.image;
+
+        document.getElementById("selected-color").value = color;
+        document.getElementById("selected-image").value = image;
+
+        document.getElementById("main-image").src = image;
+    });
+});
+
+function addProductFromPageWithOptions() {
+    const size = document.getElementById("size").value;
+    const color = document.getElementById("selected-color").value;
+
+    // ✅ Dynamic product name from the page
+    const name = document.querySelector(".product-info-left h2").textContent;
+
+    // ✅ Use the current main image src dynamically
+    const image = document.getElementById("main-image").src;
+
+    addToCart(
+        name,   // dynamic product name
+        30.00,  // price
+        image,  // dynamic thumbnail
+        size,
+        1,      // quantity (or currentQty if needed)
+        color   // optional: color info
+    );
+
+    // reset qty after adding
+    currentQty = 1;
+    document.getElementById("qty-value").textContent = "1";
+}

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product 4 - My Store</title>
+    <title>Product 11 - My Store</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="../script.js" defer></script>
 </head>
 <body class="mod">
 <header>
-    <h1>Product 4</h1>
+    <h1>Product 11</h1>
     <nav>
         <a href="../new.html" class="nav-logo">
             <img src="./images/CAT.png" alt="314 Logo">
@@ -67,7 +67,7 @@
         </button>
         
         <div class="product-info-left">     <!-- LEFT: Description -->
-            <h2>CASH-Black</h2>
+            <h2>YHAGA</h2>
             <p>
                 This is a great product that comes in multiple sizes.
                 High-quality print, comfortable fit, and durable fabric.
@@ -75,12 +75,7 @@
         </div>
 
         <div class="product-image">     <!-- CENTER: Image Gallery -->
-            <img id="main-image" src="images/FINISH6.png" alt="CASH-Black">
-
-            <div class="thumbnails">
-                <img src="images/FINISH6.png" onclick="changeImage(this)">
-                <img src="images/FINISH6-2.png" onclick="changeImage(this)">
-            </div>
+            <img id="main-image" src="images/FINISH-WF.png" alt="Chanel">
         </div>
 
         <div class="product-info-right">     <!-- RIGHT: Purchase -->
@@ -94,6 +89,45 @@
                 <button class="size-btn" data-size="XL">XL</button>
             </div>
 
+            <div class="color-selector">
+                <div class="color-options">
+                    <span>Color:</span>
+                    <button class="color-btn active"    
+                            data-color="Black"
+                            data-image="./images/FINISH-WF.png"
+                            style="background:#000000;">
+                    </button>
+                    <button class="color-btn"
+                            data-color="Red"
+                            data-image="./images/FINISH-WF2.png"
+                            style="background:#d94848;">
+                    </button>
+                    <button class="color-btn"
+                            data-color="Purple"
+                            data-image="./images/FINISH-WF3.png"
+                            style="background:#642a70;">
+                    </button>
+                    <button class="color-btn"
+                            data-color="Blue"
+                            data-image="./images/FINISH-WF4.png"
+                            style="background:#00009b;">
+                    </button>
+                    <button class="color-btn"
+                            data-color="Green"
+                            data-image="./images/FINISH-WF5.png"
+                            style="background:#97fee3;">
+                    </button>
+                    <button class="color-btn"
+                            data-color="Yellow"
+                            data-image="./images/FINISH-WF6.png"
+                            style="background:#ffcc00;">
+                    </button>
+                </div>
+            </div>
+
+            <input type="hidden" id="selected-color" value="Black">
+            <input type="hidden" id="selected-image" value="images/FINISH-WF.png">
+
             <div class="quantity-selector">
                 <span>Quantity:</span>
                 <div class="qty-controls">
@@ -105,9 +139,19 @@
 
             <input type="hidden" id="size" value="S">
 
-            <button class="addtocartbutton" onclick="addProductFromPage('CASH-Black', 30.00, 'products/images/FINISH6.png')">
+            <button class="addtocartbutton" onclick="addProductFromPageWithOptions()">
                 Add to Cart
             </button>
+        </div>
+
+        <div class="thumbnails">
+            <img src="images/FINISH-WF.png" onclick="changeImage(this)">
+            <img src="images/FINISH-BlankWhiteBack.png" onclick="changeImage(this)">
+            <img src="images/FINISH-WF2.png" onclick="changeImage(this)">
+            <img src="images/FINISH-WF3.png" onclick="changeImage(this)">
+            <img src="images/FINISH-WF4.png" onclick="changeImage(this)">
+            <img src="images/FINISH-WF5.png" onclick="changeImage(this)">
+            <img src="images/FINISH-WF6.png" onclick="changeImage(this)">
         </div>
     </div>
 </div>
