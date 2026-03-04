@@ -826,9 +826,10 @@
         }
 
         .mobile-page-indicator {
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 800;
             color: rgb(218, 72, 72);
+            white-space: nowrap;
         }
 
         .mobile-menu-header {
