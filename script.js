@@ -386,7 +386,7 @@ function addProductFromPageWithOptions() {
         30.00,  // price
         image,  // dynamic thumbnail
         size,
-        1,      // quantity (or currentQty if needed)
+        currentQty,      // quantity (or currentQty if needed)
         color   // optional: color info
     );
 
