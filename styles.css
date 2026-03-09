@@ -253,7 +253,7 @@
         font-weight: 800;
     }
 
-    .left-links a:nth-last-child(2) {
+    .left-links a:nth-last-child(3) {
         margin-top: 13.3rem;
     }
 
@@ -302,8 +302,8 @@
         color: white;
     }
 
-    .right-links a:last-child {
-        margin-top: 19.2rem; /* adjust spacing as needed */
+    .right-links a:nth-last-child(2) {
+        margin-top: 16.5rem; /* adjust spacing as needed */
     }
 
     .shop-layout .container{
@@ -635,16 +635,23 @@
 
     .coin-wrapper {
         position: absolute;
-        right: calc(50% - 650px); /* aligns with container edge */
-        top: 370px;
+        right: calc(50% - 605px); /* aligns with container edge */
+        top: 7.5rem;
         pointer-events: none; /* prevents blocking clicks */
     }
 
     #scroll-coin {
-        width: 120px;  /* adjust size */
+        width: 70px;  /* adjust size */
         height: auto;
         transform-origin: center;
         transition: transform 0.1s linear;
+    }
+
+    .copyright {
+        font-size: 12px;
+        margin-bottom: 6px;
+        opacity: 0.7;
+        color:rgb(218, 72, 72);
     }
 
     #checkout-total {
@@ -689,6 +696,10 @@
 
     .color-btn.active {
         border: 2px solid #000000; /* optional border */
+    }
+
+    .mobile-copyright {
+        display: none;
     }
 
     /* For Chrome, Edge, and Safari */
@@ -1004,6 +1015,17 @@
 
         .confirmation {
             padding: 6%;
+        }
+
+        .coin-wrapper {
+            display: none;
+        }
+
+        .mobile-copyright {
+            display: block;
+            font-size: 0.75rem;
+            opacity: 0.5;
+            color: rgb(218, 72, 72);
         }
     }
 
