@@ -455,9 +455,9 @@
 
     .product img.hover-img {
         position: absolute;
-        top: 17px;
-        left: 25px;
-        width: 80%;
+        top: 19px;
+        left: 17px;
+        width: 88%;
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
     }
