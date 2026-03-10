@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product 15 - YHAGA Store</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../script.js" defer></script>
+</head>
+<body class="mod">
+<header>
+    <h1>Product 15</h1>
+    <nav>
+        <a href="../new.html" class="nav-logo">
+            <img src="./images/CAT.png" alt="314 Logo">
+        </a>
+
+        <form id="search-form" action="../search.html" method="get" class="desktop-search">
+            <div class="search-wrapper"id="mobile-search">
+                <img class="search-icon" src="images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                <input type="text" name="q" placeholder="Search" required>
+            </div>
+        </form>
+
+        <div class="mobile-menu-header">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <span class="mobile-page-indicator"></span>
+        </div>
+
+        <a href="../index.html">Home</a>
+        <a href="../cart.html" id="cart-link">
+            <img id="cart-icon" src="images/shopping-cart-free-5-svgrepo-com.svg" alt="Cart">
+            Cart <span id="cart-count">0</span>
+        </a>
+    </nav>
+</header>
+
+<div id="toast"></div>
+
+<div class="shop-layout">
+
+    <div class="left-links">
+        <div class="mobile-menu-header">
+            <form id="mobile-search-form" action="../search.html" method="get" class="desktop-search">
+                <div class="search-wrapper">
+                    <img class="search-icon" src="./images/magnifying-glass-9-svgrepo-com.svg" alt="Search">
+                    <input type="text" name="q" placeholder="Search" required>
+                </div>
+            </form>
+
+            <button class="menu-close">✕</button>
+        </div>
+
+        <a href="../new.html">New</a>
+        <a href="../tshirts.html">All T-Shirts</a>
+        <a href="../graphic_ts.html">Graphic T's</a>
+        <a href="../logo_ts.html">Logo T's</a>
+        <a href="../pants.html">Pants</a>
+        <a href="../shorts.html">Shorts</a>
+        <a href="../index.html">Home</a>
+        <a href="../tos.html" class="bottom-link">Terms of Service</a>
+
+        <p class="mobile-copyright">Copyright © 2026 YHAGA</p>
+    </div>
+
+    <div class="container product-detail">
+        <button class="back-arrow" onclick="history.back()">
+            <span class="arrow-icon"> < </span>
+        </button>
+        
+        <div class="product-info-left">     <!-- LEFT: Description -->
+            <h2>Abu Simbel</h2>
+            <p>
+                This is a great product that comes in multiple sizes.
+                High-quality print, comfortable fit, and durable fabric.
+            </p>
+        </div>
+
+        <div class="product-image">     <!-- CENTER: Image Gallery -->
+            <img id="main-image" src="images/FINISH15.png" alt="Chanel">
+        </div>
+
+        <div class="product-info-right">     <!-- RIGHT: Purchase -->
+            <p class="price">€30.00</p>
+
+            <div class="size-selector">
+                <span>Size:</span>
+                <button class="size-btn" data-size="S">S</button>
+                <button class="size-btn" data-size="M">M</button>
+                <button class="size-btn" data-size="L">L</button>
+                <button class="size-btn" data-size="XL">XL</button>
+            </div>
+
+            <div class="color-selector">
+                <div class="color-options">
+                    <span>Colour:</span>
+                    <button class="color-btn active"    
+                            data-color="Green"
+                            data-image="./images/FINISH15.png"
+                            style="background:#66b666;">
+                    </button>
+                    <button class="color-btn"
+                            data-color="Blue"
+                            data-image="./images/FINISH15-2.png"
+                            style="background:#6ca1c0;">
+                    </button>
+                </div>
+            </div>
+
+            <input type="hidden" id="selected-color" value="Green">
+            <input type="hidden" id="selected-image" value="images/FINISH15.png">
+
+            <div class="quantity-selector">
+                <span>Quantity:</span>
+                <div class="qty-controls">
+                    <button type="button" class="qty-btn" onclick="changeQty(-1)">−</button>
+                    <span id="qty-value">1</span>
+                    <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+                </div>
+            </div>
+
+            <input type="hidden" id="size" value="S">
+
+            <button class="addtocartbutton" onclick="addProductFromPageWithOptions()">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="thumbnails">
+            <img src="images/FINISH15.png" onclick="changeImage(this)">
+            <img src="images/FINISH-BlankWhiteBack.png" onclick="changeImage(this)">
+            <img src="images/FINISH15-2.png" onclick="changeImage(this)">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
