@@ -24,7 +24,7 @@ header {
 
 #welcome-screen {
     height: 100dvh;   /* dynamic visible height */
-    width: 100%;
+    width: 100vw;
     align-items: center;
     justify-content: center;
     gap: 2rem;
@@ -764,26 +764,24 @@ button:hover {
         background-image:
             linear-gradient(#ffffff, #ffffff), /* white top bar */
             linear-gradient(to right, #e5e5e5 1px, transparent 1px), /* vertical lines */
-            linear-gradient(to bottom, #e5e5e5 1px, transparent 1px), /* horizontal lines */
-            linear-gradient(to bottom, #e5e5e5 1px, transparent 1px); /* first horizontal line */                      
+            linear-gradient(to bottom, #e5e5e5 1px, transparent 1px); /* horizontal lines */                    
         background-size:
-            100% 2.6rem, /* white top bar */
+            100% 2.4rem, /* white top bar */
             calc(100% / 2) 100%, /* vertical lines */
-            100% 16.75rem, /* horizontal lines */
-            100% 1.5rem; /* first horizontal line */  
+            100% 16.75rem; /* horizontal lines */
         background-position:
             0 0, /* white top bar */
             0 330px, /* vertical lines */
-            0 38px, /* horizontal lines */
-            0 42px; /* first horizontal line */  
+            0 38px; /* horizontal lines */
         background-repeat:
             no-repeat, /* white top bar */
             repeat, /* vertical lines */
             repeat, /* horizontal lines */
-            no-repeat; /* first horizontal line */ 
     }
 
     .shop-layout .container {
+        width: 100%;
+        flex: none;
         padding: 0;
         padding-top: 2.5rem;
         display: flex;
