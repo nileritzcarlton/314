@@ -783,7 +783,7 @@ button:hover {
         background-size:
             100% 2.4rem, /* white top bar */
             calc(100% / 2) 100%, /* vertical lines */
-            100% 17.075rem;   /* slightly smaller */
+            100% 17.08rem;   /* slightly smaller */
     }
 
     .shop-layout .container {
