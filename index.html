@@ -1,100 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta property="og:image" content="https://yhaga.com/products/images/CAT-Background-2.png">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YHAGA Store</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="products/images/favicon-32x32.png">
-    <meta name="theme-color" content="#000000">
-    <script src="script.js" defer></script>
+<head>
+<meta property="og:image" content="https://yhaga.com/products/images/CAT-Background-2.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YHAGA Store</title>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="products/images/favicon-32x32.png">
+<meta name="theme-color" content="#000000">
+
+<script src="script.js" defer></script>
 </head>
 
-<script>
-    function isInstagramBrowser() {
-        const ua = navigator.userAgent || navigator.vendor || window.opera;
-        return ua.includes("Instagram");
-    }
-
-    if (isInstagramBrowser()) {
-        document.getElementById("open-browser-banner").style.display = "block";
-    }
-
-    function openBrowser() {
-        window.location.href = window.location.href;
-    }
-</script>
-
 <body>
-    <div id="open-browser-banner">
-        ⚠️ For the best experience, open this page in your browser.
-        <br>
-        <button onclick="openBrowser()">Open in Browser</button>
-    </div>
 
-    <script> 
-        /*
-        function updateSideTime() {
-            const options = { timeZone: 'Africa/Cairo', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            const timeStr = new Intl.DateTimeFormat('en-GB', options).format(new Date());
-            document.getElementById('side-time').textContent = `Local Time: ${timeStr}`;
-        }
-        setInterval(updateSideTime, 1000);
-        updateSideTime();
+<div id="welcome-screen">
+    <div class="tv-wrapper">
 
-        // SIDE WEATHER
-        const apiKey = "2af21dfbcc6570d1543b7138367a31ea"; // your OpenWeather key
-        const cairoLat = 30.0444;
-        const cairoLon = 31.2357;
-
-        async function updateSideWeather() {
-            try {
-                const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${cairoLat}&lon=${cairoLon}&units=metric&appid=${apiKey}`);
-                const data = await res.json();
-                const temp = data.main.temp.toFixed(1);
-                const description = data.weather[0].description;
-                document.getElementById('side-weather').textContent = `Weather: ${temp}°C, ${description}`;
-            } catch (err) {
-                document.getElementById('side-weather').textContent = `Weather: unavailable`;
-                console.error(err);
-            }
-        }
-
-        updateSideWeather();
-        setInterval(updateSideWeather, 10 * 60 * 1000); // update every 10 min
-        */
-        // ENTER STORE click
-
-        document.getElementById("enter-text").addEventListener("click", () => {
-            window.location.href = "new.html";
-        });
-
-        // ENTER key support
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-                window.location.href = "new.html";
-            }
-        });
-    </script>
-
-    <div id="welcome-screen">
-        <div class="tv-wrapper">
-            <!-- Background image inside the TV screen -->
-            <div class="tv-screen">
-                <div class="welcome-content">
-                    <div id="enter-text">
-                        <span class="blink">></span> Enter the store
-                    </div>
+        <div class="tv-screen">
+            <div class="welcome-content">
+                <div id="enter-text">
+                    <span class="blink">></span> Enter the store
                 </div>
             </div>
-
-            <!-- The TV image on top -->
-            <img src="products/images/old-tv-11527929226fejsvwoyk3x.png" class="tv-frame">
         </div>
+
+        <img src="products/images/old-tv-11527929226fejsvwoyk3x.png" class="tv-frame">
+
     </div>
+</div>
+
+
+<div id="open-browser-banner">
+⚠️ For the best experience, open this page in your browser.
+<br>
+<button onclick="openBrowser()">Open in Browser</button>
+</div>
+
+
+<script>
+
+function isInstagramBrowser() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    return ua.includes("Instagram");
+}
+
+function openBrowser() {
+    window.location.href = window.location.href;
+}
+
+if (isInstagramBrowser()) {
+    document.getElementById("open-browser-banner").style.display = "block";
+}
+
+
+// ENTER STORE click
+document.getElementById("enter-text").addEventListener("click", () => {
+    window.location.href = "new.html";
+});
+
+// ENTER key support
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        window.location.href = "new.html";
+    }
+});
+
+</script>
 
 </body>
 </html>
