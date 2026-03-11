@@ -25,6 +25,7 @@ header {
 #welcome-screen {
     height: 100dvh;   /* dynamic visible height */
     width: 100vw;
+    width: 100%;
     align-items: center;
     justify-content: center;
     gap: 2rem;
