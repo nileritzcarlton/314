@@ -17,8 +17,9 @@
     <script> 
         document.addEventListener("DOMContentLoaded", function() {
             const ua = navigator.userAgent || navigator.vendor || window.opera;
-            if (ua.includes("Instagram")) {
-            window.location.href = window.location.href;
+            if (ua.includes("Instagram") && !sessionStorage.getItem("instagram_redirected")) {
+                sessionStorage.setItem("instagram_redirected", "true");
+                window.location.href = window.location.href;
             }
         });
     </script>
