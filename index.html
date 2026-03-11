@@ -29,7 +29,28 @@
     </div>
 </div>
 
+<script>
+    function isInstagramBrowser() {
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        return ua.includes("Instagram");
+    }
+
+    if (isInstagramBrowser()) {
+        document.getElementById("open-browser-banner").style.display = "block";
+    }
+
+    function openBrowser() {
+        window.location.href = window.location.href;
+    }
+</script>
+
 <body>
+    <div id="open-browser-banner">
+        ⚠️ For the best experience, open this page in your browser.
+        <br>
+        <button onclick="openBrowser()">Open in Browser</button>
+    </div>
+
     <script> 
         /*
         function updateSideTime() {

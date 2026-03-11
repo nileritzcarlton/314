@@ -1079,6 +1079,30 @@ button:hover {
         opacity: 0.5;
         color: rgb(218, 72, 72);
     }
+    #open-browser-banner{
+        display:none;
+        position:fixed;
+        bottom:0;
+        left:0;
+        right:0;
+        background:#111;
+        color:white;
+        padding:16px;
+        text-align:center;
+        font-family:sans-serif;
+        z-index:9999;
+    }
+
+    #open-browser-banner button{
+        margin-top:10px;
+        padding:10px 18px;
+        font-size:16px;
+        border:none;
+        background:#ff0069;
+        color:white;
+        border-radius:6px;
+        cursor:pointer;
+    }
 }
 
 /* Extra small phones */
