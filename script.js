@@ -394,3 +394,7 @@ function addProductFromPageWithOptions() {
     currentQty = 1;
     document.getElementById("qty-value").textContent = "1";
 }
+
+if (navigator.userAgent.includes("Instagram")) {
+    document.body.classList.add("instagram-browser");
+}

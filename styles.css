@@ -779,6 +779,13 @@ button:hover {
             repeat, /* horizontal lines */
     }
 
+    .instagram-browser .container:not(.product-detail):not(.cart-page):not(.tos-page) {
+        background-size:
+            100% 2.4rem, /* white top bar */
+            calc(100% / 2) 100%, /* vertical lines */
+            100% 17rem;   /* slightly smaller */
+    }
+
     .shop-layout .container {
         padding: 0;
         padding-top: 2.5rem;
