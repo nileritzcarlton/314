@@ -780,8 +780,6 @@ button:hover {
     }
 
     .shop-layout .container {
-        width: 100%;
-        flex: none;
         padding: 0;
         padding-top: 2.5rem;
         display: flex;

@@ -31,6 +31,14 @@
 
 <body>
     <script> 
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            if (ua.includes("Instagram")) {
+            window.location.href = window.location.href;
+            }
+        });
+
         /*
         function updateSideTime() {
             const options = { timeZone: 'Africa/Cairo', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
