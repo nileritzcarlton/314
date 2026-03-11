@@ -13,33 +13,24 @@
     <script src="script.js" defer></script>
 </head>
 
-<body>
-    <script> 
-        document.addEventListener("DOMContentLoaded", function() {
-            const ua = navigator.userAgent || navigator.vendor || window.opera;
-            if (ua.includes("Instagram") && !sessionStorage.getItem("instagram_redirected")) {
-                sessionStorage.setItem("instagram_redirected", "true");
-                window.location.href = window.location.href;
-            }
-        });
-    </script>
-
-    <div id="welcome-screen">
-        <div class="tv-wrapper">
-            <!-- Background image inside the TV screen -->
-            <div class="tv-screen">
-                <div class="welcome-content">
-                    <div id="enter-text">
-                        <span class="blink">></span> Enter the store
-                    </div>
+<div id="welcome-screen">
+    <div class="tv-wrapper">
+        <!-- Background image inside the TV screen -->
+        <div class="tv-screen">
+            <div class="welcome-content">
+                <div id="enter-text">
+                    <span class="blink">></span> Enter the store
                 </div>
             </div>
-
-            <!-- The TV image on top -->
-            <img src="products/images/old-tv-11527929226fejsvwoyk3x.png" class="tv-frame">
         </div>
-    </div>
 
+        <!-- The TV image on top -->
+        <img src="products/images/old-tv-11527929226fejsvwoyk3x.png" class="tv-frame">
+    </div>
+</div>
+
+<body>
+    <script> 
         /*
         function updateSideTime() {
             const options = { timeZone: 'Africa/Cairo', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
