@@ -1074,12 +1074,12 @@ button:hover {
     .mobile-copyright {
         display: block;
         font-size: 12px;
+        --base-font: 12px;
         opacity: 0.5;
         color: rgb(218, 72, 72);
     }
 
-    .instagram-browser body,
-    .instagram-browser h1,
+    .instagram-browser header,
     .instagram-browser a,
     .instagram-browser p,
     .instagram-browser .size-selector
@@ -1090,13 +1090,16 @@ button:hover {
     .instagram-browser #cart-items,
     .instagram-browser .price,
     .instagram-browser #toast,
-    .instagram-browser .mobile-copyright,
     .instagram-browser #checkout-total,
     .instagram-browser .menu-toggle,
     .instagram-browser .mobile-page-indicator,
     .instagram-browser #mobile-search-form .search-wrapper input
     {
         font-size: calc(1em * var(--instagram-scale)) !important;
+    }
+
+    .instagram-browser .mobile-copyright {
+        font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
     }
 }
 
