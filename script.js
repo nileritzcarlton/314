@@ -405,20 +405,19 @@ function getFontScale() {
     return rendered / 16;
 }
 
-/**
- * Apply Instagram browser fix for Android/iOS
- */
 function fixInstagramFontScaling() {
     const ua = navigator.userAgent;
     const isInstagram = ua.includes("Instagram") || ua.includes("FBAN");
 
     if (isInstagram) {
-        const scale = getFontScale(); // system font size factor
-        // Apply inverse scaling to neutralize
-        document.documentElement.style.zoom = 1 / scale;
-        console.log(`Instagram detected. Font scale: ${scale.toFixed(2)} → zoom applied: ${ (1/scale).toFixed(2) }`);
+        const scale = getFontScale(); // how much system font inflated
+        const damping = 0.85; // tweak this: 0.8–0.95 usually works well
+        const adjustedZoom = 1 / scale * damping;
+        document.documentElement.style.zoom = adjustedZoom;
+        console.log(
+            `Instagram detected. System font scale: ${scale.toFixed(2)}, applied zoom: ${adjustedZoom.toFixed(2)}`
+        );
     }
 }
 
-// Run immediately after DOM content is ready
 document.addEventListener("DOMContentLoaded", fixInstagramFontScaling);
