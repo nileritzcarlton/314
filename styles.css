@@ -1078,7 +1078,29 @@ button:hover {
         color: rgb(218, 72, 72);
     }
 
-    .instagram-browser * {
+    .instagram-browser body,
+    .instagram-browser h1,
+    .instagram-browser h2,
+    .instagram-browser h3,
+    .instagram-browser h4,
+    .instagram-browser h5,
+    .instagram-browser h6,
+    .instagram-browser nav,
+    .instagram-browser nav a,
+    .instagram-browser .right-links .brand-name,
+    .instagram-browser .left-links a,
+    .instagram-browser .welcome-content,
+    .instagram-browser #enter-text,
+    .instagram-browser .qty-btn,
+    .instagram-browser #cart-items li div button,
+    .instagram-browser .price,
+    .instagram-browser #toast,
+    .instagram-browser .copyright,
+    .instagram-browser #checkout-total,
+    .instagram-browser .menu-toggle,
+    .instagram-browser .mobile-page-indicator,
+    .instagram-browser #mobile-search-form .search-wrapper input
+    {
         font-size: calc(1em * var(--instagram-scale)) !important;
     }
 }
