@@ -1002,6 +1002,7 @@ button:hover {
     #cart-link {
         position: relative;  /* needed for badge positioning */
         font-size: 0;        /* hide text */
+        --base-font: 0px;
         gap: 0;
     }
     
@@ -1118,6 +1119,7 @@ button:hover {
     .instagram-browser .mod header h1,
     .instagram-browser .search-wrapper input,
     .instagram-browser .mobile-copyright,
+    .instagram-browser #cart-link,
     .instagram-browser #mobile-search-form .search-wrapper input,
     .instagram-browser #cart-link #cart-count,
     .instagram-browser #enter-text,
@@ -1125,10 +1127,6 @@ button:hover {
     .instagram-browser #checkout-total,
     .instagram-browser #toast {
         font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
-    }
-    
-    .instagram-browser #cart-link {
-        font-size: 0;
     }
 }
 
