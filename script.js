@@ -411,7 +411,7 @@ function fixInstagramFontScaling() {
 
     if (isInstagram) {
         const scale = getFontScale(); // how much system font inflated
-        const damping = 0.85; // tweak this: 0.8–0.95 usually works well
+        const damping = 0.95; // tweak this: 0.8–0.95 usually works well
         const adjustedZoom = 1 / scale * damping;
         document.documentElement.style.zoom = adjustedZoom;
         console.log(
