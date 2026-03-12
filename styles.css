@@ -129,6 +129,7 @@ header {
 
     font-family: "Courier New", monospace;
     font-size: 32px;
+    --base-font: 32px;
     color: #ffffff;
     text-shadow:
         0 0 5px #fff,
@@ -146,6 +147,7 @@ header {
 
 #enter-text {
     font-size: 24px;
+    --base-font: 24px;
     cursor: pointer;
 }
 
@@ -155,6 +157,7 @@ header {
 
 nav {
     font-size: 24px;
+    --base-font: 24px;
     display: flex;
     align-items: center;
     justify-content: center; /* center the nav items */
@@ -494,6 +497,7 @@ button:hover {
     background: none;
     border: none;
     font-size: 24px;
+    --base-font: 24px;
     cursor: pointer;
     padding: 0;
     font-weight: bold;
@@ -564,6 +568,7 @@ button:hover {
 
 .price {
     font-size: 19.2px;
+    --base-font: 19.2px;
     margin-bottom: 16px;
 }
 
@@ -577,6 +582,7 @@ button:hover {
     border-radius: 6px;
     font-family: "Courier New", Courier, monospace;
     font-size: 14.4px;
+    --base-font: 14.4px;
     opacity: 0;
     pointer-events: none;
     transform: translateY(10px);
@@ -626,6 +632,7 @@ button:hover {
     color: rgb(218, 72, 72);
     font-family: "Courier New", Courier, monospace;
     font-size: 19.2px;
+    --base-font: 19.2px;
     padding-left: 4.8px;  /* space after icon */
     width: 100px;          /* adjust as needed */
 }
@@ -675,6 +682,7 @@ button:hover {
 
 .copyright {
     font-size: 12px;
+    --base-font: 12px;
     margin-bottom: 6px;
     opacity: 0.7;
     color:rgb(218, 72, 72);
@@ -917,6 +925,7 @@ button:hover {
         position: absolute;   /* remove from normal flow */
         right: -24px;             /* stick to the right edge of header */
         font-size: 32px;
+        --base-font: 32px;
         color: white;
         cursor: pointer;
         display: block;
@@ -927,6 +936,7 @@ button:hover {
         color: rgb(218, 72, 72);
         font-family: "Courier New", monospace;
         font-size: 14.4px;
+        --base-font: 14.4px;
         padding-left: 4.8px;
         width: 100%;
     }
@@ -1003,6 +1013,7 @@ button:hover {
         background: rgb(218, 72, 72);     /* classic notification color */
         color: white;
         font-size: 9.6px;   /* small size */
+        --base-font: 9.6px;
         font-weight: bold;
         width: 15px;
         height: 15px;
@@ -1086,24 +1097,33 @@ button:hover {
     .instagram-browser header,
     .instagram-browser a,
     .instagram-browser p,
-    .instagram-browser .size-selector
     .instagram-browser nav,
     .instagram-browser nav a,
+    .instagram-browser .size-selector,
     .instagram-browser .left-links a,
-    .instagram-browser .qty-btn,
-    .instagram-browser #cart-items,
-    .instagram-browser .price,
-    .instagram-browser #toast,
     .instagram-browser .mobile-page-indicator,
-    .instagram-browser #mobile-search-form .search-wrapper input {
+    .instagram-browser .qty-btn,
+    .instagram-browser .price,
+    .instagram-browser #cart-items {
         font-size: calc(1em * var(--instagram-scale)) !important;
     }
 
-    .instagram-browser #cart-items li div button,
-    .instagram-browser #checkout-total,
+    .instagram-browser nav,
+    .instagram-browser .menu-close,
+    .instagram-browser .copyright,
+    .instagram-browser .price,
+    .instagram-browser .back-arrow,
+    .instagram-browser .welcome-content,
     .instagram-browser .menu-toggle,
     .instagram-browser .mod header h1,
-    .instagram-browser .mobile-copyright {
+    .instagram-browser .search-wrapper input,
+    .instagram-browser .mobile-copyright,
+    .instagram-browser #mobile-search-form .search-wrapper input,
+    .instagram-browser #cart-link #cart-count,
+    .instagram-browser #enter-text,
+    .instagram-browser #cart-items li div button,
+    .instagram-browser #checkout-total,
+    .instagram-browser #toast {
         font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
     }
 }
