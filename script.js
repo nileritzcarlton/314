@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         // Instagram inflates text ~1.15x on Android by default
-        const scaleFactor = 1 / 1.15; // adjust down to normal size
+        const scaleFactor = 1 / 1.1; // adjust down to normal size
 
         // Apply a CSS variable to scale all fonts
         document.documentElement.style.setProperty(
