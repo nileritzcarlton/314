@@ -281,7 +281,7 @@ nav a:hover {
 }
 
 .left-links a:nth-last-child(3) {
-    margin-top: 13.48px;
+    margin-top: 210px;
 }
 
 .left-links a:hover {
@@ -346,6 +346,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
 }
 
 button:hover {
