@@ -428,6 +428,7 @@ button:hover {
     font-family: "Courier New", Courier, monospace;
     border-radius: 4px;
     font-size: 14.4px;
+    --base-font: 14.4px;
 }
 
 #cart-count::before {
@@ -682,6 +683,7 @@ button:hover {
 #checkout-total {
     font-weight: bold;
     font-size: 19.2px;
+    --base-font: 19.2px;
 }
 
 #paypal-button-container {
@@ -810,6 +812,7 @@ button:hover {
         margin-top: 0rem;
         margin-bottom: -24px;
         font-size: 24px;
+        --base-font: 24px;
     }
 
     .desktop-search {
@@ -819,6 +822,7 @@ button:hover {
     .menu-toggle {
         display: block;
         font-size: 32px;
+        --base-font: 32px;
         cursor: pointer;
         margin-top: 32px;
         margin-bottom: 32px;
@@ -1090,14 +1094,15 @@ button:hover {
     .instagram-browser #cart-items,
     .instagram-browser .price,
     .instagram-browser #toast,
-    .instagram-browser #checkout-total,
-    .instagram-browser .menu-toggle,
     .instagram-browser .mobile-page-indicator,
-    .instagram-browser #mobile-search-form .search-wrapper input
-    {
+    .instagram-browser #mobile-search-form .search-wrapper input {
         font-size: calc(1em * var(--instagram-scale)) !important;
     }
 
+    .instagram-browser #cart-items li div button,
+    .instagram-browser #checkout-total,
+    .instagram-browser .menu-toggle,
+    .instagram-browser .mod header h1,
     .instagram-browser .mobile-copyright {
         font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
     }
