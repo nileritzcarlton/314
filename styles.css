@@ -1,10 +1,13 @@
 html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    font-size: 16px;
 }
 
 body {
     -webkit-text-size-adjust: 100%;
+    font-size: 16px;
+    
     font-family: "Courier New", Courier, monospace;
     background-color: #000000;
     margin: 0;
@@ -12,6 +15,9 @@ body {
 }
 
 header {
+    -webkit-text-size-adjust: 100%;
+    font-size: 16px;
+
     background-color: #000000;
     color: rgb(255, 255, 255);
 
