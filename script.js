@@ -405,19 +405,32 @@ function getFontScale() {
     return rendered / 16;
 }
 
-function fixInstagramFontScaling() {
+function fixInstagramFontScalingTextOnly() {
     const ua = navigator.userAgent;
     const isInstagram = ua.includes("Instagram") || ua.includes("FBAN");
 
     if (isInstagram) {
-        const scale = getFontScale(); // how much system font inflated
-        const damping = 0.95; // tweak this: 0.8–0.95 usually works well
-        const adjustedZoom = 1 / scale * damping;
-        document.documentElement.style.zoom = adjustedZoom;
+        const scale = getFontScale();
+        const damping = 0.9; // tweak for perfect fit
+        const adjustedScale = 1 / scale * damping;
+
+        // wrap all text in a container
+        const textWrapper = document.createElement("div");
+        textWrapper.style.transform = `scale(${adjustedScale})`;
+        textWrapper.style.transformOrigin = "top left";
+        textWrapper.style.width = `${100 / adjustedScale}%`; // keep layout width correct
+        textWrapper.style.height = `${100 / adjustedScale}%`;
+
+        // move all body content into this wrapper
+        while (document.body.firstChild) {
+            textWrapper.appendChild(document.body.firstChild);
+        }
+        document.body.appendChild(textWrapper);
+
         console.log(
-            `Instagram detected. System font scale: ${scale.toFixed(2)}, applied zoom: ${adjustedZoom.toFixed(2)}`
+            `Instagram detected. System font scale: ${scale.toFixed(2)}, text scale applied: ${adjustedScale.toFixed(2)}`
         );
     }
 }
 
-document.addEventListener("DOMContentLoaded", fixInstagramFontScaling);
+document.addEventListener("DOMContentLoaded", fixInstagramFontScalingTextOnly);
