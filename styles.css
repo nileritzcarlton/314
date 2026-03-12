@@ -1101,11 +1101,15 @@ button:hover {
     .instagram-browser nav a,
     .instagram-browser .size-selector,
     .instagram-browser .left-links a,
-    .instagram-browser .mobile-page-indicator,
+    .instagram-browser #mobile-page-indicator,
     .instagram-browser .qty-btn,
     .instagram-browser .price,
     .instagram-browser #cart-items {
         font-size: calc(1em * var(--instagram-scale)) !important;
+    }
+
+    .instagram-browser #cart-link {
+        font-size: 0;
     }
 
     .instagram-browser nav,
@@ -1126,6 +1130,7 @@ button:hover {
     .instagram-browser #toast {
         font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
     }
+
 }
 
 /* Extra small phones */
