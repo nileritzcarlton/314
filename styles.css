@@ -1,17 +1,8 @@
-body, p, a, span, li, button, input {
-    font-size: 16px;
-}
-
 html {
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
     font-size: 16px;
 }
 
 body {
-    -webkit-text-size-adjust: none;
-    font-size: 16px;
-
     font-family: "Courier New", Courier, monospace;
     background-color: #000000;
     margin: 0;
@@ -19,19 +10,16 @@ body {
 }
 
 header {
-    -webkit-text-size-adjust: none;
-    font-size: 16px;
-
     background-color: #000000;
     color: rgb(255, 255, 255);
 
     display: flex;
     flex-direction: column; /* stack title + nav */
-    padding: 1rem 0;
+    padding: 16px 0;
     align-items: center;    /* horizontal center */
     text-align: center;
     position: relative;
-    top: 1.5rem;
+    top: 24px;
 }
 
 #welcome-screen {
@@ -39,7 +27,7 @@ header {
     width: 100vw;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 32px;
     flex-direction: row;
     overflow: hidden;         /* no scroll */
 }
@@ -144,7 +132,7 @@ header {
     justify-content: center;
 
     font-family: "Courier New", monospace;
-    font-size: 2rem;
+    font-size: 32px;
     color: #ffffff;
     text-shadow:
         0 0 5px #fff,
@@ -161,7 +149,7 @@ header {
 }
 
 #enter-text {
-    font-size: 1.5rem;
+    font-size: 24px;
     cursor: pointer;
 }
 
@@ -170,19 +158,19 @@ header {
 }
 
 nav {
-    font-size: 1.5rem;
+    font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center; /* center the nav items */
     position: relative;      /* for positioning the logo */
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-    gap: 4rem;   /* THIS handles spacing properly */
+    margin-bottom: 32px;
+    margin-top: 16px;
+    gap: 64px;   /* THIS handles spacing properly */
 }
 
 .nav-logo {
     position: absolute;  /* pull logo to left */
-    left: -28rem;          /* spacing from left edge */
+    left: -448px;          /* spacing from left edge */
     top: -5.5rem
 }
 
@@ -194,7 +182,7 @@ nav {
 .nav-items {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 16px;
 }
 
 nav a {
@@ -230,14 +218,14 @@ nav a:hover {
         repeat, /* vertical lines */
         repeat; /* horizontal lines */
     
-    padding-top: 3rem;
+    padding-top: 48px;
 }
 .container {
     position: relative;
     max-width: 900px;
     align-items: center;
-    margin: 1rem auto;
-    padding: 2rem;
+    margin: 16px auto;
+    padding: 32px;
     
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0px 30px rgba(212, 212, 212, 0.8);
@@ -247,8 +235,8 @@ nav a:hover {
 .container .product {
     display: inline-block;
     width: 220px;
-    margin: 1rem;
-    padding: 1rem;
+    margin: 16px;
+    padding: 16px;
     text-align: center;
     vertical-align: top;
 }
@@ -256,7 +244,7 @@ nav a:hover {
 .container .product img {
     width: 100%;
     border-radius: 8px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
         display: block;
     margin: 0 auto;
 }
@@ -269,8 +257,8 @@ nav a:hover {
     display: flex;
     justify-content: center;  /* keep container centered */
     position: relative;       /* for left-links positioning */
-    gap: 0.625rem;                /* space between links and container */
-    padding: 1.25rem;
+    gap: 10px;                /* space between links and container */
+    padding: 20px;
 }
 
 /* Left links */
@@ -279,10 +267,10 @@ nav a:hover {
     height: 100%;
 
     left: calc(50% - 700px);  /* adjust: shift a bit to left of container center */
-    top: 3.75rem;                 /* align to top of container */
+    top: 60px;                 /* align to top of container */
     display: flex;
     flex-direction: column;
-    gap: 0.625rem;
+    gap: 10px;
 }
 
 .left-links a {
@@ -293,7 +281,7 @@ nav a:hover {
 }
 
 .left-links a:nth-last-child(3) {
-    margin-top: 13.3rem;
+    margin-top: 13.48px;
 }
 
 .left-links a:hover {
@@ -318,10 +306,10 @@ nav a:hover {
     position: absolute;
     height: 100%;
     right: calc(50% - 650px);  /* mirrors left-links */
-    top: 3.75rem;
+    top: 60px;
     display: flex;
     flex-direction: column;
-    gap: 0.9375rem;
+    gap: 15px;
     align-items: center;        /* center items horizontally */
 }
 
@@ -342,7 +330,7 @@ nav a:hover {
 }
 
 .right-links a:nth-last-child(2) {
-    margin-top: 16.5rem; /* adjust spacing as needed */
+    margin-top: 264px; /* adjust spacing as needed */
 }
 
 .shop-layout .container{
@@ -352,13 +340,12 @@ nav a:hover {
 }
 
 button {
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
     background-color: #0070f3;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: "Courier New", Courier, monospace;
 }
 
 button:hover {
@@ -366,15 +353,15 @@ button:hover {
 }
 
 .size-selector {
-    margin: 1rem 0;
+    margin: 16px 0;
 }
 
 .size-btn {
     border: 1px solid #333;
     background: #fff;
     color: #333;
-    padding: 0.4rem 0.70rem;
-    margin-right: 0.33rem;
+    padding: 6.4px 0.70rem;
+    margin-right: 5.28px;
     cursor: pointer;
     border-radius: 4px;
     font-family: "Courier New", Courier, monospace;
@@ -386,29 +373,29 @@ button:hover {
 }
 
 .quantity-selector {
-    margin-top: 1.5rem;
+    margin-top: 24px;
     display: flex;
     align-items: center; /* <-- vertical alignment */
-    gap: 0.6rem;         /* adjust spacing as needed */
+    gap: 9.6px;         /* adjust spacing as needed */
 }
 
 .qty-controls {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 9.6px;
 }
 
 .qty-btn {
     background: transparent;
     border: 1px solid #000;
-    padding: 0.2rem 0.6rem;
-    font-size: 1rem;
+    padding: 3.2px 9.6px;
+    font-size: 16px;
     cursor: pointer;
     color: #333;
 }
 
 .addtocartbutton {
-    margin: 1.25rem;
+    margin: 20px;
     font-family: "Courier New", Courier, monospace;
     border-radius: 6px;
 }
@@ -421,8 +408,8 @@ button:hover {
 #cart-items li {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem; /* space between items */
-    padding: 0.5rem;
+    margin-bottom: 16px; /* space between items */
+    padding: 8px;
     border-bottom: 1px solid #ccc; /* optional separator */
     font-family: "Courier New", Courier, monospace;
 }
@@ -431,7 +418,7 @@ button:hover {
 #cart-items li img {
     width: 80px; /* bigger image */
     height: auto;
-    margin-right: 1rem; /* space between image and text */
+    margin-right: 16px; /* space between image and text */
     border-radius: 4px;
 }
 
@@ -439,11 +426,11 @@ button:hover {
     border: 1px solid #ccc;
     background: transparent;
     color: inherit;
-    padding: 0.2rem 0.5rem;
+    padding: 3.2px 8px;
     cursor: pointer;
     font-family: "Courier New", Courier, monospace;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: 14.4px;
 }
 
 #cart-count::before {
@@ -457,7 +444,7 @@ button:hover {
     display: flex;
     align-items: center;      /* vertical alignment */
     justify-content: center;  /* horizontal alignment */
-    gap: 1rem;                /* space between total and button */
+    gap: 16px;                /* space between total and button */
 }
 
 .checkoutbutton {
@@ -472,7 +459,7 @@ button:hover {
 
 .product img.hover-img {
     position: absolute;
-    top: 1.1875rem;
+    top: 19px;
     left: 1.0625rem;
     width: 88%;
     opacity: 0;
@@ -489,23 +476,23 @@ button:hover {
 }
 
 .product-gallery {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 .product-detail {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: 32px;
     align-items: center;
     max-width: 1100px;
-    margin: 2rem auto;
+    margin: 32px auto;
     position: relative;
 }
 
 .back-arrow {
     position: absolute;
-    top: 0.6875rem;
-    left: 0.9375rem;
+    top: 11px;
+    left: 15px;
     background: none;
     border: none;
     font-size: 24px;
@@ -539,31 +526,31 @@ button:hover {
 }
 
 .product h3 {
-    margin: 1rem 0; /* optional spacing tweak */
-    margin-bottom: -0.5rem;   /* smaller space under name */
+    margin: 16px 0; /* optional spacing tweak */
+    margin-bottom: -8px;   /* smaller space under name */
 }
 
 #main-image {
     width: 320px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
 }
 
 .thumbnails {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 8px;
     margin-top: 0rem;
     flex-wrap: nowrap;     /* IMPORTANT: prevent wrapping */
     grid-column: 1 / -1;   /* span across all columns */
 }
 
 .thumbnails:has(img:nth-child(6)) {
-    margin-top: -2rem;
+    margin-top: -32px;
 }
 
 .thumbnails img {
     width: 70px;
-    margin: 0 0.3rem;
+    margin: 0 4.8px;
     cursor: pointer;
     border: 1px solid #ccc;
 }
@@ -577,20 +564,20 @@ button:hover {
 }
 
 .price {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 19.2px;
+    margin-bottom: 16px;
 }
 
 #toast {
     position: fixed;
-    bottom: 1.25rem;
-    right: 1.25rem;
+    bottom: 20px;
+    right: 20px;
     background: #111;
     color: #fff;
-    padding: 0.8rem 1.2rem;
+    padding: 12.8px 19.2px;
     border-radius: 6px;
     font-family: "Courier New", Courier, monospace;
-    font-size: 0.9rem;
+    font-size: 14.4px;
     opacity: 0;
     pointer-events: none;
     transform: translateY(10px);
@@ -606,7 +593,7 @@ button:hover {
 #cart-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 4.8px;
 }
 
 #cart-icon {
@@ -614,7 +601,7 @@ button:hover {
     height: 30px;
     color: white;
     vertical-align: middle;
-    margin-right: 0.3rem;   /* space between icon and text */
+    margin-right: 4.8px;   /* space between icon and text */
 }
 
 #cart-count {
@@ -630,7 +617,7 @@ button:hover {
     display: flex;
     align-items: center;
     border-bottom: 1px solid blue;  /* underline style */
-    padding: 0.2rem 0;
+    padding: 3.2px 0;
 }
 
 .search-wrapper input {
@@ -639,13 +626,13 @@ button:hover {
     background: transparent;
     color: rgb(218, 72, 72);
     font-family: "Courier New", Courier, monospace;
-    font-size: 1.2rem;
-    padding-left: 0.3rem;  /* space after icon */
+    font-size: 19.2px;
+    padding-left: 4.8px;  /* space after icon */
     width: 100px;          /* adjust as needed */
 }
 
 .search-wrapper .search-icon {
-    margin-right: 0.3rem;
+    margin-right: 4.8px;
     width: 24px;    /* size of the magnifying glass */
     height: 24px;
 }
@@ -653,17 +640,17 @@ button:hover {
 .checkout-container ul {
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
+    margin: 16px 0;
 }
 
 .checkout-container li {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
 }
 
 .checkout-bottom {
-    margin-top: 2rem;
+    margin-top: 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -676,7 +663,7 @@ button:hover {
 .coin-wrapper {
     position: absolute;
     right: calc(50% - 605px); /* aligns with container edge */
-    top: 7.5rem;
+    top: 120px;
     pointer-events: none; /* prevents blocking clicks */
 }
 
@@ -696,7 +683,7 @@ button:hover {
 
 #checkout-total {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 19.2px;
 }
 
 #paypal-button-container {
@@ -722,8 +709,8 @@ button:hover {
 
 .color-options {
     display: flex;
-    gap: 0.24rem;
-    margin-bottom: -0.5rem;
+    gap: 3.84px;
+    margin-bottom: -8px;
 }
 
 .color-btn {
@@ -779,9 +766,9 @@ button:hover {
             linear-gradient(to right, #e5e5e5 1px, transparent 1px), /* vertical lines */
             linear-gradient(to bottom, #e5e5e5 1px, transparent 1px); /* horizontal lines */                    
         background-size:
-            100% 2.4rem, /* white top bar */
+            100% 38.4px, /* white top bar */
             calc(100% / 2) 100%, /* vertical lines */
-            100% 16.75rem; /* horizontal lines */
+            100% 268px; /* horizontal lines */
         background-position:
             0 0, /* white top bar */
             0 330px, /* vertical lines */
@@ -794,14 +781,14 @@ button:hover {
 
     .instagram-browser .container:not(.product-detail):not(.cart-page):not(.tos-page) {
         background-size:
-            100% 2.4rem, /* white top bar */
+            100% 38.4px, /* white top bar */
             calc(100% / 2) 100%, /* vertical lines */
-            100% 17.08rem;   /* slightly smaller */
+            100% 273.28px;   /* slightly smaller */
     }
 
     .shop-layout .container {
         padding: 0;
-        padding-top: 2.5rem;
+        padding-top: 40px;
         display: flex;
         flex-wrap: wrap;     /* allow multiple rows */
         justify-content: space-between; /* push items to edges */
@@ -809,13 +796,13 @@ button:hover {
 
     .container.tos-page {
         max-width: fit-content;
-        padding: 2rem;
+        padding: 32px;
     }
 
     .shop-layout .container .product {
-        flex: 0 0 calc(50% - 0.4rem);   /* 2 per row with middle gap */
+        flex: 0 0 calc(50% - 6.4px);   /* 2 per row with middle gap */
         margin: 0;
-        padding: 0.2rem;                /* optional padding inside product */
+        padding: 3.2px;                /* optional padding inside product */
     }
 
     .shop-layout .container .product img {
@@ -830,8 +817,8 @@ button:hover {
 
     .mod header h1 {
         margin-top: 0rem;
-        margin-bottom: -1.5rem;
-        font-size: 1.5rem;
+        margin-bottom: -24px;
+        font-size: 24px;
     }
 
     .desktop-search {
@@ -840,10 +827,10 @@ button:hover {
 
     .menu-toggle {
         display: block;
-        font-size: 2rem;
+        font-size: 32px;
         cursor: pointer;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-top: 32px;
+        margin-bottom: 32px;
 
         background: none;
         font-family: 'Courier New', Courier, monospace;
@@ -856,7 +843,7 @@ button:hover {
         align-items: center;
         width: 90%;
         max-width: 300px;
-        margin: 1rem auto;
+        margin: 16px auto;
     }
 
     .left-links {
@@ -871,8 +858,8 @@ button:hover {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        gap: 1rem;
-        padding-top: 1rem;
+        gap: 16px;
+        padding-top: 16px;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s ease;
@@ -886,7 +873,7 @@ button:hover {
 
     .left-links a {
         position: relative; /* ensure positioning works on mobile too */
-        font-size: 1rem;
+        font-size: 16px;
         color: rgb(218, 72, 72);
         text-decoration: none;
         font-weight: 800;
@@ -905,11 +892,11 @@ button:hover {
         justify-content: flex-start; /* icon left, input expands right */
         width: 90%;
         max-width: 250px;
-        margin: 2rem auto;
+        margin: 32px auto;
     }
 
     .mobile-page-indicator {
-        font-size: 1rem;
+        font-size: 16px;
         font-weight: 800;
         color: rgb(218, 72, 72);
         white-space: nowrap;
@@ -933,8 +920,8 @@ button:hover {
 
     .menu-close {
         position: absolute;   /* remove from normal flow */
-        right: -1.5rem;             /* stick to the right edge of header */
-        font-size: 2rem;
+        right: -24px;             /* stick to the right edge of header */
+        font-size: 32px;
         color: white;
         cursor: pointer;
         display: block;
@@ -944,8 +931,8 @@ button:hover {
     #mobile-search-form .search-wrapper input {
         color: rgb(218, 72, 72);
         font-family: "Courier New", monospace;
-        font-size: 0.9rem;
-        padding-left: 0.3rem;
+        font-size: 14.4px;
+        padding-left: 4.8px;
         width: 100%;
     }
 
@@ -960,7 +947,7 @@ button:hover {
 
     nav {
         margin-top: 0;
-        margin-bottom: -4rem;
+        margin-bottom: -64px;
         align-items: center;
         justify-content: space-between; /* KEY CHANGE */
         width: 90%;
@@ -1020,7 +1007,7 @@ button:hover {
         right: -6px;         /* adjust horizontally */
         background: rgb(218, 72, 72);     /* classic notification color */
         color: white;
-        font-size: 0.6rem;   /* small size */
+        font-size: 9.6px;   /* small size */
         font-weight: bold;
         width: 15px;
         height: 15px;
@@ -1037,9 +1024,9 @@ button:hover {
     .product-detail {
         display: flex;
         flex-direction: column; /* stack left-center-right vertically */
-        gap: 1rem;
+        gap: 16px;
         max-width: 100%;
-        margin: 1rem auto;
+        margin: 16px auto;
     }
 
     .product img.hover-img {
@@ -1074,7 +1061,7 @@ button:hover {
     }
 
     .thumbnails:has(img:nth-child(6)) img {
-        margin: 0.1rem;
+        margin: 0.16px;
     }
 
     .product-info-left {
@@ -1095,7 +1082,7 @@ button:hover {
 
     .mobile-copyright {
         display: block;
-        font-size: 0.75rem;
+        font-size: 12px;
         opacity: 0.5;
         color: rgb(218, 72, 72);
     }
