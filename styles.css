@@ -1,6 +1,5 @@
 html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
+    -webkit-text-size-adjust: none;
 }
 
 body {
@@ -347,6 +346,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-family: "Courier New", Courier, monospace;
 }
 
 button:hover {
