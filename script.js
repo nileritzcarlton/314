@@ -393,44 +393,9 @@ function addProductFromPageWithOptions() {
     document.getElementById("qty-value").textContent = "1";
 }
 
-function getFontScale() {
-    const test = document.createElement("div");
-    test.style.fontSize = "16px";
-    test.style.position = "absolute";
-    test.style.visibility = "hidden";
-    test.innerText = "M";
-    document.body.appendChild(test);
-    const rendered = test.getBoundingClientRect().height;
-    document.body.removeChild(test);
-    return rendered / 16;
-}
-
-function fixInstagramFontScalingTextOnly() {
-    const ua = navigator.userAgent;
-    const isInstagram = ua.includes("Instagram") || ua.includes("FBAN");
-
-    if (isInstagram) {
-        const scale = getFontScale();
-        const damping = 0.9; // tweak for perfect fit
-        const adjustedScale = 1 / scale * damping;
-
-        // wrap all text in a container
-        const textWrapper = document.createElement("div");
-        textWrapper.style.transform = `scale(${adjustedScale})`;
-        textWrapper.style.transformOrigin = "top left";
-        textWrapper.style.width = `${100 / adjustedScale}%`; // keep layout width correct
-        textWrapper.style.height = `${100 / adjustedScale}%`;
-
-        // move all body content into this wrapper
-        while (document.body.firstChild) {
-            textWrapper.appendChild(document.body.firstChild);
-        }
-        document.body.appendChild(textWrapper);
-
-        console.log(
-            `Instagram detected. System font scale: ${scale.toFixed(2)}, text scale applied: ${adjustedScale.toFixed(2)}`
-        );
+document.addEventListener("DOMContentLoaded", () => {
+    if (navigator.userAgent.includes("Instagram")) {
+        document.body.classList.add("instagram-browser");
+        console.log("Instagram browser detected: applying custom font sizes.");
     }
-}
-
-document.addEventListener("DOMContentLoaded", fixInstagramFontScalingTextOnly);
+});

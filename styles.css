@@ -1110,6 +1110,35 @@ button:hover {
         border-radius:6px;
         cursor:pointer;
     }
+
+    .instagram-browser h1 {
+    font-size: 2.0rem !important;    /* main page titles */
+    }
+    .instagram-browser h2 {
+        font-size: 1.6rem !important;    /* section headers */
+    }
+    .instagram-browser h3 {
+        font-size: 1.4rem !important;    /* product names */
+    }
+    .instagram-browser h4 {
+        font-size: 1.2rem !important;    /* subheaders */
+    }
+    .instagram-browser p {
+        font-size: 1rem !important;      /* body text */
+    }
+    .instagram-browser .price {
+        font-size: 1rem !important;      /* product price */
+    }
+    .instagram-browser .mobile-page-indicator {
+        font-size: 0.9rem !important;    /* top page indicator on mobile */
+    }
+    .instagram-browser nav a {
+        font-size: 1rem !important;      /* nav links */
+    }
+    .instagram-browser .left-links a,
+    .instagram-browser .right-links .brand-name {
+        font-size: 0.95rem !important;   /* sidebar and brand */
+    }
 }
 
 /* Extra small phones */
