@@ -7,7 +7,7 @@ html {
 body {
     -webkit-text-size-adjust: 100%;
     max-height: 1000000px;
-    
+
     font-family: "Courier New", Courier, monospace;
     background-color: #000000;
     margin: 0;
@@ -784,13 +784,6 @@ button:hover {
             no-repeat, /* white top bar */
             repeat, /* vertical lines */
             repeat, /* horizontal lines */
-    }
-
-    .instagram-browser .container:not(.product-detail):not(.cart-page):not(.tos-page) {
-        background-size:
-            100% 38.4px, /* white top bar */
-            calc(100% / 2) 100%, /* vertical lines */
-            100% 273.28px;   /* slightly smaller */
     }
 
     .shop-layout .container {

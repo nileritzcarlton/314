@@ -375,10 +375,8 @@ function addProductFromPageWithOptions() {
     const size = document.getElementById("size").value;
     const color = document.getElementById("selected-color").value;
 
-    // ✅ Dynamic product name from the page
     const name = document.querySelector(".product-info-left h2").textContent;
 
-    // ✅ Use the current main image src dynamically
     const image = document.getElementById("main-image").src;
 
     addToCart(
@@ -395,6 +393,32 @@ function addProductFromPageWithOptions() {
     document.getElementById("qty-value").textContent = "1";
 }
 
-if (navigator.userAgent.includes("Instagram")) {
-    document.body.classList.add("instagram-browser");
+function getFontScale() {
+    const test = document.createElement("div");
+    test.style.fontSize = "16px";
+    test.style.position = "absolute";
+    test.style.visibility = "hidden";
+    test.innerText = "M";
+    document.body.appendChild(test);
+    const rendered = test.getBoundingClientRect().height;
+    document.body.removeChild(test);
+    return rendered / 16;
 }
+
+/**
+ * Apply Instagram browser fix for Android/iOS
+ */
+function fixInstagramFontScaling() {
+    const ua = navigator.userAgent;
+    const isInstagram = ua.includes("Instagram") || ua.includes("FBAN");
+
+    if (isInstagram) {
+        const scale = getFontScale(); // system font size factor
+        // Apply inverse scaling to neutralize
+        document.documentElement.style.zoom = 1 / scale;
+        console.log(`Instagram detected. Font scale: ${scale.toFixed(2)} → zoom applied: ${ (1/scale).toFixed(2) }`);
+    }
+}
+
+// Run immediately after DOM content is ready
+document.addEventListener("DOMContentLoaded", fixInstagramFontScaling);
