@@ -1,13 +1,4 @@
-html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    font-size: 16px;
-}
-
 body {
-    -webkit-text-size-adjust: 100%;
-    max-height: 1000000px;
-
     font-family: "Courier New", Courier, monospace;
     background-color: #000000;
     margin: 0;
@@ -1087,6 +1078,7 @@ button:hover {
         color: rgb(218, 72, 72);
     }
 
+    .instagram-browser .left-links a,
     .instagram-browser body {
         font-size: calc(1em * var(--instagram-scale)) !important;
     }
