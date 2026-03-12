@@ -1087,12 +1087,7 @@ button:hover {
         color: rgb(218, 72, 72);
     }
 
-    .instagram-browser h1,
-    .instagram-browser a,
-    .instagram-browser p,
-    .instagram-browser nav a,
-    .instagram-browser .price,
-    .instagram-browser .left-links a {
+    .instagram-browser body {
         font-size: calc(1em * var(--instagram-scale)) !important;
     }
 }
