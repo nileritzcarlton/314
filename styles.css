@@ -1108,10 +1108,6 @@ button:hover {
         font-size: calc(1em * var(--instagram-scale)) !important;
     }
 
-    .instagram-browser #cart-link {
-        font-size: 0;
-    }
-
     .instagram-browser nav,
     .instagram-browser .menu-close,
     .instagram-browser .copyright,
@@ -1130,7 +1126,10 @@ button:hover {
     .instagram-browser #toast {
         font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
     }
-
+    
+    .instagram-browser #cart-link {
+        font-size: 0;
+    }
 }
 
 /* Extra small phones */
