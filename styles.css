@@ -1,3 +1,7 @@
+body, p, a, span, li, button, input {
+    font-size: 16px;
+}
+
 html {
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
