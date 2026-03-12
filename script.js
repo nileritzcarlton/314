@@ -396,6 +396,20 @@ function addProductFromPageWithOptions() {
 document.addEventListener("DOMContentLoaded", () => {
     if (navigator.userAgent.includes("Instagram")) {
         document.body.classList.add("instagram-browser");
-        console.log("Instagram browser detected: applying custom font sizes.");
+
+        // Detect the current computed font size of body
+        const bodyFontSize = parseFloat(
+            window.getComputedStyle(document.body).fontSize
+        );
+
+        // Instagram inflates text ~1.15x on Android by default
+        const scaleFactor = 1 / 1.15; // adjust down to normal size
+
+        // Apply a CSS variable to scale all fonts
+        document.documentElement.style.setProperty(
+            "--instagram-scale",
+            scaleFactor
+        );
+        console.log("Instagram font scale applied:", scaleFactor);
     }
 });
