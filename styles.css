@@ -19,7 +19,7 @@ header {
     top: 24px;
 }
 
-h2 {
+h1, h2 {
     --base-font: 24px;
 }
 
@@ -1117,15 +1117,15 @@ button:hover {
     }
 
     .instagram-browser nav,
+    .instagram-browser h1,
+    .instagram-browser h2,
+    .instagram-browser button,
     .instagram-browser .menu-close,
     .instagram-browser .copyright,
     .instagram-browser .price,
     .instagram-browser .back-arrow,
     .instagram-browser .welcome-content,
     .instagram-browser .menu-toggle,
-    .instagram-browser .mod header h1,
-    .instagram-browser h2,
-    .instagram-browser button,
     .instagram-browser .search-wrapper input,
     .instagram-browser .mobile-copyright,
     .instagram-browser #cart-link,
