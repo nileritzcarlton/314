@@ -1111,7 +1111,6 @@ button:hover {
     .instagram-browser .left-links a,
     .instagram-browser .price,
     .instagram-browser .mobile-page-indicator,
-    .instagram-browser #cart-total-container,
     .instagram-browser #mobile-page-indicator,
     .instagram-browser #cart-items {
         font-size: calc(1em * var(--instagram-scale)) !important;
