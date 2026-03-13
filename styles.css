@@ -616,6 +616,7 @@ button:hover {
 }
 
 #cart-count {
+    display: inline-block;
     color: rgb(255, 255, 255);
     font-family: "Courier New", Courier, monospace;
 }
@@ -1109,6 +1110,7 @@ button:hover {
     .instagram-browser .left-links a,
     .instagram-browser .price,
     .instagram-browser .mobile-page-indicator,
+    .instagram-browser .color-selector,
     .instagram-browser #mobile-page-indicator,
     .instagram-browser #cart-items {
         font-size: calc(1em * var(--instagram-scale)) !important;
