@@ -350,6 +350,8 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-family: "Courier New", Courier, monospace;
+    font-size: 13.33px;
+    --base-font: 13.33px;
 }
 
 button:hover {
@@ -393,7 +395,6 @@ button:hover {
     background: transparent;
     border: 1px solid #000;
     padding: 3.2px 9.6px;
-    font-size: 16px;
     cursor: pointer;
     color: #333;
 }
@@ -1100,19 +1101,15 @@ button:hover {
     }
 
     .instagram-browser header,
-    .instagram-browser h2,
     .instagram-browser a,
     .instagram-browser p,
     .instagram-browser nav,
     .instagram-browser nav a,
-    .instagram-browser button,
     .instagram-browser .size-selector,
     .instagram-browser .quantity-selector,
     .instagram-browser .left-links a,
-    .instagram-browser .addtocartbutton,
-    .instagram-browser .size-btn,
-    .instagram-browser .qty-btn,
     .instagram-browser .price,
+    .instagram-browser .mobile-page-indicator,
     .instagram-browser #cart-total-container,
     .instagram-browser #mobile-page-indicator,
     .instagram-browser #cart-items {
@@ -1128,6 +1125,7 @@ button:hover {
     .instagram-browser .menu-toggle,
     .instagram-browser .mod header h1,
     .instagram-browser h2,
+    .instagram-browser button,
     .instagram-browser .search-wrapper input,
     .instagram-browser .mobile-copyright,
     .instagram-browser #cart-link,
