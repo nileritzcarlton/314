@@ -1110,7 +1110,7 @@ button:hover {
     .instagram-browser .left-links a,
     .instagram-browser .price,
     .instagram-browser .mobile-page-indicator,
-    .instagram-browser .color-selector,
+    .instagram-browser .color-options,
     .instagram-browser #mobile-page-indicator,
     .instagram-browser #cart-items {
         font-size: calc(1em * var(--instagram-scale)) !important;
