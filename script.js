@@ -399,7 +399,6 @@ document.addEventListener("DOMContentLoaded", () => {
             window.getComputedStyle(document.body).fontSize
         );
 
-        // Suppose your design base is 16px
         const scaleFactor = 16 / bodyFontSize; // shrink or grow to match 16px
 
         document.body.classList.add("instagram-browser");
