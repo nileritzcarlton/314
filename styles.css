@@ -1019,13 +1019,16 @@ button:hover {
         right: -6px;         /* adjust horizontally */
         background: rgb(218, 72, 72);     /* classic notification color */
         color: white;
-        font-size: 9.6px;   /* small size */
-        --base-font: 9.6px;
         font-weight: bold;
         width: 15px;
         height: 15px;
         line-height: 17px;
         border-radius: 30%;
+    }
+
+    #cart-count {
+        font-size: 9.6px;   /* small size */
+        --base-font: 9.6px
     }
 
     #cart-count::before,
