@@ -400,9 +400,10 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         const scaleFactor = 16 / bodyFontSize; // shrink or grow to match 16px
+        const containerScale = scaleFactor / 3;
 
         document.body.classList.add("instagram-browser");
         document.documentElement.style.setProperty("--instagram-scale", scaleFactor);
-        console.log("Instagram text scale applied:", scaleFactor);
+        document.documentElement.style.setProperty("--instagram-scale-container", containerScale);
     }
 });
