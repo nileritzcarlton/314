@@ -1139,8 +1139,25 @@ button:hover {
         font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
     }
 
-    .instagram .container:not(.product-detail):not(.cart-page):not(.tos-page) {
-        background-size: 100% 38.4px, calc(100% / 2) 100%, 100% calc(268px * var(--instagram-scale)) !important;
+    .container:not(.product-detail):not(.cart-page):not(.tos-page) {
+        display: flex;
+        font-size: 0; /* prevent relative scaling */
+        background-image:
+            linear-gradient(#ffffff, #ffffff), /* white top bar */
+            linear-gradient(to right, #e5e5e5 1px, transparent 1px), /* vertical lines */
+            linear-gradient(to bottom, #e5e5e5 1px, transparent 1px); /* horizontal lines */                    
+        background-size:
+            100% 38.4px, /* white top bar */
+            calc(100% / 2) 100%, /* vertical lines */
+            100% calc(268px * var(--instagram-scale)) !important; /* horizontal lines */
+        background-position:
+            0 0, /* white top bar */
+            0 330px, /* vertical lines */
+            0 38px; /* horizontal lines */
+        background-repeat:
+            no-repeat, /* white top bar */
+            repeat, /* vertical lines */
+            repeat, /* horizontal lines */
     }
 }
 
