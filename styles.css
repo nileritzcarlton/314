@@ -783,7 +783,7 @@ button:hover {
         background-size:
             100% 38.4px, /* white top bar */
             calc(100% / 2) 100%, /* vertical lines */
-            100% 268px; /* horizontal lines */
+            100% 268dppx; /* horizontal lines */
         background-position:
             0 0, /* white top bar */
             0 330px, /* vertical lines */
