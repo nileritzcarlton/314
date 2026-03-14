@@ -1143,7 +1143,7 @@ button:hover {
         background-size: 
             100% 38.4px, /* white top bar */
             calc(100% / 2) 100%,                        /* vertical lines, unchanged */
-            100% calc(268px * var(--instagram-scale));  /* horizontal lines */
+            100% calc(268px * var(--instagram-scale)) !important;  /* horizontal lines */
     }
 }
 
