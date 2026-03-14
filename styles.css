@@ -1140,10 +1140,7 @@ button:hover {
     }
 
     .instagram .container:not(.product-detail):not(.cart-page):not(.tos-page) {
-        background-size: 
-            100% 38.4px, /* white top bar */
-            calc(100% / 2) 100%,                        /* vertical lines, unchanged */
-            100% calc(268px * var(--instagram-scale)) !important;  /* horizontal lines */
+        background-size: 100% 38.4px, calc(100% / 2) 100%, 100% calc(268px * var(--instagram-scale)) !important;
     }
 }
 
