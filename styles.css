@@ -1139,7 +1139,7 @@ button:hover {
         font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
     }
 
-    .container:not(.product-detail):not(.cart-page):not(.tos-page) {
+    .instagram-browser .container:not(.product-detail):not(.cart-page):not(.tos-page) {
         display: flex;
         font-size: 0; /* prevent relative scaling */
         background-image:
