@@ -1138,6 +1138,13 @@ button:hover {
     .instagram-browser #toast {
         font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
     }
+
+    .instagram .container:not(.product-detail):not(.cart-page):not(.tos-page) {
+        background-size: 
+            100% 38.4px, /* white top bar */
+            calc(100% / 2) 100%,                        /* vertical lines, unchanged */
+            100% calc(268px * var(--instagram-scale));  /* horizontal lines */
+    }
 }
 
 /* Extra small phones */
