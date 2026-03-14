@@ -776,6 +776,7 @@ button:hover {
 
     .container:not(.product-detail):not(.cart-page):not(.tos-page) {
         display: flex;
+        font-size: 0; /* prevent relative scaling */
         background-image:
             linear-gradient(#ffffff, #ffffff), /* white top bar */
             linear-gradient(to right, #e5e5e5 1px, transparent 1px), /* vertical lines */
@@ -783,7 +784,7 @@ button:hover {
         background-size:
             100% 38.4px, /* white top bar */
             calc(100% / 2) 100%, /* vertical lines */
-            100% 268dppx; /* horizontal lines */
+            100% 268px; /* horizontal lines */
         background-position:
             0 0, /* white top bar */
             0 330px, /* vertical lines */
@@ -792,10 +793,6 @@ button:hover {
             no-repeat, /* white top bar */
             repeat, /* vertical lines */
             repeat, /* horizontal lines */
-    }
-
-    .instagram-browser {
-        background-size: auto round; /* snaps repeating lines to integer pixels */
     }
 
     .shop-layout .container {
