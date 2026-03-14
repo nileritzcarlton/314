@@ -1018,8 +1018,7 @@ button:hover {
         position: absolute;
         top: -6px;           /* adjust vertically */
         right: -6px;         /* adjust horizontally */
-        --base-font: 9.6px;
-        font-size: var(--base-font);
+        font-size: 1.666rem;
         background: rgb(218, 72, 72);     /* classic notification color */
         color: white;
         font-weight: bold;
@@ -1102,40 +1101,8 @@ button:hover {
         color: rgb(218, 72, 72);
     }
 
-    .instagram-browser header,
-    .instagram-browser a,
-    .instagram-browser p,
-    .instagram-browser .size-selector,
-    .instagram-browser .quantity-selector,
-    .instagram-browser .left-links a,
-    .instagram-browser .price,
-    .instagram-browser .mobile-page-indicator,
-    .instagram-browser .color-options,
-    .instagram-browser #mobile-page-indicator,
-    .instagram-browser #cart-items {
-        font-size: calc(1em * var(--instagram-scale)) !important;
-    }
-
-    .instagram-browser nav,
-    .instagram-browser h1,
-    .instagram-browser h2,
-    .instagram-browser button,
-    .instagram-browser .menu-close,
-    .instagram-browser .copyright,
-    .instagram-browser .price,
-    .instagram-browser .back-arrow,
-    .instagram-browser .welcome-content,
-    .instagram-browser .menu-toggle,
-    .instagram-browser .search-wrapper input,
-    .instagram-browser .mobile-copyright,
-    .instagram-browser #mobile-search-form .search-wrapper input,
-    .instagram-browser #cart-link,
-    .instagram-browser #cart-count,
-    .instagram-browser #enter-text,
-    .instagram-browser #cart-items li div button,
-    .instagram-browser #checkout-total,
-    .instagram-browser #toast {
-        font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
+    .instagram-browser html {
+        font-size: calc(16px * var(--instagram-scale));
     }
 }
 
