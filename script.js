@@ -400,7 +400,9 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         const scaleFactor = 16 / bodyFontSize; // shrink or grow to match 16px
-        const containerScale = scaleFactor / 3;
+        
+        const strength = 0.8; // reduce scaling intensity
+        const containerScale = 1 + (scaleFactor - 1) * strength;
 
         document.body.classList.add("instagram-browser");
         document.documentElement.style.setProperty("--instagram-scale", scaleFactor);
