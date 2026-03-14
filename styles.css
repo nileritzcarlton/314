@@ -1137,6 +1137,11 @@ button:hover {
     .instagram-browser #toast {
         font-size: calc(var(--base-font) * var(--instagram-scale)) !important;
     }
+
+    .instagram-browser #cart-count {
+        transform: scale(var(--instagram-scale));
+        transform-origin: top right;
+    }
 }
 
 /* Extra small phones */
