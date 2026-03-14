@@ -776,7 +776,6 @@ button:hover {
 
     .container:not(.product-detail):not(.cart-page):not(.tos-page) {
         display: flex;
-        font-size: 0; /* prevent relative scaling */
         background-image:
             linear-gradient(#ffffff, #ffffff), /* white top bar */
             linear-gradient(to right, #e5e5e5 1px, transparent 1px), /* vertical lines */
@@ -1141,7 +1140,6 @@ button:hover {
 
     .instagram-browser .container:not(.product-detail):not(.cart-page):not(.tos-page) {
         display: flex;
-        font-size: 0; /* prevent relative scaling */
         background-image:
             linear-gradient(#ffffff, #ffffff), /* white top bar */
             linear-gradient(to right, #e5e5e5 1px, transparent 1px), /* vertical lines */
