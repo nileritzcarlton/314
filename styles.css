@@ -20,7 +20,7 @@ header {
 }
 
 h1, h2 {
-    --base-font: 24px;
+    font-size: 1.5rem;
 }
 
 #welcome-screen {
