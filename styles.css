@@ -1106,7 +1106,7 @@ button:hover {
     }
 
     .instagram-browser html {
-        font-size: calc(16px * var(--instagram-scale));
+        font-size: calc(16px * var(--instagram-scale)) !important;
     }
 }
 
