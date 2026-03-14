@@ -1159,7 +1159,7 @@ button:hover {
     }
 
     .instagram-browser .product h3 {
-        margin-bottom: calc(-8px * var(--instagram-scale-container)) !important;
+        margin-bottom: calc(-8px * var(--instagram-scale)) !important;
     }
 }
 
