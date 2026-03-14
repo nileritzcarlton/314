@@ -1018,7 +1018,6 @@ button:hover {
         position: absolute;
         top: -6px;           /* adjust vertically */
         right: -6px;         /* adjust horizontally */
-        font-size: 9.6px;   /* small size */
         --base-font: 9.6px;
         background: rgb(218, 72, 72);     /* classic notification color */
         color: white;
