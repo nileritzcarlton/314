@@ -810,7 +810,7 @@ button:hover {
     .shop-layout .container .product {
         flex: 0 0 calc(50% - 6.4px);   /* 2 per row with middle gap */
         margin: 0;
-        padding: 3.2px;                /* optional padding inside product */
+        padding: calc(3.2px * var(--instagram-scale-container));              /* optional padding inside product */
     }
 
     .shop-layout .container .product img {
