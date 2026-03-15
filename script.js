@@ -414,3 +414,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.setProperty("--instagram-scale-container", containerScale);
     }
 });
+
+document.body.insertAdjacentHTML(
+    "beforeend",
+    `<div style="position:fixed;bottom:10px;left:10px;background:black;color:lime;padding:10px;font-size:12px;z-index:9999">
+    bodyFontSize: ${bodyFontSize}<br>
+    scaleFactor: ${scaleFactor}<br>
+    containerScale: ${containerScale}
+    </div>`
+);
