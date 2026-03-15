@@ -764,7 +764,7 @@ button:hover {
 }
 
 /* ###################################################################################################### PHONE PHONE PHONE PHONE PHONE PHONE ############################################################################################################################################# */
-@media (max-width: 768px) {
+@media (max-width: 768px) or (max-height: 768px) {
     header {
         top: 0; /* reset for smaller screens */
     }
@@ -990,7 +990,7 @@ button:hover {
     }
 
     .nav-logo {
-        position: static;   /* flow with nav */
+        position: static;   /* flow with nav */ 
         left: 0rem;              /* reset offset */
         z-index: 2000;
     }
@@ -1018,7 +1018,7 @@ button:hover {
         position: absolute;
         top: -6px;           /* adjust vertically */
         right: -6px;         /* adjust horizontally */
-        --base-font: 9px;
+        --base-font: 11px;
         font-size: var(--base-font);
         background: rgb(218, 72, 72);     /* classic notification color */
         color: white;
@@ -1160,6 +1160,10 @@ button:hover {
 
     .instagram-browser .product h3 {
         margin-bottom: calc(-8px * var(--instagram-scale)) !important;
+    }
+
+    .instagram-browser #cart-count {
+        line-height: calc(17px * var(--instagram-scale)) !important;
     }
 }
 

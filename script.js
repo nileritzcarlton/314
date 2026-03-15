@@ -414,7 +414,3 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.setProperty("--instagram-scale-container", containerScale);
     }
 });
-
-if (screen.orientation && screen.orientation.lock) {
-  screen.orientation.lock('portrait');
-}
