@@ -404,6 +404,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const strength = 0.09; // reduce scaling intensity
         const containerScale = 1 + (scaleFactor - 1) * strength;
 
+        console.log("Instagram detected");
+        console.log("bodyFontSize:", bodyFontSize);
+        console.log("scaleFactor:", scaleFactor);
+        console.log("containerScale:", containerScale);
+
         document.body.classList.add("instagram-browser");
         document.documentElement.style.setProperty("--instagram-scale", scaleFactor);
         document.documentElement.style.setProperty("--instagram-scale-container", containerScale);
