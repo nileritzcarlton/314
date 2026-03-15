@@ -400,62 +400,17 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         const scaleFactor = 16 / bodyFontSize; // shrink or grow to match 16px
+
         const strength = 0.09; // reduce scaling intensity
         const containerScale = 1 + (scaleFactor - 1) * strength;
+
+        console.log("Instagram detected");
+        console.log("bodyFontSize:", bodyFontSize);
+        console.log("scaleFactor:", scaleFactor);
+        console.log("containerScale:", containerScale);
 
         document.body.classList.add("instagram-browser");
         document.documentElement.style.setProperty("--instagram-scale", scaleFactor);
         document.documentElement.style.setProperty("--instagram-scale-container", containerScale);
-
-        document.body.insertAdjacentHTML(
-            "beforeend",
-            `<div style="position:fixed;bottom:10px;left:10px;background:black;color:lime;padding:10px;font-size:12px;z-index:9999">
-            bodyFontSize: ${bodyFontSize}<br>
-            scaleFactor: ${scaleFactor}<br>
-            containerScale: ${containerScale}
-            </div>`
-        );
-
-        const selectors = [
-            "header",
-            "a",
-            "p",
-            ".size-selector",
-            ".quantity-selector",
-            ".left-links a",
-            ".price",
-            ".mobile-page-indicator",
-            ".color-options",
-            "#mobile-page-indicator",
-            "#cart-items",
-            "nav",
-            "h1",
-            "h2",
-            "button",
-            ".menu-close",
-            ".copyright",
-            ".back-arrow",
-            ".welcome-content",
-            ".menu-toggle",
-            ".search-wrapper input",
-            ".mobile-copyright",
-            "#cart-link",
-            "#cart-count",
-            "#enter-text",
-            "#cart-items li div button",
-            "#checkout-total",
-            "#toast"
-        ];
-
-        const debugDiv = document.getElementById("insta-debug");
-
-        selectors.forEach(sel => {
-            const elements = document.querySelectorAll(`.instagram-browser ${sel}`);
-            elements.forEach(el => {
-                const size = window.getComputedStyle(el).fontSize;
-                console.log(sel, el, size);
-                debugDiv.innerHTML += `${sel}: ${size}<br>`;
-            });
-        });
     }
 });
