@@ -421,5 +421,47 @@ document.addEventListener("DOMContentLoaded", () => {
             containerScale: ${containerScale}
             </div>`
         );
+
+        const selectors = [
+            "header",
+            "a",
+            "p",
+            ".size-selector",
+            ".quantity-selector",
+            ".left-links a",
+            ".price",
+            ".mobile-page-indicator",
+            ".color-options",
+            "#mobile-page-indicator",
+            "#cart-items",
+            "nav",
+            "h1",
+            "h2",
+            "button",
+            ".menu-close",
+            ".copyright",
+            ".back-arrow",
+            ".welcome-content",
+            ".menu-toggle",
+            ".search-wrapper input",
+            ".mobile-copyright",
+            "#cart-link",
+            "#cart-count",
+            "#enter-text",
+            "#cart-items li div button",
+            "#checkout-total",
+            "#toast"
+        ];
+
+        const debugDiv = document.getElementById("insta-debug");
+
+        selectors.forEach(sel => {
+            const elements = document.querySelectorAll(`.instagram-browser ${sel}`);
+            elements.forEach(el => {
+                const size = window.getComputedStyle(el).fontSize;
+                console.log(sel, el, size);
+                debugDiv.innerHTML += `${sel}: ${size}<br>`;
+            });
+        });
     }
 });
