@@ -25,7 +25,6 @@
 
         <div class="mobile-menu-header">
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <span class="mobile-page-indicator">Pants</span>
         </div>
 
         <a href="./index.html">Home</a>
@@ -66,9 +65,27 @@
     </div>
 
     <div class="container" style="display: flex; justify-content: center">
+        <button class="back-arrow" onclick="history.back()">
+            <span class="arrow-icon"> < </span>
+        </button>
+        <span class="mobile-page-indicator">Pants</span>
+
         Coming Soon
     </div>
-
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    // Filter only T-Shirts
+    const products = document.querySelectorAll(".container .product");
+    products.forEach(product => {
+        if (product.dataset.category !== "pants") {
+            product.style.display = "none";
+        }
+    });
+    updateProductGridRows();
+});
+</script>
+
 </body>
 </html>

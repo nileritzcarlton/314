@@ -25,7 +25,6 @@
 
         <div class="mobile-menu-header">
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <span class="mobile-page-indicator">Graphic T's</span>
         </div>
 
         <a href="./index.html">Home</a>
@@ -70,6 +69,7 @@
         <button class="back-arrow" onclick="history.back()">
             <span class="arrow-icon"> < </span>
         </button>
+        <span class="mobile-page-indicator">Graphic T's</span>
 
         <div class="product" data-name="Death Mask" data-price="30.00" data-image="products/images/FINISH10.png" data-category="tshirt">
             <a href="products/product1.html">
@@ -191,16 +191,17 @@
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    // Filter only T-Shirts
-    const products = document.querySelectorAll(".container .product");
-    products.forEach(product => {
-        if (product.dataset.category !== "tshirt") {
-            product.style.display = "none";
-        }
+    document.addEventListener("DOMContentLoaded", () => {
+        // Filter only T-Shirts
+        const products = document.querySelectorAll(".container .product");
+        products.forEach(product => {
+            if (product.dataset.category !== "tshirt") {
+                product.style.display = "none";
+            }
+        });
+        updateProductGridRows();
     });
-    updateProductGridRows();
-});
 </script>
+
 </body>
 </html>
