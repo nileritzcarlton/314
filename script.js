@@ -63,17 +63,20 @@ function updateCart() {
         // Product name on top
         const nameDiv = document.createElement("div");
         nameDiv.textContent = item.name;
-        nameDiv.style.fontWeight = "bold";
+        nameDiv.style.fontWeight = "bolder";
+        nameDiv.classList.add("cart-name")
         textDiv.appendChild(nameDiv);
 
         // Size line
         const sizeDiv = document.createElement("div");
         sizeDiv.textContent = `Size: ${item.size || "default"}`;
+        sizeDiv.classList.add("cart-size");
         textDiv.appendChild(sizeDiv);
         
         // Color line
         const colorDiv = document.createElement("div");
         colorDiv.textContent = `Colour: ${item.color || "default"}`;
+        colorDiv.classList.add("cart-color");
         textDiv.appendChild(colorDiv);
         // Quantity line with buttons
         const quantityDiv = document.createElement("div");
