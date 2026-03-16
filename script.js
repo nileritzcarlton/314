@@ -73,7 +73,7 @@ function updateCart() {
         
         // Color line
         const colorDiv = document.createElement("div");
-        colorDiv.textContent = `Color: ${item.color || "default"}`;
+        colorDiv.textContent = `Colour: ${item.color || "default"}`;
         textDiv.appendChild(colorDiv);
         // Quantity line with buttons
         const quantityDiv = document.createElement("div");
