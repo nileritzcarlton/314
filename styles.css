@@ -304,16 +304,20 @@ nav a:hover {
     font-weight: 800;
 }
 
+.left-links .mobile-social-icon {
+    display: none;
+}
+
 
 /* Right links panel */
 .right-links {
     position: absolute;
     height: 100%;
     right: calc(50% - 650px);  /* mirrors left-links */
-    top: 60px;
+    top: 55px;
     display: flex;
+    gap: 10px;
     flex-direction: column;
-    gap: 15px;
     align-items: center;        /* center items horizontally */
 }
 
@@ -334,7 +338,11 @@ nav a:hover {
 }
 
 .right-links a:nth-last-child(2) {
-    margin-top: 264px; /* adjust spacing as needed */
+    margin-top: 255px; /* adjust spacing as needed */
+}
+
+.right-links p {
+    margin: 0;
 }
 
 .shop-layout .container{
@@ -676,7 +684,7 @@ button:hover {
 .coin-wrapper {
     position: absolute;
     right: calc(50% - 605px); /* aligns with container edge */
-    top: 120px;
+    top: 131px;
     pointer-events: none; /* prevents blocking clicks */
 }
 
@@ -687,10 +695,17 @@ button:hover {
     transition: transform 0.1s linear;
 }
 
+#side-time {
+    font-size: 12px;
+    opacity: 0.8;
+    color:rgb(255, 255, 255);
+}
+
 .copyright {
     font-size: 12px;
     --base-font: 12px;
     margin-bottom: 6px;
+    padding-top: 10px;
     opacity: 0.7;
     color:rgb(218, 72, 72);
 }
@@ -903,6 +918,19 @@ button:hover {
         width: 90%;
         max-width: 250px;
         margin: 32px auto;
+    }
+
+    .left-links .mobile-social-icon {
+        display: block;
+        width: 30px;
+    }
+
+    .left-links a:nth-last-child(3) {
+        margin-top: 85px;
+    }
+
+    .left-links a:nth-last-child(4) {
+        margin-top: 85px;
     }
 
     .mobile-page-indicator {

@@ -414,3 +414,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.setProperty("--instagram-scale-container", containerScale);
     }
 });
+
+function updateSideTime() {
+    const options = { timeZone: 'Africa/Cairo', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const timeStr = new Intl.DateTimeFormat('en-GB', options).format(new Date());
+    document.getElementById('side-time').textContent = `CAI: ${timeStr}`;
+}
+setInterval(updateSideTime, 1000);
+updateSideTime();
