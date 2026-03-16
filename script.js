@@ -422,3 +422,20 @@ function updateSideTime() {
 }
 setInterval(updateSideTime, 1000);
 updateSideTime();
+
+function updateProductGridRows() {
+    const container = document.querySelector('.shop-layout .container');
+    if (!container) return;
+
+    const products = container.querySelectorAll('.product').length;
+
+    let perRow = 3;
+    if (window.innerWidth <= 768) perRow = 2;
+
+    const rows = Math.ceil(products / perRow);
+
+    container.style.setProperty('--rows', rows);
+}
+
+updateProductGridRows();
+window.addEventListener('resize', updateProductGridRows);
