@@ -1005,7 +1005,7 @@ button:hover {
         right: 0;
         width: 100vw; /* full screen width */
         top: 110px; /* move down */
-        height: 0.1px;
+        height: 0.4px;
         background: rgba(255, 255, 255);
     }
 
@@ -1017,7 +1017,7 @@ button:hover {
         right: 0;
         width: 100vw; /* full screen width */
         top: 45px; /* move down */
-        height: 0.1px;
+        height: 0.4px;
         background: rgb(255, 255, 255);
     }
 
