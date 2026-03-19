@@ -1118,8 +1118,12 @@ button:hover {
         text-align: center;
     } 
 
-    .product img.hover-img {
-        display: none;  /* hide the hover image entirely */
+    .product:hover img.hover-img {
+        opacity: 0 !important;
+    }
+
+    .product:hover img:not(.hover-img) {
+        opacity: 1 !important;
     }
 
     .product-info-left,

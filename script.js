@@ -427,18 +427,19 @@ setInterval(updateSideTime, 1000);
 updateSideTime();
 
 function updateProductGridRows() {
-    const container = document.querySelector('.shop-layout .container');
-    if (!container) return;
+    const containers = document.querySelectorAll('.shop-layout .container');
+    containers.forEach(container => {
+        const products = container.querySelectorAll('.product').length;
+        if (!products) return;
 
-    const products = container.querySelectorAll('.product').length;
+        let perRow = 3;
+        if (window.innerWidth <= 768) perRow = 2;
 
-    let perRow = 3;
-    if (window.innerWidth <= 768) perRow = 2;
-
-    const rows = Math.ceil(products / perRow);
-
-    container.style.setProperty('--rows', rows);
+        const rows = Math.ceil(products / perRow);
+        container.style.setProperty('--rows', rows);
+    });
 }
 
-updateProductGridRows();
+// Run after DOM fully loads
+window.addEventListener('DOMContentLoaded', updateProductGridRows);
 window.addEventListener('resize', updateProductGridRows);
