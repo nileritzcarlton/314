@@ -388,7 +388,6 @@ button:hover {
 }
 
 .quantity-selector {
-    margin-top: 24px;
     display: flex;
     align-items: center; /* <-- vertical alignment */
     gap: 9.6px;         /* adjust spacing as needed */
@@ -507,11 +506,13 @@ button:hover {
 .product-detail {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 32px;
-    align-items: center;
+    column-gap: 32px;  /* horizontal spacing */
+    row-gap: 16px;
     max-width: 1100px;
-    margin: 32px auto;
+    margin: 28px auto;
     position: relative;
+
+    height: 390px;
 }
 
 .back-arrow {
@@ -548,11 +549,39 @@ button:hover {
 }
 
 .product-info-left {
+    display: flex;              
+    flex-direction: column;      
+    justify-content: center;  
+
     text-align: right;
+    padding-top: 50px;
+}
+
+.product-info-right {
+    display: flex;                
+    flex-direction: column;      
+    justify-content: center;    
+    align-items: flex-start;
+    text-align: left;
+    padding-top: 50px;
+
+}
+
+.product-info-right .price{
+    margin: 0; /* remove top margin, keep bottom spacing */
+}
+
+.product-info-left h2 {
+    margin: 0; /* remove top margin, keep bottom spacing */
 }
 
 .product-image {
-    text-align: center;
+    display: flex;
+    flex-direction: column;  /* stack image + thumbnails */
+    justify-content: center;  /* center the whole stack in column */
+    align-items: center;      /* horizontal center */
+    height: 100%;
+    height: 280px;
 }
 
 .product a {
@@ -570,20 +599,15 @@ button:hover {
 
 #main-image {
     width: 320px;
-    margin-bottom: 8px;
 }
 
 .thumbnails {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 0rem;
+    margin-top: 16px;   /* space below image */
     flex-wrap: nowrap;     /* IMPORTANT: prevent wrapping */
     grid-column: 1 / -1;   /* span across all columns */
-}
-
-.thumbnails:has(img:nth-child(6)) {
-    margin-top: -32px;
 }
 
 .thumbnails img {
@@ -595,10 +619,6 @@ button:hover {
 
 .thumbnails img:hover {
     border-color: #000;
-}
-
-.product-info-right {
-    text-align: left;
 }
 
 .price {
@@ -761,7 +781,7 @@ button:hover {
 .color-options {
     display: flex;
     gap: 3.84px;
-    margin-bottom: -8px;
+    margin-bottom: 16px;
 }
 
 .color-btn {
@@ -1083,7 +1103,20 @@ button:hover {
         gap: 16px;
         max-width: 100%;
         margin: 16px auto;
+        row-gap: 48px;
+        
+        height: 100%;
     }
+
+    .product-info-right {
+        padding-top: 0px;
+    } 
+
+    .product-info-right .price {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    } 
 
     .product img.hover-img {
         display: none;  /* hide the hover image entirely */
