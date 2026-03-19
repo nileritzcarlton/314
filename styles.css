@@ -469,14 +469,24 @@ button:hover {
 .product {
     position: relative;
     display: inline-block;
-    overflow: hidden;
 }
 
+/* Main image */
+.product img:not(.hover-img) {
+    display: block;
+    width: 100%;       /* main image width */
+    height: auto;
+}
+
+/* Hover image */
 .product img.hover-img {
     position: absolute;
-    top: 19px;
-    left: 1.0625rem;
-    width: 88%;
+    top: 37%;
+    left: 50%;
+    width: 88%;        /* same as main image width */
+    height: auto;
+    transform: translate(-50%, -50%); /* centers on main image */
+    object-fit: contain;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
@@ -485,7 +495,7 @@ button:hover {
     opacity: 1;
 }
 
-.product:hover img.main-img {
+.product:hover img:not(.hover-img) {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
