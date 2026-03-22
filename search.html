@@ -68,6 +68,7 @@
         <button class="back-arrow" onclick="history.back()">
             <span class="arrow-icon"> < </span>
         </button>
+        <span id="search-query-display"></span> <!-- ← this will show the search text -->
         <!-- JS will populate matching products here -->
     </div>
     
@@ -103,6 +104,13 @@
     // Get search query from URL
     const params = new URLSearchParams(window.location.search);
     const query = params.get("q")?.toLowerCase() || "";
+    
+    const searchDisplay = document.getElementById("search-query-display");
+    if (query) {
+        searchDisplay.textContent = `"${query}"`;
+    } else {
+        searchDisplay.textContent = "All Products";
+    }
 
     const resultsContainer = document.getElementById("search-results");
 

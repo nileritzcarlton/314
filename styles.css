@@ -640,7 +640,16 @@ button:hover {
     color: rgb(0, 0, 0);
     white-space: nowrap;
 }
+#search-query-display {
+    position: absolute;
+    font-weight: 800;
+    top: 13px;
+    left: 50%;
+    transform: translateX(-50%);
 
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
+}
 .product-info-left {
     display: flex;              
     flex-direction: column;      
@@ -1274,7 +1283,7 @@ button:hover {
         color: rgb(218, 72, 72);
     }
 
-    h1, h2, h3, #cart-count, .back-arrow, .mobile-page-indicator {
+    h1, h2, h3, #cart-count, .back-arrow, .mobile-page-indicator, #search-query-display {
         -webkit-text-stroke: 0.3px currentColor;
     }
 
@@ -1305,7 +1314,7 @@ button:hover {
     .instagram-browser .price,
     .instagram-browser .mobile-page-indicator,
     .instagram-browser .color-options,
-    .instagram-browser #mobile-page-indicator,
+    .instagram-browser #search-query-display,
     .instagram-browser #cart-items {
         font-size: calc(16px * var(--instagram-scale)) !important;
     }
