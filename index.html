@@ -17,6 +17,9 @@
     <div class="tv-wrapper">
         <!-- Background image inside the TV screen -->
         <div class="tv-screen">
+            <div class="shutter top"></div>
+            <div class="shutter bottom"></div>
+
             <div class="welcome-content">
                 <div id="enter-text">
                     <span class="blink">></span> Enter the store
@@ -62,16 +65,27 @@
         setInterval(updateSideWeather, 10 * 60 * 1000); // update every 10 min
         */
         // ENTER STORE click
+        document.addEventListener("DOMContentLoaded", () => {
+            const enter = document.getElementById("enter-text");
+            const tvScreen = document.querySelector(".tv-screen");
 
-        document.getElementById("enter-text").addEventListener("click", () => {
-            window.location.href = "new.html";
-        });
+            if (!enter || !tvScreen) return; // prevent errors on other pages
 
-        // ENTER key support
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-                window.location.href = "new.html";
+            function closeTV() {
+                tvScreen.classList.add("close");
+
+                setTimeout(() => {
+                    window.location.href = "new.html";
+                }, 550); // was 700
             }
+
+            enter.addEventListener("click", closeTV);
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    closeTV();
+                }
+            });
         });
     </script>
 </body>
