@@ -86,7 +86,7 @@ h1, h2 {
     background: black;
     z-index: 5;
     transform: scaleY(0);
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .shutter.top {
@@ -99,7 +99,6 @@ h1, h2 {
     transform-origin: bottom;
 }
 
-/* Active closing animation */
 .tv-screen.close .shutter.top {
     transform: scaleY(1);
 }
@@ -114,15 +113,78 @@ h1, h2 {
     top: 50%;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 5px;
     background: white;
     transform: translateY(-50%);
-    animation: flash 0.2s ease-out;
+    
+    opacity: 0;
+    animation: line-flash 0.15s ease-out 0.3s forwards; /* delay = shutter time */
+    background: white;
+    box-shadow: 0 0 10px #fff, 0 0 30px #fff;
 }
 
-@keyframes flash {
-    from { opacity: 1; }
-    to { opacity: 0; }
+@keyframes line-flash {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.crt-flare {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+
+    background: radial-gradient(circle,
+        rgba(255,255,255,1) 0%,
+        rgba(255,255,255,0.8) 30%,
+        rgba(255,255,255,0.3) 60%,
+        transparent 80%
+    );
+
+    box-shadow:
+        0 0 20px #fff,
+        0 0 60px #fff,
+        0 0 120px rgba(255,255,255,0.8);
+
+    opacity: 0;
+    z-index: 9; /* above shutters but under UI if needed */
+    pointer-events: none;
+}
+
+.tv-screen.close .crt-flare {
+    animation: center-flare 0.35s ease-out 0.35s forwards;
+}
+
+@keyframes center-flare {
+    0% {
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 1;
+    }
+    40% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+}
+
+.tv-screen.close {
+    animation: final-collapse 0.2s ease-in 0.6s forwards;
+}
+.tv-screen.close::after {
+    z-index: 20; /* add this */
+}   
+@keyframes final-collapse {
+    to {
+        transform: scaleY(0);
+        opacity: 0;
+    }
 }
 
 .tv-screen::before {
@@ -131,7 +193,6 @@ h1, h2 {
     inset: 0;
 
     background:
-        /* scanlines */
         repeating-linear-gradient(
             rgba(0,0,0,0.15) 0px,
             rgba(0,0,0,0.15) 2px,
@@ -149,21 +210,6 @@ h1, h2 {
     z-index: 2;
 
     animation: crt-flicker 0.15s infinite;
-}
-
-.tv-screen::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: radial-gradient(
-        ellipse at center,
-        transparent 55%,
-        rgba(0,0,0,0.6) 100%
-    );
-
-    pointer-events: none;
-    z-index: 2;
 }
 
 @keyframes crt-flicker {
