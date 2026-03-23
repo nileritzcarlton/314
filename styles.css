@@ -133,25 +133,48 @@ h1, h2 {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     transform: translate(-50%, -50%) scale(0);
-    border-radius: 50%;
+    border-radius: 0;
 
-    background: radial-gradient(circle,
-        rgba(255,255,255,1) 0%,
-        rgba(255,255,255,0.8) 30%,
-        rgba(255,255,255,0.3) 60%,
-        transparent 80%
-    );
+    background:
+        /* vertical beam */
+        linear-gradient(to bottom,
+            transparent 0%,
+            rgba(255,255,255,0.8) 50%,
+            transparent 100%
+        ),
+        /* horizontal beam */
+        linear-gradient(to right,
+            transparent 0%,
+            rgba(255,255,255,0.8) 50%,
+            transparent 100%
+        ),
+        /* soft glow center */
+        radial-gradient(circle,
+            rgba(255,255,255,1) 0%,
+            rgba(255,255,255,0.4) 40%,
+            transparent 70%
+        );
 
-    box-shadow:
-        0 0 20px #fff,
-        0 0 60px #fff,
-        0 0 120px rgba(255,255,255,0.8);
+    background-repeat: no-repeat;
+    background-size:
+        4px 100%,   /* vertical line */
+        100% 4px,   /* horizontal line */
+        100% 100%;  /* glow */
 
+    background-position:
+        center,
+        center,
+        center;
+    filter:
+        drop-shadow(0 0 10px #fff)
+        drop-shadow(0 0 30px #fff)
+        drop-shadow(0 0 80px rgba(255,255,255,0.8));
+        
     opacity: 0;
-    z-index: 9; /* above shutters but under UI if needed */
+    z-index: 9;
     pointer-events: none;
 }
 
@@ -180,6 +203,7 @@ h1, h2 {
 .tv-screen.close::after {
     z-index: 20; /* add this */
 }   
+
 @keyframes final-collapse {
     to {
         transform: scaleY(0);
