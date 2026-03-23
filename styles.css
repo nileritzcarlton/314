@@ -150,12 +150,6 @@ h1, h2 {
             transparent 0%,
             rgba(255,255,255,0.8) 50%,
             transparent 100%
-        ),
-        /* soft glow center */
-        radial-gradient(circle,
-            rgba(255,255,255,1) 0%,
-            rgba(255,255,255,0.4) 40%,
-            transparent 70%
         );
 
     background-repeat: no-repeat;
@@ -170,9 +164,9 @@ h1, h2 {
         center;
     filter:
         drop-shadow(0 0 10px #fff)
-        drop-shadow(0 0 30px #fff)
-        drop-shadow(0 0 80px rgba(255,255,255,0.8));
-        
+        drop-shadow(0 0 30px #6d6d6d)
+        drop-shadow(0 0 80px rgba(51, 51, 51, 0.8));
+
     opacity: 0;
     z-index: 9;
     pointer-events: none;
