@@ -1301,6 +1301,10 @@ button:hover {
         color: rgb(218, 72, 72);
     }
 
+    .addtocartbutton {
+        align-self: center;
+    }
+
     h1, h2, h3, #cart-count, .back-arrow, .mobile-page-indicator, #search-query-display {
         -webkit-text-stroke: 0.3px currentColor;
     }
