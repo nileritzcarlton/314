@@ -33,7 +33,6 @@ h1, h2 {
     overflow: hidden;         /* no scroll */
 }
 
-/* TV container fills screen */
 .tv-wrapper {
     height: 100%;
     width: auto;
@@ -977,6 +976,48 @@ button:hover {
         justify-content: space-between; /* push items to edges */
     }
 
+    /* darkness */
+    /*
+    body, nav, header {
+        background-color: #62c5ff;
+    }
+    .container:not(.product-detail):not(.cart-page):not(.tos-page) {
+        background-image:
+            linear-gradient(#62c5ff, #62c5ff), 
+            linear-gradient(to right, rgb(255, 255, 255) 0.1px, transparent 1px), 
+            linear-gradient(to bottom, rgb(255, 255, 255) 0.1px, transparent 1px); 
+    }
+    .shop-layout .container:not(.product-detail):not(.cart-page) {
+        background-color: #62c5ff;
+        color: white;
+    }
+    .back-arrow {
+        color: rgb(255, 255, 255);
+    }
+    .mobile-page-indicator {
+        color: rgb(255, 255, 255);
+    }
+    .product h3 {
+        color: rgb(255, 255, 255);
+    }
+    h1 {
+        color: rgb(255, 255, 255);
+    } 
+    nav::before{
+        background: rgb(255, 255, 255) !important;
+    }
+    nav::after{
+        background: rgb(255, 255, 255) !important;
+    }
+    .shop-layout .container:not(.product-detail):not(.cart-page) p {
+        color: rgb(255, 255, 255) !important;
+    }
+    .menu-toggle {
+        color: wheat !important;
+    }
+    */
+    /*darkness */
+
     .container.tos-page {
         max-width: fit-content;
         padding: 32px;
@@ -989,7 +1030,7 @@ button:hover {
     }
 
     .shop-layout .container .product img {
-        width: 100%;
+        width: 90%;
     }
     
     .shop-layout {
@@ -1223,7 +1264,6 @@ button:hover {
         max-width: 100%;
         margin: 16px auto;
         row-gap: 48px;
-        
         height: 100%;
     }
 
