@@ -29,14 +29,14 @@ html {
 }
 
 @media (max-width: 1400px) {
-    html {
+    html:not(.index) {
         transform: scale(0.85);
         width: 100%;
     }
 }
 
 @media (max-width: 1300px) {
-    html {
+    html:not(.index) {
         transform: scale(0.82);
         width: 100%;
     }
