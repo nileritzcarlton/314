@@ -23,6 +23,25 @@ h1, h2 {
     --base-font: 24px;
 }
 
+html {
+    transform-origin: top center;
+    scrollbar-gutter: stable both-edges;
+}
+
+@media (max-width: 1400px) {
+    html {
+        transform: scale(0.85);
+        width: 100%;
+    }
+}
+
+@media (max-width: 1300px) {
+    html {
+        transform: scale(0.82);
+        width: 100%;
+    }
+}
+
 #welcome-screen {
     height: 100dvh;   /* dynamic visible height */
     width: 100vw;
@@ -370,6 +389,9 @@ nav a:hover {
 
 .shop-layout {
     display: flex;
+    max-width: 875px;
+    margin: 0 auto;
+    width: 100%;
     justify-content: center;  /* keep container centered */
     position: relative;       /* for left-links positioning */
     gap: 10px;                /* space between links and container */
@@ -381,8 +403,9 @@ nav a:hover {
     position: absolute;
     height: 100%;
 
-    left: calc(50% - 700px);  /* adjust: shift a bit to left of container center */
+    left: calc(50% - 700px);
     top: 60px;                 /* align to top of container */
+
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -424,7 +447,7 @@ nav a:hover {
 .right-links {
     position: absolute;
     height: 100%;
-    right: calc(50% - 650px);  /* mirrors left-links */
+    right: calc(50% - 650px);
     top: 55px;
     display: flex;
     gap: 10px;
@@ -942,6 +965,11 @@ button:hover {
 @media (max-width: 768px) or (max-height: 768px) {
     header {
         top: 0; /* reset for smaller screens */
+    }
+
+    html {
+        transform: scale(1);
+        width: 100%;
     }
 
     body.menu-open {
