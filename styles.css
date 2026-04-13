@@ -286,7 +286,7 @@ nav {
 .nav-logo {
     position: absolute;  /* pull logo to left */
     left: -448px;          /* spacing from left edge */
-    top: -5.5rem
+    top: -88px;
 }
 
 .nav-logo img {
@@ -486,7 +486,7 @@ button:hover {
     border: 1px solid #333;
     background: #fff;
     color: #333;
-    padding: 6.4px 0.70rem;
+    padding: 6.4px 11px;
     margin-right: 5.28px;
     cursor: pointer;
     border-radius: 4px;
@@ -1157,7 +1157,7 @@ button:hover {
     #mobile-search-form {
         max-width: 175px;     /* or whatever size you want */
         display: flex;
-        margin-top: 6rem;
+        margin-top: 96px;
         justify-content: center; /* centers the input inside the form */
     }
 
