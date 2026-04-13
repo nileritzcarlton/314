@@ -967,7 +967,7 @@ button:hover {
         top: 0; /* reset for smaller screens */
     }
 
-    html {
+    html:not(.index) {
         transform: scale(1);
         width: 100%;
     }
