@@ -278,8 +278,8 @@ html:not(.index) {
 }
 
 #enter-text {
-    font-size: 24px;
     --base-font: 24px;
+    font-size: clamp(20px, 2.5vw, var(--base-font));
     cursor: pointer;
     transform: translateX(-10px);
 }
