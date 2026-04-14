@@ -279,9 +279,23 @@ html:not(.index) {
 
 #enter-text {
     --base-font: 24px;
-    font-size: clamp(20px, 2.5vw, var(--base-font));
+    font-size: clamp(18px, 2.5vw, var(--base-font));
     cursor: pointer;
-    transform: translateX(-10px);
+
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+
+#enter-text .text {
+    position: relative;
+}
+
+#enter-text .arrow {
+    position: absolute;
+    left: calc(50% - 5em - 1ch); 
+    transform: translateX(-100%);
 }
 
 #enter-text:hover {
