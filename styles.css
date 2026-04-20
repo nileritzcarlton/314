@@ -285,7 +285,7 @@ html:not(.index) {
     position: relative;
     text-align: center;
     width: 100%;
-    color: rgb(255, 244, 183);
+    color: rgb(255, 255, 255);
 
     /* Glow effect */
     text-shadow: 
