@@ -1403,7 +1403,7 @@ button:hover {
         align-self: center;
     }
 
-    h1, h2, h3, #cart-count, .back-arrow, .mobile-page-indicator, #search-query-display {
+    body.modd p, h1, h2, h3, #cart-count, .back-arrow, .mobile-page-indicator, #search-query-display {
         -webkit-text-stroke: 0.3px currentColor;
     }
 
