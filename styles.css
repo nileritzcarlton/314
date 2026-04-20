@@ -82,7 +82,7 @@ html:not(.index) {
     width: 83%;    /* % of stretched TV width */
     height: 78%;   /* % of stretched TV height */
 
-    background-image: url("products/images/f2adec8c-b9f0-401c-971c-80892042744e.jpeg");
+    background-image: url("products/images/f2adec8c-b9f0-401c-971c-80892042744e.png");
     background-size: cover;
     background-position: center;
 
@@ -285,6 +285,7 @@ html:not(.index) {
     position: relative;
     text-align: center;
     width: 100%;
+    color: rgb(255, 244, 183);
 }
 
 
