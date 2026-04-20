@@ -294,7 +294,7 @@ html:not(.index) {
 
 #enter-text .arrow {
     position: absolute;
-    left: calc(50% - 5em - 1ch); 
+    left: calc(50% - 7rem - 1ch); 
     transform: translateX(-100%);
 }
 
@@ -989,6 +989,12 @@ button:hover {
         height: 100vh; /* ensures body doesn’t grow */  
     }
 
+    #enter-text .arrow {
+        position: absolute;
+        left: calc(50% - 5.5rem - 1ch); 
+        transform: translateX(-100%);
+    }
+
     .container:not(.product-detail):not(.cart-page):not(.tos-page) {
         display: flex;
         background-image:
@@ -1227,7 +1233,8 @@ button:hover {
     }
 
     .right-links {
-        display: none;
+        display:
+         none;
     }
 
     nav {
