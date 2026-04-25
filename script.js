@@ -460,20 +460,27 @@ window.addEventListener('resize', updateProductGridRows);
 
 async function updatePricesByCountry() {
     try {
-        // check cache first
-        const cached = localStorage.getItem("userCountry");
+
+        const CACHE_TIME = 15 * 60 * 1000; // 15 minutes in ms
+        const cachedData = JSON.parse(localStorage.getItem("userCountry") || "null");
 
         let country;
 
-        if (cached) {
-            country = cached;
+        if (cachedData && (Date.now() - cachedData.timestamp < CACHE_TIME)) {
+            // use cached value if still fresh
+            country = cachedData.country;
         } else {
+            // fetch new country
             const res = await fetch("https://ipapi.co/json/");
             const data = await res.json();
+
             country = data.country_code;
 
-            // store it
-            localStorage.setItem("userCountry", country);
+            // store with timestamp
+            localStorage.setItem("userCountry", JSON.stringify({
+                country,
+                timestamp: Date.now()
+            }));
         }
 
         let price = "€30.00";
