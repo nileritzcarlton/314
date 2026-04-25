@@ -13,12 +13,15 @@ function addToCart(name, price, image, size = null, quantity = 1, color = null) 
             item.color === color
     );
     
+    // Adjust the price when adding the item to the cart (apply the multiplier)
+    price = price
+
     if (existingItem) {
         existingItem.quantity += quantity;
     } else {
         cart.push({
             name,
-            price,
+            price,   // Price adjusted with multiplier
             size,
             color,
             quantity,
@@ -42,6 +45,7 @@ function updateCart() {
     let sum = 0;
 
     const sizeOrder = { "S": 1, "M": 2, "L": 3, "XL": 4, "XXL": 5 };
+
     // Group by product name, then size
     const grouped = [...cart].sort((a, b) => {
         // Sort by name first
@@ -52,7 +56,7 @@ function updateCart() {
         const aSize = sizeOrder[a.size] || 0;
         const bSize = sizeOrder[b.size] || 0;
         return aSize - bSize;
-    })
+    });
 
     grouped.forEach((item, index) => {
         const li = document.createElement("li");
@@ -83,6 +87,7 @@ function updateCart() {
         colorDiv.textContent = `Colour: ${item.color || "default"}`;
         colorDiv.classList.add("cart-color");
         textDiv.appendChild(colorDiv);
+
         // Quantity line with buttons
         const quantityDiv = document.createElement("div");
 
@@ -122,10 +127,12 @@ function updateCart() {
         };
 
         const qtySpan = document.createElement("span");
+        const subtotal = (item.price * item.quantity * currentCurrency.multiplier).toFixed(2);
+
         if (isMobile) {
-            qtySpan.textContent = `${item.quantity} - €${(item.price * item.quantity).toFixed(2)}`;
+            qtySpan.textContent = `${item.quantity} - ${currentCurrency.symbol}${subtotal}`;
         } else {
-            qtySpan.textContent = `Quantity: ${item.quantity} - €${(item.price * item.quantity).toFixed(2)}`;
+            qtySpan.textContent = `Quantity: ${item.quantity} - ${currentCurrency.symbol}${subtotal}`;
         }
         qtySpan.style.margin = "0 0.5rem";
 
@@ -157,10 +164,11 @@ function updateCart() {
         li.appendChild(removeBtn);
         list.appendChild(li);
 
-        sum += item.price * item.quantity;
+        // Add to sum (total price in selected currency)
+        sum += item.price * item.quantity * currentCurrency.multiplier;
     });
 
-    if (total) total.textContent = sum.toFixed(2);
+    if (total) total.textContent = `${currentCurrency.symbol}${sum.toFixed(2)}`;
 
     updateCartCount(); // at the end of updateCart
 }
@@ -328,7 +336,6 @@ if (window.paypal) {
         },
 
         createOrder: async function () {
-
             const res = await fetch("/api/paypal/create-order", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -340,7 +347,6 @@ if (window.paypal) {
         },
 
         onApprove: async function (data) {
-
             const res = await fetch("/api/paypal/capture-order", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -426,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function updateSideTime() {
     const el = document.getElementById('side-time');
     if (!el) return; // 👈 prevents crash
-    
+
     const options = { timeZone: 'Africa/Cairo', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
     const timeStr = new Intl.DateTimeFormat('en-GB', options).format(new Date());
     document.getElementById('side-time').textContent = `CAI: ${timeStr}`;
@@ -454,10 +460,21 @@ window.addEventListener('resize', updateProductGridRows);
 
 async function updatePricesByCountry() {
     try {
-        const res = await fetch("https://ipapi.co/json/");
-        const data = await res.json();
+        // check cache first
+        const cached = localStorage.getItem("userCountry");
 
-        const country = data.country_code;
+        let country;
+
+        if (cached) {
+            country = cached;
+        } else {
+            const res = await fetch("https://ipapi.co/json/");
+            const data = await res.json();
+            country = data.country_code;
+
+            // store it
+            localStorage.setItem("userCountry", country);
+        }
 
         let price = "€30.00";
         currentCurrency = { symbol: "€", multiplier: 1 };
@@ -470,19 +487,15 @@ async function updatePricesByCountry() {
             currentCurrency = { symbol: "£", multiplier: 1 };
         } else if (country === "US") {
             price = "$35.00";
-            currentCurrency = { symbol: "$", multiplier: 1 };
+            currentCurrency = { symbol: "$", multiplier: 1.16666666 };
         }
 
-        document.querySelectorAll(".product p").forEach(p => {
-            p.textContent = price;
-        });
-
-        document.querySelectorAll(".price").forEach(p => {
+        document.querySelectorAll(".product p, .price").forEach(p => {
             p.textContent = price;
         });
 
     } catch (err) {
-        console.error(err);
+        console.error("Currency update failed:", err);
     }
 }
 
