@@ -487,17 +487,17 @@ async function updatePricesByCountry() {
         }
 
         let price = "€30.00";
-        currentCurrency = { symbol: "€", multiplier: 1 };
+        currentCurrency = { symbol: "€", multiplier: 1, code: "eur" };
 
         if (country === "CH") {
             price = "CHF 30.00";
-            currentCurrency = { symbol: "CHF ", multiplier: 1 };
+            currentCurrency = { symbol: "CHF ", multiplier: 1, "ch" };
         } else if (country === "GB") {
             price = "£30.00";
-            currentCurrency = { symbol: "£", multiplier: 1 };
+            currentCurrency = { symbol: "£", multiplier: 1, "gbp" };
         } else if (country === "US") {
             price = "$35.00";
-            currentCurrency = { symbol: "$", multiplier: 1.16666666 };
+            currentCurrency = { symbol: "$", multiplier: 1.16666666, "usd" };
         }
 
         document.querySelectorAll(".product p, .price").forEach(p => {
