@@ -12,16 +12,13 @@ function addToCart(name, price, image, size = null, quantity = 1, color = null) 
             item.size === size &&
             item.color === color
     );
-    
-    // Adjust the price when adding the item to the cart (apply the multiplier)
-    price = price
 
     if (existingItem) {
         existingItem.quantity += quantity;
     } else {
         cart.push({
             name,
-            price,   // Price adjusted with multiplier
+            price, 
             size,
             color,
             quantity,
