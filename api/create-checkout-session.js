@@ -23,7 +23,7 @@ export default async function handler(req, res) {
                 // ensures Stripe never complains about < €0.50
                 return {
                     price_data: {
-                        currency: "eur",
+                        currency: "gbp",
                         product_data: { name: item.name },
                         unit_amount: unitAmountCents,
                     },
