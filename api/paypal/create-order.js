@@ -21,12 +21,10 @@ export default async function handler(req, res) {
     }
 
     const total = items.reduce((sum, item) => {
-      const price =
-        currency === "usd"
-          ? item.price * 1.16666666
-          : item.price;
-
-      return sum + price * item.quantity;
+      if (currency == "usd") {
+          item.price = item.price * 1.16666666
+      }
+      sum + item.price * item.quantity
     }, 0);
 
     const request = new paypal.orders.OrdersCreateRequest();
