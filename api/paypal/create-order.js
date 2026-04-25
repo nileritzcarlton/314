@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       purchase_units: [
         {
           amount: {
-            currency_code: currency.toUpperCase(),
+            currency_code: "EUR",
             value: total.toFixed(2),
           },
         },
