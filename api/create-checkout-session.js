@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 
             line_items: items.map(item => {
                 if (currency == "usd") {
-                    item.price = item.price * 1.666666
+                    item.price = item.price * 1.16666666
                 }
                 const unitAmountCents = Math.max(50, Math.round(item.price * 100)); 
                 // ensures Stripe never complains about < €0.50
