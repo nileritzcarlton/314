@@ -17,8 +17,15 @@ export default async function handler(req, res) {
   try {
     const { items } = req.body;
 
+    const FX = {
+      usd: 1.16666666,
+      eur: 1,
+    };
+
+    const rate = FX[currency] ?? 1;
+
     const total = items.reduce(
-      (sum, item) => sum + item.price * item.quantity,
+      (sum, item) => sum + (item.price * rate) * item.quantity,
       0
     );
 
@@ -30,7 +37,7 @@ export default async function handler(req, res) {
       purchase_units: [
         {
           amount: {
-            currency_code: "EUR",
+            currency_code: currency.toUpperCase(),
             value: total.toFixed(2),
           },
         },
