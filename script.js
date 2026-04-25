@@ -494,7 +494,7 @@ async function updatePricesByCountry() {
             currentCurrency = { symbol: "£", multiplier: 1, code: "gbp" };
         } else if (country === "US") {
             price = "$35.00";
-            currentCurrency = { symbol: "$", multiplier: 1.16666666, code: "usd" };
+            currentCurrency = { symbol: "$", multiplier: 1.16666666, code: "USD" };
         }
 
         document.querySelectorAll(".product p, .price").forEach(p => {

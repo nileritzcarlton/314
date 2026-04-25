@@ -37,7 +37,11 @@ export default async function handler(req, res) {
       ],
     });
 
+    cconsole.log("PayPal request sent:", request.requestBody);
+
     const order = await client.execute(request);
+
+    console.log("PayPal response:", order.result);
 
     res.status(200).json({ id: order.result.id });
 
