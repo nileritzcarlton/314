@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const { items } = req.body;
+        const { items, currency = "eur" } = req.body;
 
         const origin = req.headers.origin || `https://${req.headers.host}`;
 
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
                 // ensures Stripe never complains about < €0.50
                 return {
                     price_data: {
-                        currency: "gbp",
+                        currency: currency.toLowerCase(),
                         product_data: { name: item.name },
                         unit_amount: unitAmountCents,
                     },
