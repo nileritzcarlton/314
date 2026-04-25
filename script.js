@@ -1,3 +1,8 @@
+let currentCurrency = {
+    symbol: "€",
+    multiplier: 1
+};
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function addToCart(name, price, image, size = null, quantity = 1, color = null) {
@@ -7,7 +12,7 @@ function addToCart(name, price, image, size = null, quantity = 1, color = null) 
             item.size === size &&
             item.color === color
     );
-
+    
     if (existingItem) {
         existingItem.quantity += quantity;
     } else {
@@ -419,6 +424,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function updateSideTime() {
+    const el = document.getElementById('side-time');
+    if (!el) return; // 👈 prevents crash
+    
     const options = { timeZone: 'Africa/Cairo', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
     const timeStr = new Intl.DateTimeFormat('en-GB', options).format(new Date());
     document.getElementById('side-time').textContent = `CAI: ${timeStr}`;
@@ -443,3 +451,39 @@ function updateProductGridRows() {
 // Run after DOM fully loads
 window.addEventListener('DOMContentLoaded', updateProductGridRows);
 window.addEventListener('resize', updateProductGridRows);
+
+async function updatePricesByCountry() {
+    try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+
+        const country = data.country_code;
+
+        let price = "€30.00";
+        currentCurrency = { symbol: "€", multiplier: 1 };
+
+        if (country === "CH") {
+            price = "CHF 30.00";
+            currentCurrency = { symbol: "CHF ", multiplier: 1 };
+        } else if (country === "GB") {
+            price = "£30.00";
+            currentCurrency = { symbol: "£", multiplier: 1 };
+        } else if (country === "US") {
+            price = "$35.00";
+            currentCurrency = { symbol: "$", multiplier: 1 };
+        }
+
+        document.querySelectorAll(".product p").forEach(p => {
+            p.textContent = price;
+        });
+
+        document.querySelectorAll(".price").forEach(p => {
+            p.textContent = price;
+        });
+
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+updatePricesByCountry();
