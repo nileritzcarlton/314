@@ -17,15 +17,8 @@ export default async function handler(req, res) {
   try {
     const { items } = req.body;
 
-    const FX = {
-      usd: 1.16666666,
-      eur: 1,
-    };
-
-    const rate = FX[currency] ?? 1;
-
     const total = items.reduce(
-      (sum, item) => sum + (item.price * rate) * item.quantity,
+      (sum, item) => sum + item.price * item.quantity,
       0
     );
 
