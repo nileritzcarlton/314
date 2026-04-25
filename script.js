@@ -491,13 +491,13 @@ async function updatePricesByCountry() {
 
         if (country === "CH") {
             price = "CHF 30.00";
-            currentCurrency = { symbol: "CHF ", multiplier: 1, "ch" };
+            currentCurrency = { symbol: "CHF ", multiplier: 1, code: "ch" };
         } else if (country === "GB") {
             price = "£30.00";
-            currentCurrency = { symbol: "£", multiplier: 1, "gbp" };
+            currentCurrency = { symbol: "£", multiplier: 1, code: "gbp" };
         } else if (country === "US") {
             price = "$35.00";
-            currentCurrency = { symbol: "$", multiplier: 1.16666666, "usd" };
+            currentCurrency = { symbol: "$", multiplier: 1.16666666, code: "usd" };
         }
 
         document.querySelectorAll(".product p, .price").forEach(p => {
