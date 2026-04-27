@@ -30,18 +30,14 @@ export default async function handler(req, res) {
       purchase_units: [
         {
           amount: {
-            currency_code: (currency || "EUR").toUpperCase(),
+            currency_code: "EUR",
             value: total.toFixed(2),  
           },
         },
       ],
     });
 
-    cconsole.log("PayPal request sent:", request.requestBody);
-
     const order = await client.execute(request);
-
-    console.log("PayPal response:", order.result);
 
     res.status(200).json({ id: order.result.id });
 
