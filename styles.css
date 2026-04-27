@@ -349,7 +349,7 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
-.container:not(.product-detail):not(.cart-page):not(.tos-page) {
+.container:not(.product-detail):not(.cart-page):not(.tos-page):not(.success) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
