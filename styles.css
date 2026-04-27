@@ -82,7 +82,7 @@ html:not(.index) {
     width: 83%;    /* % of stretched TV width */
     height: 78%;   /* % of stretched TV height */
 
-    background-image: url("products/images/28_nilevalley-66.png");
+    background-image: url("products/images/cairo-egypt-pyramid-city-wallpaper-3980f82d81daed1ba6c728ef10e1e66d.jpg");
     background-size: cover;
     background-position: center;
 
@@ -289,9 +289,9 @@ html:not(.index) {
 
     /* Glow effect */
     text-shadow: 
-        0 0 5px rgba(255, 255, 255, 0.9),
-        0 0 10px rgba(255, 255, 255, 0.8),
-        0 0 20px rgba(255, 255, 255, 0.7);
+        0 0 5px rgba(0, 0, 0, 0.9),
+        0 0 10px rgba(0, 0, 0, 0.9),
+        0 0 20px rgba(0, 0, 0, 0.9);
 }
 
 #enter-text .text {
@@ -1000,7 +1000,7 @@ button:hover {
     }
 
     .tv-screen {
-        background-position: 7% 50%; 
+        background-position: 50% 50%; 
     }
 
     #enter-text .arrow {
