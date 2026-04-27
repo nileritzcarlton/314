@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { items } = req.body;
+    const { items, currency } = req.body;
 
     const total = items.reduce(
       (sum, item) => sum + item.price * item.quantity,
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       purchase_units: [
         {
           amount: {
-            currency_code: (currency || "EUR").toUpperCase(),
+            currency_code: "EUR",
             value: total.toFixed(2),  
           },
         },
