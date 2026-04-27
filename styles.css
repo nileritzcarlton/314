@@ -995,6 +995,10 @@ button:hover {
         height: 100vh; /* ensures body doesn’t grow */  
     }
 
+    body.menu-open .nav-logo img {
+        content: url("products/images/CAT.png");
+    }
+
     .tv-screen {
         background-position: 7% 50%; 
     }
@@ -1025,6 +1029,9 @@ button:hover {
             repeat, /* horizontal lines */
     }
 
+    .container {
+        box-shadow: 0 0px 30px rgb(33, 33, 33);
+    }
     .shop-layout .container {
         padding: 0;
         padding-top: 40px;
@@ -1033,17 +1040,18 @@ button:hover {
         justify-content: space-between; /* push items to edges */
     }
 
-    /* darkness */
-    /*
     body, header {
-        background-color: #62c5ff;
+        background-color: #ffffff;
     }
-    .container:not(.product-detail):not(.cart-page):not(.tos-page) {
-        background-image:
-            linear-gradient(#ffffff, #ffffff), 
-            linear-gradient(to right, rgb(255, 255, 255) 0.1px, transparent 1px), 
-            linear-gradient(to bottom, rgb(255, 255, 255) 0.1px, transparent 1px);
+
+    .nav-logo img {
+        content: url("products/images/CAT-2.png");
     }
+
+    #cart-link img {
+        content: url("products/images/shopping-cart-free-5-svgrepo-com-2.svg");
+    }
+
     .shop-layout .container:not(.product-detail):not(.cart-page) {
         background-color: #ffffff;
         color: white;
@@ -1054,28 +1062,16 @@ button:hover {
     .mobile-page-indicator {
         color: rgb(0, 0, 0);    
     }
-    .product h3 {
-        color: black;
-    }
 
     nav::before{
-        background: rgb(255, 255, 255) !important;
+        background: #ffffff !important;
     }
     nav::after{
-        background: rgb(255, 255, 255) !important;
+        background: #ffffff !important;
     }
     .shop-layout .container:not(.product-detail):not(.cart-page) p {
         color: rgb(78, 78, 78) !important;
     }
-    .menu-toggle {
-        color: wheat !important;
-    }
-    #cart-count {
-        color: #000 !important;
-        background: wheat !important;  
-    }
-    */
-    /* darkness */
 
     .container.tos-page {
         max-width: fit-content;
@@ -1386,6 +1382,7 @@ button:hover {
     }
 
     .product-info-left {
+        margin-top: -40px;
         text-align: center;
     }
 
