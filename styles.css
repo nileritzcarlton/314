@@ -1009,7 +1009,7 @@ button:hover {
         transform: translateX(-100%);
     }
 
-    .container:not(.product-detail):not(.cart-page):not(.tos-page) {
+    .container:not(.product-detail):not(.cart-page):not(.tos-page):not(.success) {
         display: flex;
         background-image:
             linear-gradient(#ffffff, #ffffff), /* white top bar */
