@@ -430,7 +430,7 @@ function loadPayPalButtons() {
     const script = document.createElement("script");
     script.id = "paypal-sdk";
 
-    script.src = `https://www.paypal.com/sdk/js?client-id=AUczAwUBbRJ1tAIW8NOkKf1YSQ4ewlGJLOLLQgf_0MQQRIFydtKvNbYz3nyefSRyqpisGfMK3FUqLrAx&currency=${currentCurrency.code.toUpperCase()}`;
+    script.src = `https://www.paypal.com/sdk/js?client-id=ARDrWjNutimEpqY4mzcJ68VFbOWexBhw9mK1QXcS4rGfe3TS891E-VJVMksu_9lrjBFWt01Oi3I23b1i&currency=${currentCurrency.code.toUpperCase()}`;
 
     script.onload = () => {
         paypal.Buttons({
