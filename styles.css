@@ -516,7 +516,7 @@ button {
 }
 
 button:hover {
-    background-color: #005bb5;
+    background-color: #51dfff;
 }
 
 .size-selector {
@@ -1032,6 +1032,7 @@ button:hover {
     .container {
         box-shadow: 0 0px 30px rgb(33, 33, 33);
     }
+
     .shop-layout .container {
         padding: 0;
         padding-top: 40px;
@@ -1044,6 +1045,12 @@ button:hover {
         background-color: #ffffff;
     }
 
+    h1 {
+        color: #000;
+        position: relative;
+        top: 10px;
+    }
+
     .nav-logo img {
         content: url("products/images/CAT-2.png");
     }
@@ -1054,7 +1061,6 @@ button:hover {
 
     .shop-layout .container:not(.product-detail):not(.cart-page) {
         background-color: #ffffff;
-        color: white;
     }
     .back-arrow {
         color: rgb(0, 0, 0);
