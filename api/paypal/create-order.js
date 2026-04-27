@@ -17,9 +17,12 @@ export default async function handler(req, res) {
   try {
     const { items, currency} = req.body;
 
-    if (currency == "USD") {
-      conversionRate = 1.16666666
+    let conversionRate = 1;
+
+    if (currency === "USD") {
+      conversionRate = 1.16666666;
     }
+    
     const total = items.reduce(
       (sum, item) => sum + (item.price * conversionRate) * item.quantity,
       0
