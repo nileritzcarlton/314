@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).send("Method Not Allowed");
   }
-  
+
   try {
     const { items, currency } = req.body;
 
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       purchase_units: [
         {
           amount: {
-            currency_code: (currency || "GBP").toUpperCase(),
+            currency_code: currency,
             value: total.toFixed(2),  
           },
         },
