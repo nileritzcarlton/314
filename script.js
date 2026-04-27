@@ -2,6 +2,7 @@ let currentCurrency = {
     symbol: "€",
     multiplier: 1
 };
+const MAX_ITEM_QTY = 5;
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -117,10 +118,15 @@ function updateCart() {
         plusBtn.style.marginLeft  = isMobile ? "0" : "0.3rem";
 
         plusBtn.onclick = () => {
+            if (item.quantity >= MAX_ITEM_QTY) {
+                showToast(`Max quantity is ${MAX_ITEM_QTY}`);
+                return;
+            }
+
             item.quantity += 1;
             localStorage.setItem("cart", JSON.stringify(cart));
             updateCart();
-            updateCartCount(); // at the end of updateCart
+            updateCartCount();
         };
 
         const qtySpan = document.createElement("span");
@@ -193,6 +199,12 @@ let currentQty = 1;
 
 function changeQty(amount) {
     currentQty = Math.max(1, currentQty + amount);
+
+    if (currentQty > MAX_ITEM_QTY) {
+        currentQty = MAX_ITEM_QTY;
+        showToast(`Max quantity is ${MAX_ITEM_QTY}`);
+    }
+
     document.getElementById("qty-value").textContent = currentQty;
 }
 
