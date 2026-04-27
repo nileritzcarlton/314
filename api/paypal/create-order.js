@@ -15,10 +15,11 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { items, currency, multiplier } = req.body;
+    const { items, currency} = req.body;
 
-    const conversionRate = multiplier || 1;
-
+    if (currency == "USD") {
+      conversionRate = 1.16666666
+    }
     const total = items.reduce(
       (sum, item) => sum + (item.price * conversionRate) * item.quantity,
       0

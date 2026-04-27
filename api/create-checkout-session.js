@@ -19,7 +19,7 @@ export default async function handler(req, res) {
             mode: "payment",
 
             line_items: items.map(item => {
-                if (currency == "usd") {
+                if (currency == "USD") {
                     item.price = item.price * 1.16666666
                 }
                 const unitAmountCents = Math.max(50, Math.round(item.price * 100)); 
