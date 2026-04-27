@@ -15,10 +15,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { items, currency } = req.body;
+    const { items, currency, multiplier } = req.body;
+
+    const conversionRate = multiplier || 1;
 
     const total = items.reduce(
-      (sum, item) => sum + item.price * item.quantity,
+      (sum, item) => sum + (item.price * conversionRate) * item.quantity,
       0
     );
 

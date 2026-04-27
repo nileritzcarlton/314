@@ -305,7 +305,8 @@ async function checkout() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
             items: cart,
-            currency: currentCurrency.code
+            currency: currentCurrency.code,
+            multiplier: currentCurrency.multiplier
         })
     });
 
