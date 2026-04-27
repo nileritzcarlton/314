@@ -6,14 +6,6 @@
     <title>Cart - YHAGA Store</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="products/images/favicon-32x32.png">
-    <script>
-        const currency = getCurrency();
-
-        const script = document.createElement("script");
-        script.src = `https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=${currency}`;
-        script.onload = () => initPayPalButtons(currency);
-        document.head.appendChild(script);
-    </script>
     <script src="script.js" defer></script>
 </head>
 

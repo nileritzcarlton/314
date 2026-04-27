@@ -458,6 +458,63 @@ function updateProductGridRows() {
 window.addEventListener('DOMContentLoaded', updateProductGridRows);
 window.addEventListener('resize', updateProductGridRows);
 
+function loadPayPalButtons() {
+    if (!currentCurrency.code) return;
+
+    const existingScript = document.getElementById("paypal-sdk");
+    if (existingScript) existingScript.remove();
+
+    const script = document.createElement("script");
+    script.id = "paypal-sdk";
+
+    script.src = `https://www.paypal.com/sdk/js?client-id=AUczAwUBbRJ1tAIW8NOkKf1YSQ4ewlGJLOLLQgf_0MQQRIFydtKvNbYz3nyefSRyqpisGfMK3FUqLrAx&currency=${currentCurrency.code.toUpperCase()}`;
+
+    script.onload = () => {
+        paypal.Buttons({
+            style: {
+                layout: "horizontal",
+                color: "silver",
+                shape: "rect",
+                label: "pay",
+                height: 30,
+                tagline: false
+            },
+
+            createOrder: async function () {
+                const res = await fetch("/api/paypal/create-order", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        items: cart,
+                        currency: currentCurrency.code
+                    })
+                });
+
+                const data = await res.json();
+                return data.id;
+            },
+
+            onApprove: async function (data) {
+                const res = await fetch("/api/paypal/capture-order", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        orderID: data.orderID
+                    })
+                });
+
+                await res.json();
+
+                clearCart();
+                window.location.href = "/success.html";
+            }
+
+        }).render("#paypal-button-container");
+    };
+
+    document.head.appendChild(script);
+}
+
 async function updatePricesByCountry() {
     try {
 
@@ -484,24 +541,26 @@ async function updatePricesByCountry() {
         }
 
         let price = "€30.00";
-        currentCurrency = { symbol: "€", multiplier: 1, code: "eur" };
+        currentCurrency = { symbol: "€", multiplier: 1, code: "EUR" };
 
         if (country === "CH") {
             price = "CHF 30.00";
-            currentCurrency = { symbol: "CHF ", multiplier: 1, code: "ch" };
+            currentCurrency = { symbol: "CHF ", multiplier: 1, code: "CHF" };
         } else if (country === "GB") {
             price = "£30.00";
-            currentCurrency = { symbol: "£", multiplier: 1, code: "gbp" };
+            currentCurrency = { symbol: "£", multiplier: 1, code: "GBP" };
         } else if (country === "US") {
             price = "$35.00";
-            currentCurrency = { symbol: "$", multiplier: 1.16666666, code: "usd" };
+            currentCurrency = { symbol: "$", multiplier: 1.16666666, code: "USD" };
         }
 
         document.querySelectorAll(".product p, .price").forEach(p => {
             p.textContent = price;
         });
+        
+        loadPayPalButtons();
 
-    } catch (err) {
+    } catch (err) { 
         console.error("Currency update failed:", err);
     }
 }
