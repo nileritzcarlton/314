@@ -324,44 +324,6 @@ function clearCart() {
     updateCartCount(); // you already have this
 }
 
-if (window.paypal) {
-    paypal.Buttons({
-        style: {
-            layout: "horizontal",
-            color: "silver",
-            shape: "rect",
-            label: "pay",
-            height: 30,
-            tagline: false
-        },
-
-        createOrder: async function () {
-            const res = await fetch("/api/paypal/create-order", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ items: cart })
-            });
-
-            const data = await res.json();
-            return data.id;
-        },
-
-        onApprove: async function (data) {
-            const res = await fetch("/api/paypal/capture-order", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ orderID: data.orderID })
-            });
-
-            const details = await res.json();
-
-            clearCart();
-            window.location.href = "/success.html";
-        }
-
-    }).render("#paypal-button-container");
-}
-
 const coin = document.getElementById("scroll-coin");
 
 window.addEventListener("scroll", () => {
@@ -557,7 +519,7 @@ async function updatePricesByCountry() {
         document.querySelectorAll(".product p, .price").forEach(p => {
             p.textContent = price;
         });
-        
+
         loadPayPalButtons();
 
     } catch (err) { 
