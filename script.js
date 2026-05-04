@@ -1,3 +1,7 @@
+const OUT_OF_STOCK_PRODUCTS = [
+    "Abu Simbel"
+];
+
 let currentCurrency = {
     symbol: "€",
     multiplier: 1
@@ -209,10 +213,15 @@ function changeQty(amount) {
 }
 
 function addProductFromPage(name, price, image) {
+
+    if (OUT_OF_STOCK_PRODUCTS.includes(name)) {
+        showToast("Out of stock");
+        return;
+    }
+
     const size = document.getElementById("size")?.value || null;
     addToCart(name, price, image, size, currentQty);
 
-    // reset qty after adding
     currentQty = 1;
     document.getElementById("qty-value").textContent = "1";
 }
@@ -541,3 +550,43 @@ async function updatePricesByCountry() {
 }
 
 updatePricesByCountry();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const name = document.querySelector(".product-info-left h2").textContent;
+
+    if (OUT_OF_STOCK_PRODUCTS.includes(name)) {
+        const btn = document.querySelector(".addtocartbutton");
+
+        btn.disabled = true;
+        btn.textContent = "Out of Stock";
+        btn.style.opacity = "0.5";
+        btn.style.cursor = "not-allowed";
+
+        document.getElementById("qty-value").textContent = "0";
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const name = document.querySelector(".product-info-left h2").textContent;
+
+    if (OUT_OF_STOCK_PRODUCTS.includes(name)) {
+        const btn = document.querySelector(".addtocartbutton");
+        const minusBtn = document.querySelector(".qty-btn[onclick='changeQty(-1)']");
+        const plusBtn = document.querySelector(".qty-btn[onclick='changeQty(1)']");
+        const qtyValue = document.getElementById("qty-value");
+
+        // disable add to cart
+        btn.disabled = true;
+        btn.textContent = "Out of Stock";
+        btn.style.opacity = "0.5";
+        btn.style.cursor = "not-allowed";
+
+        // disable qty buttons
+        if (minusBtn) minusBtn.disabled = true;
+        if (plusBtn) plusBtn.disabled = true;
+
+        // set quantity display
+        qtyValue.textContent = "0";
+        currentQty = 0;
+    }
+});
