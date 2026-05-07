@@ -321,9 +321,9 @@ nav {
 }
 
 .nav-logo {
-    position: absolute;  /* pull logo to left */
-    left: -448px;          /* spacing from left edge */
-    top: -88px;
+    position: fixed;  /* pull logo to left */
+    left: calc(50% - 681px);
+    top: 48px;
 }
 
 .nav-logo img {
@@ -418,11 +418,10 @@ nav a:hover {
 
 /* Left links */
 .left-links {
-    position: absolute;
+    position: fixed;
     height: 100%;
-
     left: calc(50% - 700px);
-    top: 60px;                 /* align to top of container */
+    top: 251px;                 /* align to top of container */
 
     display: flex;
     flex-direction: column;
@@ -436,9 +435,19 @@ nav a:hover {
     font-weight: 800;
 }
 
-.left-links a:nth-last-child(3) {
-    margin-top: 210px;
+.left-links p {
+    text-decoration: none;
+    font-size: 12px;
+    opacity: 0.7;
+    color:rgb(218, 72, 72);
 }
+
+.left-links a:nth-last-child(3) {
+    margin-top: 75px;
+}
+.left-links a:nth-last-child(4) {
+    margin-top: 75px;
+ }
 
 .left-links a:hover {
     color: #712b2b;
@@ -457,29 +466,29 @@ nav a:hover {
 }
 
 .left-links .mobile-social-icon {
-    display: none;
+    width: 30px;
 }
-
+.left-links a:hover .mobile-social-icon {
+    filter: brightness(0.7); /* darkens icon on hover */
+}
+.left-links p {
+    margin: 0;
+}
 
 /* Right links panel */
 .right-links {
-    position: absolute;
+    position: fixed;
     height: 100%;
-    right: calc(50% - 650px);
-    top: 55px;
+    right: calc(50% - 619px);
+    top: 246px;
     display: flex;
     gap: 10px;
     flex-direction: column;
     align-items: center;        /* center items horizontally */
 }
 
-.right-links a:hover .social-icon {
-    filter: brightness(0.7); /* darkens icon on hover */
-}
-
-.right-links .social-icon {
-    width: 60px;    /* adjust icon size */
-    height: 60px;
+.right-links p {
+    margin: 0;
 }
 
 .right-links .brand-name {
@@ -489,12 +498,9 @@ nav a:hover {
     color: white;
 }
 
-.right-links a:nth-last-child(2) {
-    margin-top: 255px; /* adjust spacing as needed */
-}
-
-.right-links p {
-    margin: 0;
+.brand-svg {
+    width: 100px;
+    margin-top: -6px; /* pulls it slightly closer */
 }
 
 .shop-layout .container{
@@ -906,9 +912,9 @@ button:hover {
 }
 
 .coin-wrapper {
-    position: absolute;
+    position: fixed;
     right: calc(50% - 605px); /* aligns with container edge */
-    top: 131px;
+    top: 365px;
     pointer-events: none; /* prevents blocking clicks */
 }
 
@@ -980,7 +986,7 @@ button:hover {
 }
 
 .mobile-copyright {
-    display: none;
+    display: block;
 }
 
 /* For Chrome, Edge, and Safari */
