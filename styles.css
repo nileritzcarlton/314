@@ -989,25 +989,6 @@ button:hover {
     display: block;
 }
 
-/* For Chrome, Edge, and Safari */
-::-webkit-scrollbar {
-    width: 20px; /* width of the scrollbar */
-}
-
-::-webkit-scrollbar-track {
-    background: #000000; /* track (behind the thumb) */
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #983737; /* thumb color */
-    border-radius: 20px;
-    border: 3px solid #000000; /* padding around thumb */
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #712b2b; /* thumb on hover */
-}
-
 /* ###################################################################################################### PHONE PHONE PHONE PHONE PHONE PHONE ############################################################################################################################################# */
 @media (max-width: 768px) or (max-height: 768px) {
     header {
