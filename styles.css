@@ -765,6 +765,10 @@ button:hover {
     margin: 0; /* remove top margin, keep bottom spacing */
 }
 
+.product-info-left p {
+    font-size: 14px;
+}
+
 .product-image {
     display: flex;
     flex-direction: column;  /* stack image + thumbnails */
@@ -785,6 +789,13 @@ button:hover {
 .product h3 {
     margin: 16px 0; /* optional spacing tweak */
     margin-bottom: -8px;   /* smaller space under name */
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.product p {
+    color: blue;
+    font-size: 16px;
 }
 
 #main-image {
@@ -1085,9 +1096,6 @@ button:hover {
     nav::after{
         background: #ffffff !important;
     }
-    .shop-layout .container:not(.product-detail):not(.cart-page) p {
-        color: rgb(78, 78, 78) !important;
-    }
 
     .container.tos-page {
         max-width: fit-content;
@@ -1110,13 +1118,18 @@ button:hover {
         padding-right: 0;
     }
 
+    header {
+        padding-bottom: 5px;
+    }
+
     .mod header h1 {
         margin-top: 0rem;
-        margin-bottom: -28px;
+        margin-bottom: -70px;
         font-size: 24px;
         --base-font: 24px;
         visibility: hidden;
     }
+    
     .modd h1 {
         margin-top: 0rem;
         margin-bottom: -28px;
@@ -1231,7 +1244,8 @@ button:hover {
 
     .menu-close {
         position: absolute;   /* remove from normal flow */
-        right: -24px;             /* stick to the right edge of header */
+        right: -46px;             /* stick to the right edge of header */
+        top: -12px;
         font-size: 32px;
         --base-font: 32px;
         color: white;
@@ -1399,6 +1413,8 @@ button:hover {
 
     .product-info-left {
         margin-top: -40px;
+        margin-left: 20px;
+        margin-right: 20px;
         text-align: center;
     }
 
@@ -1422,6 +1438,15 @@ button:hover {
         color: rgb(218, 72, 72);
     }
 
+    .mobile-copyright-bottom {
+        display: block;
+        font-size: 12px;
+        --base-font: 12px;
+        text-align: center;
+        margin-top: -10px;    
+        color: rgb(0, 0, 0);
+    }
+
     .addtocartbutton {
         align-self: center;
     }
@@ -1443,9 +1468,16 @@ button:hover {
         --base-font: 17px;
     }
 
+    .product h3 {
+        font-size: 14px;
+        --base-font: 14px;
+        
+    }
+
     .product p {
-        font-size: 15px;
-        --base-font: 15px;
+        font-size: 14px;
+        --base-font: 14px;
+        color: blue !important;
     }
 
     .instagram-browser header,
