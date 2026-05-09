@@ -767,6 +767,7 @@ button:hover {
 
 .product-info-left p {
     font-size: 14px;
+    --base-font: 14px;
 }
 
 .product-image {
@@ -1471,7 +1472,6 @@ button:hover {
     .product h3 {
         font-size: 14px;
         --base-font: 14px;
-        
     }
 
     .product p {
@@ -1500,6 +1500,7 @@ button:hover {
     .instagram-browser h3,
     .instagram-browser button,
     .instagram-browser .product p,
+    .instagram-browser .product-info-left p
     .instagram-browser .menu-close,
     .instagram-browser .copyright,
     .instagram-browser .price,
