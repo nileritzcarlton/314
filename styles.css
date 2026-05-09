@@ -1480,6 +1480,10 @@ button:hover {
         color: blue !important;
     }
 
+    .container.cart-page {
+        margin-bottom: 35px;
+    }
+
     .instagram-browser header,
     .instagram-browser a,
     .instagram-browser p,
