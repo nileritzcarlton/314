@@ -309,15 +309,15 @@ html:not(.index) {
 }
 
 nav {
-    font-size: 24px;
-    --base-font: 24px;
+    font-size: 16px;
+    --base-font: 16px;
     display: flex;
     align-items: center;
     justify-content: center; /* center the nav items */
     position: relative;      /* for positioning the logo */
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     margin-top: 16px;
-    gap: 64px;   /* THIS handles spacing properly */
+    gap: 48px;   /* THIS handles spacing properly */
 }
 
 .nav-logo {
@@ -349,6 +349,56 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
+
+#search-form {
+    margin-right: auto;      /* push search to the left */
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid blue;
+    padding: 3.2px 0;
+}
+
+.search-wrapper input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: rgb(218, 72, 72);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    --base-font: 12px;
+    padding-left: 4.8px;  /* space after icon */
+    width: 70px;          /* adjust as needed */
+}
+
+.search-wrapper .search-icon {
+    margin-right: 4.8px;
+    width: 20px;    /* size of the magnifying glass */
+    height: auto;
+}
+
+#cart-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4.8px;
+}
+
+#cart-icon {
+    width: 20px;      /* adjust size */
+    height: auto;
+    color: white;
+    vertical-align: middle;
+    margin-right: 4.8px;   /* space between icon and text */
+}
+
+#cart-count {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-family: "Courier New", Courier, monospace;
+}
+
 .container:not(.product-detail):not(.cart-page):not(.tos-page):not(.success) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -412,8 +462,7 @@ nav a:hover {
     width: 100%;
     justify-content: center;  /* keep container centered */
     position: relative;       /* for left-links positioning */
-    gap: 10px;                /* space between links and container */
-    padding: 20px;
+    padding: 16px;
 }
 
 /* Left links */
@@ -421,7 +470,7 @@ nav a:hover {
     position: fixed;
     height: 100%;
     left: calc(50% - 700px);
-    top: 251px;                 /* align to top of container */
+    top: 225px;                 /* align to top of container */
 
     display: flex;
     flex-direction: column;
@@ -690,7 +739,7 @@ button:hover {
     column-gap: 32px;  /* horizontal spacing */
     row-gap: 16px;
     max-width: 1100px;
-    margin: 28px auto;
+    margin: 16px auto;
     position: relative;
 
     height: 390px;
@@ -797,6 +846,7 @@ button:hover {
 .product p {
     color: blue;
     font-size: 16px;
+    font-weight: 900;
 }
 
 #main-image {
@@ -849,55 +899,6 @@ button:hover {
 #toast.show {
     opacity: 1;
     transform: translateY(0);
-}
-
-#cart-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4.8px;
-}
-
-#cart-icon {
-    width: 30px;      /* adjust size */
-    height: 30px;
-    color: white;
-    vertical-align: middle;
-    margin-right: 4.8px;   /* space between icon and text */
-}
-
-#cart-count {
-    display: inline-block;
-    color: rgb(255, 255, 255);
-    font-family: "Courier New", Courier, monospace;
-}
-
-#search-form {
-    margin-right: auto;      /* push search to the left */
-}
-
-.search-wrapper {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid blue;  /* underline style */
-    padding: 3.2px 0;
-}
-
-.search-wrapper input {
-    border: none;
-    outline: none;
-    background: transparent;
-    color: rgb(218, 72, 72);
-    font-family: "Courier New", Courier, monospace;
-    font-size: 19.2px;
-    --base-font: 19.2px;
-    padding-left: 4.8px;  /* space after icon */
-    width: 100px;          /* adjust as needed */
-}
-
-.search-wrapper .search-icon {
-    margin-right: 4.8px;
-    width: 24px;    /* size of the magnifying glass */
-    height: 24px;
 }
 
 .checkout-container ul {
@@ -1079,6 +1080,11 @@ button:hover {
 
     #cart-link img {
         content: url("products/images/shopping-cart-free-5-svgrepo-com-2.svg");
+    }
+
+    #cart-icon {
+        width: 30px;      /* adjust size */
+        height: auto;
     }
 
     .shop-layout .container:not(.product-detail):not(.cart-page) {
