@@ -422,6 +422,12 @@ nav a:hover {
     
     padding-top: 48px;
 }
+
+.container.cart-page {
+    max-width: 875px;
+    margin-top: 0px;
+}
+
 .container {
     position: relative;
     max-width: 900px;
@@ -1450,15 +1456,21 @@ button:hover {
         font-size: 12px;
         --base-font: 12px;
         text-align: center;
-        margin-top: -10px;    
+        margin-top: -10px;
         color: rgb(0, 0, 0);
+    }
+
+    .mobile-brand-svg {
+        width: 100px;
+        display: block;
+        margin: -8px auto 16px;
     }
 
     .addtocartbutton {
         align-self: center;
     }
 
-    body.modd p, h1, h2, h3, #cart-count, .back-arrow, .mobile-page-indicator, #search-query-display {
+    body.modd, .mod, p, h1, h2, h3, #cart-count, .back-arrow, .mobile-page-indicator, #search-query-display {
         -webkit-text-stroke: 0.3px currentColor;
     }
 
