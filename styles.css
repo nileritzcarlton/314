@@ -405,18 +405,22 @@ nav a:hover {
 
     background-image:
         linear-gradient(#ffffff, #ffffff), /* white top bar */
+        linear-gradient(#ffffff, #ffffff), /* white bottom bar */   
         linear-gradient(to right, #e5e5e5 1px, transparent 1px), /* vertical lines */ 
-        linear-gradient(to bottom, #e5e5e5 1px, transparent 1px); /* horizontal lines */                    
+        linear-gradient(to bottom, #e5e5e5 1px, transparent 1px); /* horizontal lines */                
     background-size:
         100% 40px, /* white top bar */
+        100% 40px, /* white bottom bar */
         calc(100% / 3) 100%, /* vertical lines */
         100% 345px; /* horizontal lines */
     background-position:
         0 0, /* white top bar */
+        0 calc(41px + (345px * var(--rows))),
         0 330px, /* vertical lines */ 
         0 40px; /* horizontal lines */
     background-repeat:
         no-repeat, /* white top bar */
+        no-repeat,
         repeat, /* vertical lines */
         repeat; /* horizontal lines */
     
@@ -1042,18 +1046,22 @@ button:hover {
         display: flex;
         background-image:
             linear-gradient(#ffffff, #ffffff), /* white top bar */
+            linear-gradient(#ffffff, #ffffff), /* white bottom bar */
             linear-gradient(to right, #e5e5e5 1px, transparent 1px), /* vertical lines */
             linear-gradient(to bottom, #e5e5e5 1px, transparent 1px); /* horizontal lines */                    
         background-size:
             100% 38.4px, /* white top bar */
+            100% 38.4px, /* white bottom bar */
             calc((100% + 2px) / 2) 100%, /* vertical lines */
             100% calc((100% - 48px) / var(--rows)); /* horizontal lines */
         background-position:
             0 0, /* white top bar */
+            0 calc(78px + (((100% - 48px) / var(--rows)) * var(--rows))),
             -2px 0, /* vertical lines */
             0 38.4px; /* horizontal lines */
         background-repeat:
             no-repeat, /* white top bar */
+            no-repeat, /* white bottom bar */
             repeat, /* vertical lines */
             repeat, /* horizontal lines */
     }
