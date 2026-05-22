@@ -1012,6 +1012,14 @@ button:hover {
     display: block;
 }
 
+.mobile-copyright-bottom {
+    display: none;
+}
+
+.mobile-brand-svg {
+    display: none;
+}
+
 /* ###################################################################################################### PHONE PHONE PHONE PHONE PHONE PHONE ############################################################################################################################################# */
 @media (max-width: 768px) or (max-height: 768px) {
     header {
