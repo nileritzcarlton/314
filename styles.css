@@ -1020,6 +1020,39 @@ button:hover {
     display: none;
 }
 
+/* ------------------------------------- alternative desktop theme ------------------------------------------ */
+body, header {
+    background-color: #ffffff;
+}
+h1 {
+    color: #000;
+    position: relative;
+    top: 10px;
+}
+nav a {
+    color: #000 !important;
+}
+.nav-logo img {
+    content: url("products/images/CAT-2.png");
+}
+#cart-link img {
+    content: url("products/images/shopping-cart-free-5-svgrepo-com-2.svg");
+}
+.container {
+    box-shadow: 0 0px 30px rgb(33, 33, 33);
+}
+.right-links p, span {
+    color: #000 !important;
+}
+.left-links a:hover,
+.left-links a.active {
+    color: #ffc8c8;
+}
+.left-links a.active::before {
+    color: black;
+}
+/* ------------------------------------- alternative theme ------------------------------------------ */
+
 /* ###################################################################################################### PHONE PHONE PHONE PHONE PHONE PHONE ############################################################################################################################################# */
 @media (max-width: 768px) or (max-height: 768px) {
     header {
