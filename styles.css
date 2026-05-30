@@ -1041,7 +1041,9 @@ nav a {
 .container {
     box-shadow: 0 0px 30px rgb(33, 33, 33);
 }
-.right-links p, span {
+.right-links p, 
+.brand-name,
+#cart-count {
     color: #000 !important;
 }
 .left-links a:hover,
