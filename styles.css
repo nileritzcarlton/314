@@ -1044,7 +1044,7 @@ nav a {
 .right-links p, 
 .brand-name,
 #cart-count {
-    color: #000;
+    color: #000 !important;
 }
 .left-links a:hover,
 .left-links a.active {
@@ -1405,7 +1405,7 @@ nav a {
         --base-font: 11px;
         font-size: var(--base-font);
         background: rgb(218, 72, 72);     /* classic notification color */
-        color: white;
+        color: white !important;
         font-weight: bold;
         width: 15px;
         height: 15px;
