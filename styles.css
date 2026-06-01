@@ -1265,6 +1265,10 @@ nav a {
     .left-links a:hover {
         color: #712b2b;
     }
+
+    .left-links a.active::before {
+        color: white;
+    }
     
     .left-links #mobile-search {
         position: relative;       /* important for input focus */
