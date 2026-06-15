@@ -810,6 +810,7 @@ button:hover {
     list-style-type: none;
     padding-left: 20px;
     font-size: 12px;
+    --base-font: 12px;
 }
 
 .product-details li {
@@ -1327,6 +1328,7 @@ nav a {
         padding-bottom: 10px;
         order: 4;
         font-size: 14px;
+        --base-font: 14px;
     }
 
     .product-details-mobile li {
