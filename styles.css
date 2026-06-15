@@ -836,6 +836,7 @@ button:hover {
     text-align: left;
     padding-top: 50px;
     font-size: 14px;
+    --base-font: 14px;
 }
 
 .product-info-right .price{
