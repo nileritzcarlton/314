@@ -1324,10 +1324,10 @@ nav a {
     .product-details-mobile {
         display: block;
         list-style: none;
-        margin-top: -35px;
+        margin: -20px;
         padding: 0;
         padding-bottom: 10px;
-        order: 4;
+        order: 3;
         font-size: 14px;
         --base-font: 14px;
     }
