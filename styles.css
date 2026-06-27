@@ -405,25 +405,28 @@ nav a:hover {
 
     background-image:
         linear-gradient(#ffffff, #ffffff), /* white top bar */
-        linear-gradient(#ffffff, #ffffff), /* white bottom bar */   
-        linear-gradient(to right, #e5e5e5 1px, transparent 1px), /* vertical lines */ 
-        linear-gradient(to bottom, #e5e5e5 1px, transparent 1px); /* horizontal lines */                
+        linear-gradient(#ffffff, #ffffff), /* white bottom bar */
+        linear-gradient(to right, #e5e5e5 1px, transparent 1px), /* vertical lines */
+        linear-gradient(to bottom, #e5e5e5 1px, transparent 1px); /* horizontal lines */
+
     background-size:
         100% 40px, /* white top bar */
         100% 40px, /* white bottom bar */
-        calc(100% / 3) 100%, /* vertical lines */
-        100% 345px; /* horizontal lines */
+        calc((100% + 2px) / 3) 100%, /* vertical lines */
+        100% calc((100% - 80px) / var(--rows)); /* horizontal lines */
+
     background-position:
         0 0, /* white top bar */
-        0 calc(41px + (345px * var(--rows))),
-        0 330px, /* vertical lines */ 
+        0 calc(80px + (((100% - 40px) / var(--rows)) * var(--rows))), /* white bottom bar */
+        -2px 0, /* vertical lines */
         0 40px; /* horizontal lines */
+
     background-repeat:
-        no-repeat, /* white top bar */
         no-repeat,
-        repeat, /* vertical lines */
-        repeat; /* horizontal lines */
-    
+        no-repeat,
+        repeat,
+        repeat;
+
     padding-top: 48px;
 }
 
@@ -857,8 +860,8 @@ button:hover {
     flex-direction: column;  /* stack image + thumbnails */
     justify-content: center;  /* center the whole stack in column */
     align-items: center;      /* horizontal center */
-    height: 100%;
     height: 280px;
+    width: auto;
 }
 
 .product a {
