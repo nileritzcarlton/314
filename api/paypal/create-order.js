@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     }
 
     const paypalItems = items.map(item => ({
-      name: `${item.name} (${item.size || "default"}, ${item.color || "default"})`,
+      name: `${item.name} (${item.size}, ${item.color || "default"})`,
       unit_amount: {
         currency_code: currency,
         value: ((item.price * conversionRate)).toFixed(2),
