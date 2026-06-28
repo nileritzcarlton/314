@@ -379,7 +379,7 @@ function addProductFromPageWithOptions() {
 
     addToCart(
         name,   // dynamic product name
-        1.00,  // price
+        30.00,  // price
         image,  // dynamic thumbnail
         size,
         currentQty,      // quantity (or currentQty if needed)
