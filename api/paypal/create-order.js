@@ -22,6 +22,15 @@ export default async function handler(req, res) {
     if (currency === "USD") {
       conversionRate = 1.16666666;
     }
+
+    const paypalItems = items.map(item => ({
+      name: `${item.name} (${item.size || "default"}, ${item.color || "default"})`,
+      unit_amount: {
+        currency_code: currency,
+        value: ((item.price * conversionRate)).toFixed(2),
+      },
+      quantity: String(item.quantity),
+    }));
     
     const total = items.reduce(
       (sum, item) => sum + (item.price * conversionRate) * item.quantity,
@@ -33,12 +42,22 @@ export default async function handler(req, res) {
 
     request.requestBody({
       intent: "CAPTURE",
+
       purchase_units: [
         {
           amount: {
             currency_code: currency,
-            value: total.toFixed(2),  
+            value: total.toFixed(2),
+
+            breakdown: {
+              item_total: {
+                currency_code: currency,
+                value: total.toFixed(2),
+              },
+            },
           },
+
+          items: paypalItems,
         },
       ],
     });

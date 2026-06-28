@@ -18,6 +18,8 @@ export default async function handler(req, res) {
 
     const capture = await client.execute(request);
 
+    console.log(JSON.stringify(capture.result, null, 2));
+    
     res.status(200).json(capture.result);
 
   } catch (err) {

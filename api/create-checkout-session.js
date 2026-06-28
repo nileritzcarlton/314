@@ -29,7 +29,7 @@ export default async function handler(req, res) {
                 return {
                     price_data: {
                         currency: currency.toLowerCase(),
-                        product_data: { name: item.name },
+                        product_data: {name: `${item.name} (${item.size}, ${item.color})`},
                         unit_amount: unitAmountCents,
                     },
                     quantity: item.quantity,
