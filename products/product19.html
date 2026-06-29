@@ -90,7 +90,7 @@
         </div>
 
         <div class="product-image">     <!-- CENTER: Image Gallery -->
-            <img id="main-image" src="images/FINISH18.png" alt="Chanel">
+            <img id="main-image" src="images/FINISH18-2.png" alt="Chanel">
         </div>
 
         <div class="product-info-right">     <!-- RIGHT: Purchase -->
@@ -104,6 +104,25 @@
                 <button class="size-btn" data-size="XL">XL</button>
             </div>
 
+            <div class="color-selector">
+                <div class="color-options">
+                    <span>Colour:</span>
+                    <button class="color-btn active"
+                            data-color="Black"
+                            data-image="./images/FINISH18-2.png"
+                            style="background:#000000;">
+                    </button>
+                    <button class="color-btn"    
+                            data-color="White"
+                            data-image="./images/FINISH18.png"
+                            style="background:#ffffff;">
+                    </button>
+                </div>
+            </div>
+
+            <input type="hidden" id="selected-color" value="Black">
+            <input type="hidden" id="selected-image" value="images/FINISH18-2.png">
+
             <div class="quantity-selector">
                 <span>Quantity:</span>
                 <div class="qty-controls">
@@ -115,14 +134,15 @@
 
             <input type="hidden" id="size" value="S">
 
-            <button class="addtocartbutton" onclick="addProductFromPage('YHAGA - 5', 30.00, 'products/images/FINISH18.png')">
+            <button class="addtocartbutton" onclick="addProductFromPageWithOptions()">
                 Add to Cart
             </button>
         </div>
         
         <div class="thumbnails">
+            <img src="images/FINISH18-2.png" onclick="changeImage(this)">
+            <img src="images/FINISH-BlankBlackBack.png" onclick="changeImage(this)">
             <img src="images/FINISH18.png" onclick="changeImage(this)">
-            <img src="images/FINISH-BlankWhiteBack.png" onclick="changeImage(this)">
         </div>
         <ul class="product-details-mobile">
             <li>100% Pre-Shrunk Cotton.</li>
