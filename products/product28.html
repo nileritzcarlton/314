@@ -90,7 +90,7 @@
         </div>
 
         <div class="product-image">     <!-- CENTER: Image Gallery -->
-            <img id="main-image" src="images/FINISH27.png" alt="Chanel">
+            <img id="main-image" src="images/FINISH27-3.png" alt="Chanel">
         </div>
 
         <div class="product-info-right">     <!-- RIGHT: Purchase -->
@@ -108,6 +108,11 @@
                 <div class="color-options">
                     <span>Colour:</span>
                     <button class="color-btn active"    
+                            data-color="Gray"
+                            data-image="./images/FINISH27-3.png"
+                            style="background:#a4a4ab;">
+                    </button> 
+                    <button class="color-btn"    
                             data-color="White"
                             data-image="./images/FINISH27.png"
                             style="background:#ffffff;">
@@ -120,7 +125,7 @@
                 </div>
             </div>
 
-            <input type="hidden" id="selected-color" value="White">
+            <input type="hidden" id="selected-color" value="Gray">
             <input type="hidden" id="selected-image" value="images/FINISH27.png">
 
             <div class="quantity-selector">
@@ -140,8 +145,9 @@
         </div>
 
         <div class="thumbnails">
-            <img src="images/FINISH27.png" onclick="changeImage(this)">
-            <img src="images/FINISH-BlankWhiteBack.png" onclick="changeImage(this)">
+            <img src="images/FINISH27-3.png" onclick="changeImage(this)">
+            <img src="images/FINISH-BlankGrayBack.png" onclick="changeImage(this)">
+            <img src="images/FINISH27.png" onclick="changeImage(this)">            
             <img src="images/FINISH27-2.png" onclick="changeImage(this)">
         </div>
         <ul class="product-details-mobile">
